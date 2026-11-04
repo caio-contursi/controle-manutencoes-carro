@@ -1,0 +1,5 @@
+node_modules/
+dist/
+server/data/
+contact-sheet.jpg
+contact-detail.jpg
