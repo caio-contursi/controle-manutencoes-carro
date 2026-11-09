@@ -1,12 +1,14 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
-  ArrowDownLeft, ArrowLeft, ArrowRight, Bell, BookOpen, CalendarDays, Car, Check,
+  ArrowDownLeft, ArrowLeft, ArrowRight, ArrowUpRight, Bell, BookOpen, CalendarDays, Car, Check,
   CheckCircle2, ChevronDown, ChevronRight, CircleHelp, ClipboardList, Clock3,
   Droplet, FileText, Fuel, Gauge, History, Home, Info, KeyRound, Map, Menu,
   MessageCircle, MoreHorizontal, Pencil, Plus, Search, Settings2, ShieldCheck,
   SlidersHorizontal, Sparkles, Wallet, Wrench, X, Zap,
 } from 'lucide-react'
+import { displayDate, historyEntries, mileageFromRecord } from './records.js'
+import FipeLookup from './FipeLookup.jsx'
 import './styles.css'
 
 const navItems = [
@@ -15,35 +17,10 @@ const navItems = [
   { id: 'gastos', label: 'Gastos', icon: Wallet },
   { id: 'copiloto', label: 'Copiloto', icon: MessageCircle },
   { id: 'historico', label: 'Histórico', icon: FileText },
+  { id: 'catalogo', label: 'Catálogo', icon: BookOpen },
 ]
 
-const initialMaintenance = [
-  { title: 'Troca de velas de ignição', detail: '30.000 km · 36 meses', icon: Zap, status: 'Aguardando calibração', km: 30000 },
-  { title: 'Troca da correia dentada', detail: '40.000 km · 48 meses', icon: Settings2, status: 'Aguardando calibração', km: 40000 },
-  { title: 'Rodízio de pneus', detail: '10.000 km · 12 meses', icon: CircleHelp, status: 'Aguardando calibração', km: 10000 },
-  { title: 'Troca de filtro de combustível', detail: '10.000 km · 12 meses', icon: SlidersHorizontal, status: 'Aguardando calibração', km: 10000 },
-  { title: 'Troca de óleo do motor', detail: '10.000 km · 12 meses', icon: Droplet, status: 'Aguardando calibração', km: 10000 },
-  { title: 'Alinhamento e balanceamento', detail: '10.000 km · 12 meses', icon: Settings2, status: 'No plano', km: 10000 },
-]
-
-const firstSteps = [
-  'Informe a quilometragem atual', 'Calibre seu plano', 'Ligue os avisos',
-  'Registre o primeiro abastecimento', 'Registre a 1ª manutenção', 'Adicione um lembrete',
-]
-
-const referenceFiles = Object.keys(import.meta.glob('/public/references/*', { eager: false }))
-  .map((path) => path.split('/').pop())
-  .filter(Boolean)
-  .sort((a, b) => {
-    const match = (file) => {
-      const [, hh = '0', mm = '0', ss = '0', copy = '0'] = file.match(/at (\d+)\.(\d+)\.(\d+)(?: \((\d+)\))?/) || []
-      return [Number(hh), Number(mm), Number(ss), Number(copy)]
-    }
-    const first = match(a)
-    const second = match(b)
-    for (let index = 0; index < first.length; index += 1) if (first[index] !== second[index]) return first[index] - second[index]
-    return a.localeCompare(b, 'pt-BR')
-  })
+const initialMaintenance = []
 
 function loadState(key, fallback) {
   try { return JSON.parse(localStorage.getItem(key)) ?? fallback } catch { return fallback }
@@ -68,7 +45,7 @@ function usePersistentState(key, fallback) {
   useEffect(() => {
     if (hydrated) fetch(`/api/state/${shortKey}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ value: state }) }).catch(() => {})
   }, [hydrated, key, shortKey, state])
-  return [state, setState]
+  return [state, setState, hydrated]
 }
 
 function money(value) {
@@ -76,98 +53,100 @@ function money(value) {
 }
 
 function App() {
-  const [profile, setProfile] = usePersistentState('lembracar.profile', null)
-  const [vehicle, setVehicle] = usePersistentState('lembracar.vehicle', null)
-  const [mileage, setMileage] = usePersistentState('lembracar.mileage', 245000)
-  const [maintenance, setMaintenance] = usePersistentState('lembracar.maintenance', initialMaintenance)
-  const [expenses, setExpenses] = usePersistentState('lembracar.expenses', [])
-  const [reminders, setReminders] = usePersistentState('lembracar.reminders', [])
-  const [firstDone, setFirstDone] = usePersistentState('lembracar.firstSteps', [true, false, false, false, false, false])
+  const [profile, setProfile, profileReady] = usePersistentState('lembracar.profile', null)
+  const [vehicle, setVehicle, vehicleReady] = usePersistentState('lembracar.vehicle', null)
+  const [mileage, setMileage, mileageReady] = usePersistentState('lembracar.mileage', 0)
+  const [maintenance, setMaintenance, maintenanceReady] = usePersistentState('lembracar.maintenance', initialMaintenance)
+  const [expenses, setExpenses, expensesReady] = usePersistentState('lembracar.expenses', [])
+  const [reminders, setReminders, remindersReady] = usePersistentState('lembracar.reminders', [])
   const [page, setPage] = useState(() => localStorage.getItem('lembracar.page') || (loadState('lembracar.vehicle', null) ? 'inicio' : 'onboarding'))
-  const [dark, setDark] = usePersistentState('lembracar.dark', false)
+  const pageIsReady = profileReady && vehicleReady && mileageReady && maintenanceReady && expensesReady && remindersReady
   const [fabOpen, setFabOpen] = useState(false)
   const [modal, setModal] = useState('')
+  const [serviceTitleDraft, setServiceTitleDraft] = useState({ title: '', km: 0 })
   const [toast, setToast] = useState('')
   const [query, setQuery] = useState('')
   const [conversation, setConversation] = useState([])
-  const [plate, setPlate] = useState('')
-  const [lookupBusy, setLookupBusy] = useState(false)
-  const [plateLookup, setPlateLookup] = useState(false)
+  const [catalogData, setCatalogData] = useState({ brands: [], sources: [], counts: null })
+  const [catalogQuery, setCatalogQuery] = useState('')
+  const [catalogResults, setCatalogResults] = useState([])
+  const catalogRequest = useRef(0)
+  const [catalogSearchStatus, setCatalogSearchStatus] = useState('idle')
   const [onStep, setOnStep] = useState(1)
-  const [draft, setDraft] = useState({ make: 'Fiat', model: 'Palio', version: 'Palio 1.0 Fire Flex', year: '2012', city: 'Rio de Janeiro - RJ', name: '' })
+  const [draft, setDraft] = useState({ make: '', model: '', version: '', year: '', city: '', name: '' })
 
   useEffect(() => {
+    if (!pageIsReady) return
     if (!profile || !vehicle) setPage('onboarding')
     else if (page === 'onboarding') setPage('inicio')
-  }, [profile, vehicle])
+  }, [pageIsReady, profile, vehicle, page])
   useEffect(() => { localStorage.setItem('lembracar.page', page) }, [page])
   useEffect(() => {
     if (!toast) return
     const timer = setTimeout(() => setToast(''), 2600)
     return () => clearTimeout(timer)
   }, [toast])
+  useEffect(() => {
+    Promise.all([fetch('/api/catalog/brands').then((r) => r.json()), fetch('/api/catalog/sources').then((r) => r.json()), fetch('/api/catalog/health').then((r) => r.json())])
+      .then(([brands, sources, health]) => setCatalogData({ brands: brands.brands || [], sources: sources.sources || [], counts: health.counts || null })).catch(() => {})
+  }, [])
+  useEffect(() => {
+    const openReminder = () => setModal('reminder')
+    document.addEventListener('lembracar:new-reminder', openReminder)
+    return () => document.removeEventListener('lembracar:new-reminder', openReminder)
+  }, [])
 
-  const monthExpenses = useMemo(() => expenses.reduce((sum, item) => sum + Number(item.amount || 0), 0), [expenses])
-  const completedSteps = firstDone.filter(Boolean).length
+  const monthExpenses = useMemo(() => expenses.filter((item) => String(item.date || '').slice(0, 7) === new Date().toISOString().slice(0, 7)).reduce((sum, item) => sum + Number(item.amount || 0), 0), [expenses])
   const completedMaintenance = maintenance.filter((item) => item.status === 'Concluída').length
-  const awaitingMaintenance = maintenance.filter((item) => ['Aguardando calibração', 'Aguardando resposta'].includes(item.status)).length
+  const awaitingMaintenance = maintenance.filter((item) => item.status === 'Aguardando resposta').length
 
   const movePage = (next) => { setPage(next); setFabOpen(false); setModal('') }
   const completeOnboarding = () => {
-    const cleanPlate = plate.replace(/[^a-z0-9]/gi, '').toUpperCase() || 'KOQ2B84'
-    const { phone: _phone, ...vehicleDraft } = draft
-    setVehicle({ ...vehicleDraft, plate: cleanPlate, brand: draft.make, name: draft.model })
-    setProfile({ name: draft.name.trim() || 'Rafael' })
-    setFirstDone([true, false, false, false, false, false])
+    const cleanPlate = ''
+    const vehicleDraft = { brand: draft.make.trim(), model: draft.model.trim(), version: draft.version.trim(), year: draft.year, city: draft.city.trim(), plate: cleanPlate }
+    setVehicle(vehicleDraft)
+    setProfile({ name: draft.name.trim() })
     movePage('inicio')
-    setToast('Seu Palio já está sendo monitorado')
-  }
-  const markStep = (index) => {
-    if (firstDone[index]) return
-    if (index === 1) setModal('calibrate')
-    else if (index === 2) {
-      setFirstDone((old) => { const next = [...old]; next[index] = true; return next })
-      setToast('Avisos ativados para as próximas manutenções')
-    } else if (index === 3) setModal('expense')
-    else if (index === 4) setModal('maintenance')
-    else if (index === 5) setModal('reminder')
+    setToast('Veículo cadastrado. Consulte a cobertura disponível no catálogo.')
   }
   const saveMileage = (value) => {
-    const nextValue = Number(value)
+    const nextValue = Math.max(0, Number(value))
     setMileage(nextValue)
-    setFirstDone((old) => { const next = [...old]; next[0] = true; return next })
     setToast('Quilometragem atualizada')
   }
-  const calibrate = () => {
-    setMaintenance(initialMaintenance.slice(0, 5).map((item, index) => ({ ...item, status: index < 2 ? 'Aguardando resposta' : 'No plano' })))
-    setFirstDone((old) => { const next = [...old]; next[1] = true; return next })
-    setModal('')
-    setToast('Seu plano ficou pronto com 17 manutenções')
-  }
   const submitExpense = (data) => {
-    setExpenses((old) => [{ ...data, id: crypto.randomUUID(), date: new Date().toISOString() }, ...old])
-    if (data.type === 'Abastecimento') setFirstDone((old) => { const next = [...old]; next[3] = true; return next })
+    setExpenses((old) => [{ ...data, id: crypto.randomUUID(), date: data.date || new Date().toISOString() }, ...old])
+    setMileage((current) => mileageFromRecord(current, data.mileage))
     setModal('')
     setToast('Gasto registrado')
   }
   const removeExpense = (id) => {
-    const removed = expenses.find((item) => item.id === id)
     setExpenses((old) => old.filter((item) => item.id !== id))
-    if (removed?.type === 'Abastecimento') setFirstDone((old) => { const next = [...old]; next[3] = expenses.some((item) => item.id !== id && item.type === 'Abastecimento'); return next })
     setToast('Gasto removido do extrato')
   }
-  const submitMaintenance = (title, amount, recordedMileage = mileage) => {
-    const serviceMileage = Number(recordedMileage || mileage)
-    setMileage(serviceMileage)
-    setMaintenance((old) => [{ title, detail: `${serviceMileage.toLocaleString('pt-BR')} km · Hoje`, icon: Wrench, status: 'Concluída', km: serviceMileage, amount, completedAt: new Date().toISOString() }, ...old])
-    setFirstDone((old) => { const next = [...old]; next[4] = true; return next })
-    if (amount) setExpenses((old) => [{ id: crypto.randomUUID(), type: 'Manutenção', title, amount: Number(amount), date: new Date().toISOString() }, ...old])
+  const submitMaintenance = (title, amount, recordedMileage = mileage, recordedDate, hasInvoice = false) => {
+    const serviceMileage = Math.max(0, Number(recordedMileage ?? mileage))
+    const completedAt = recordedDate ? new Date(`${recordedDate}T12:00:00`).toISOString() : new Date().toISOString()
+    setMileage((current) => mileageFromRecord(current, serviceMileage))
+    const id = crypto.randomUUID()
+    setMaintenance((old) => [{ id, title, detail: `${serviceMileage.toLocaleString('pt-BR')} km · ${new Date(completedAt).toLocaleDateString('pt-BR')}${hasInvoice ? ' · Nota fiscal' : ''}`, status: 'Concluída', km: serviceMileage, amount: Number(amount || 0), hasInvoice, completedAt }, ...old])
+    if (amount) setExpenses((old) => [{ id: crypto.randomUUID(), type: 'Manutenção', maintenanceId: id, title, amount: Number(amount), date: completedAt }, ...old])
     setModal('')
     setToast('Manutenção adicionada ao histórico')
   }
+  const completeExistingMaintenance = (item, amount, recordedMileage = mileage, recordedDate) => {
+    if (!maintenance.includes(item) || item.status === 'Concluída') return
+    const id = item.id ?? crypto.randomUUID()
+    const completedAt = recordedDate ? new Date(`${recordedDate}T12:00:00`).toISOString() : new Date().toISOString()
+    const serviceMileage = Math.max(0, Number(recordedMileage ?? mileage))
+    setMileage((current) => mileageFromRecord(current, serviceMileage))
+    setMaintenance((old) => old.map((entry) => entry === item ? { ...entry, id, status: 'Concluída', km: serviceMileage, detail: `${serviceMileage.toLocaleString('pt-BR')} km · ${new Date(completedAt).toLocaleDateString('pt-BR')}`, completedAt, amount: Number(amount || entry.amount || 0) } : entry))
+    if (amount) setExpenses((old) => [{ id: crypto.randomUUID(), type: 'Manutenção', maintenanceId: id, title: item.title, amount: Number(amount), date: completedAt }, ...old])
+    setModal('')
+    setToast('Serviço marcado como concluído')
+  }
   const submitReminder = (title, date) => {
     setReminders((old) => [{ title, date, id: crypto.randomUUID() }, ...old])
-    setFirstDone((old) => { const next = [...old]; next[5] = true; return next })
     setModal('')
     setToast('Lembrete criado')
   }
@@ -176,71 +155,88 @@ function App() {
     const prompt = question.trim()
     setConversation((old) => [...old, { role: 'user', text: prompt }])
     setQuery('')
-    setTimeout(() => setConversation((old) => [...old, { role: 'assistant', text: answerFor(prompt, mileage, monthExpenses) }]), 350)
+    setTimeout(() => setConversation((old) => [...old, { role: 'assistant', text: answerFor(prompt, mileage, monthExpenses, vehicle, maintenance) }]), 350)
   }
-  const lookupPlate = () => {
-    if (!plate.trim()) { setToast('Digite a placa do veículo'); return }
-    setLookupBusy(true)
-    setTimeout(() => {
-      setLookupBusy(false)
-      setPlateLookup(true)
-      setToast('Veículo encontrado. Confira os dados para continuar.')
-    }, 800)
+  const searchCatalog = async (value = catalogQuery) => {
+    setCatalogQuery(value)
+    const request = ++catalogRequest.current
+    setCatalogResults([])
+    if (!value.trim()) { setCatalogSearchStatus('idle'); return }
+    setCatalogSearchStatus('loading')
+    try {
+      const response = await fetch(`/api/catalog/search?q=${encodeURIComponent(value)}`)
+      const data = await response.json()
+      if (!response.ok) throw new Error('Busca indisponível')
+      if (request === catalogRequest.current) {
+        setCatalogResults(data.vehicles || [])
+        setCatalogSearchStatus('done')
+      }
+    } catch {
+      if (request === catalogRequest.current) setCatalogSearchStatus('error')
+    }
+  }
+  const contributeSource = async (data) => {
+    try {
+      const response = await fetch('/api/catalog/contributions', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+      if (!response.ok) throw new Error('invalid')
+      setToast('Fonte enviada para revisão do catálogo')
+      return true
+    } catch { setToast('Não foi possível registrar. Confira os dados e tente novamente.'); return false }
   }
 
   return (
-    <main className={`app-shell ${dark ? 'dark' : ''} ${page === 'onboarding' ? 'onboarding-shell' : ''}`}>
-      {page === 'onboarding' ? (
-        <Onboarding step={onStep} setStep={setOnStep} draft={draft} setDraft={setDraft} plate={plate} setPlate={setPlate} busy={lookupBusy} lookedUp={plateLookup} onLookup={lookupPlate} onFinish={completeOnboarding} onToast={setToast} onEnter={() => { setProfile({ name: 'Rafael' }); setVehicle({ brand: 'Fiat', model: 'Palio', version: 'Palio 1.0 Fire Flex', year: '2012', city: 'Rio de Janeiro - RJ', plate: 'KOQ2B84' }); movePage('inicio') }} />
+    <main className={`app-shell ${page === 'onboarding' ? 'onboarding-shell' : ''}`}>
+      {!pageIsReady ? <div className="app-loading" role="status">Carregando seus dados…</div> : !profile || !vehicle ? (
+        <Onboarding step={onStep} setStep={setOnStep} draft={draft} setDraft={setDraft} onFinish={completeOnboarding} onToast={setToast} />
       ) : (
         <>
-          <div className="phone-status"><span>16:53 ◐</span><span className="signal">▮▮▮ ◉ ▰</span></div>
-          <DesktopSidebar page={page} profile={profile} vehicle={vehicle} onNavigate={movePage} onProfile={() => setModal('profile')} />
+          <DesktopSidebar page={page} profile={profile} vehicle={vehicle} onNavigate={movePage} onProfile={() => setModal('profile')} onVehicle={() => setModal('vehicle')} />
           <div className="app-main">
-            <Header page={page} vehicle={vehicle} dark={dark} setDark={setDark} profile={profile} onProfile={() => setModal('profile')} onReminders={() => setModal('notifications')} />
-            <section className={`screen-content ${page === 'inicio' || page === 'manutencoes' && dark ? 'screen-dark' : ''}`} key={page}>
-              {page === 'inicio' && <HomePage vehicle={vehicle} profile={profile} mileage={mileage} setMileage={setMileage} maintenance={maintenance} firstDone={firstDone} completedSteps={completedSteps} completedMaintenance={completedMaintenance} awaitingMaintenance={awaitingMaintenance} onMileageSave={saveMileage} onStep={markStep} onOpen={movePage} onToast={setToast} reminders={reminders} />}
-              {page === 'manutencoes' && <MaintenancePage maintenance={maintenance} onComplete={(item) => submitMaintenance(item.title, '')} onPremium={() => setModal('premium')} onCalibrate={() => setModal('calibrate')} onReminder={() => setModal('reminder')} onManual={() => setModal('maintenance')} dark={dark} setDark={setDark} />}
+            <Header page={page} vehicle={vehicle} profile={profile} onProfile={() => setModal('profile')} onReminders={() => setModal('notifications')} reminderCount={reminders.length} />
+            <section className="screen-content" key={page}>
+              {page === 'inicio' && <HomePage vehicle={vehicle} profile={profile} mileage={mileage} maintenance={maintenance} completedMaintenance={completedMaintenance} awaitingMaintenance={awaitingMaintenance} onMileageSave={saveMileage} onOpen={movePage} reminders={reminders} />}
+              {page === 'manutencoes' && <MaintenancePage maintenance={maintenance} onComplete={(item) => { setServiceTitleDraft(item); setModal('complete-maintenance') }} onReminder={() => setModal('reminder')} onManual={() => { setServiceTitleDraft({ title: '', km: mileage }); setModal('maintenance') }} vehicle={vehicle} />}
               {page === 'gastos' && <ExpensesPage expenses={expenses} total={monthExpenses} onAdd={() => setModal('expense')} onRemove={removeExpense} />}
               {page === 'copiloto' && <CopilotPage vehicle={vehicle} profile={profile} mileage={mileage} conversation={conversation} query={query} setQuery={setQuery} onSubmit={submitChat} onSuggestion={submitChat} />}
-              {page === 'historico' && <HistoryPage maintenance={maintenance} expenses={expenses} reminders={reminders} firstDone={firstDone} completedSteps={completedSteps} onRegister={() => setModal('maintenance')} />}
+              {page === 'historico' && <HistoryPage maintenance={maintenance} expenses={expenses} reminders={reminders} onRegister={() => { setServiceTitleDraft({ title: '', km: mileage }); setModal('maintenance') }} />}
+              {page === 'catalogo' && <CatalogPage data={catalogData} query={catalogQuery} results={catalogResults} searchStatus={catalogSearchStatus} onSearch={searchCatalog} onContribute={contributeSource} />}
             </section>
             {fabOpen && <div className="fab-menu">
-              <button onClick={() => setModal('reminder')}>Criar novo lembrete <CalendarDays size={17} /></button>
-              <button onClick={() => setModal('maintenance')}>Registrar manutenção feita <Check size={17} /></button>
-              <button onClick={() => setModal('expense')}>Registrar gasto <Wallet size={17} /></button>
+              <button onClick={() => { setFabOpen(false); setModal('reminder') }}>Criar novo lembrete <CalendarDays size={17} /></button>
+              <button onClick={() => { setFabOpen(false); setServiceTitleDraft({ title: '', km: mileage }); setModal('maintenance') }}>Registrar manutenção feita <Check size={17} /></button>
+              <button onClick={() => { setFabOpen(false); setModal('expense') }}>Registrar gasto <Wallet size={17} /></button>
             </div>}
-            <button className={`fab ${fabOpen ? 'fab-open' : ''}`} aria-label={fabOpen ? 'Fechar ações' : 'Adicionar'} onClick={() => setFabOpen(!fabOpen)}>{fabOpen ? <X size={25} /> : <Plus size={26} />}</button>
+            {page !== 'copiloto' && <button className={`fab ${fabOpen ? 'fab-open' : ''}`} aria-label={fabOpen ? 'Fechar ações' : 'Adicionar'} onClick={() => setFabOpen(!fabOpen)}>{fabOpen ? <X size={25} /> : <Plus size={26} />}</button>}
             <BottomNav page={page} onNavigate={movePage} />
           </div>
         </>
       )}
-      {modal && <Modal name={modal} close={() => setModal('')} onExpense={submitExpense} onMaintenance={submitMaintenance} onReminder={submitReminder} onCalibrate={calibrate} onToast={setToast} profile={profile} setProfile={setProfile} mileage={mileage} setMileage={setMileage} />}
+      {modal && <Modal key={modal} name={modal} onEditVehicle={() => setModal('vehicle')} close={() => setModal('')} onExpense={submitExpense} onMaintenance={submitMaintenance} onCompleteMaintenance={completeExistingMaintenance} onReminder={submitReminder} onToast={setToast} profile={profile} setProfile={setProfile} mileage={mileage} setMileage={setMileage} vehicle={vehicle} setVehicle={setVehicle} reminders={reminders} initialTitle={modal === 'complete-maintenance' ? serviceTitleDraft.title : ''} initialMileage={modal === 'complete-maintenance' ? serviceTitleDraft.km ?? mileage : mileage} maintenanceItem={serviceTitleDraft} />}
       {toast && <div className="toast"><CheckCircle2 size={17} />{toast}</div>}
     </main>
   )
 }
 
-function answerFor(question, mileage, spend) {
+function answerFor(question, mileage, spend, vehicle, maintenance) {
   const lower = question.toLowerCase()
   if (lower.includes('gasto') || lower.includes('gaste')) return `Neste mês você registrou ${money(spend)} em gastos do seu carro. Anote cada abastecimento e manutenção para acompanhar sua média ao longo do tempo.`
-  if (lower.includes('óleo')) return `Confira a última troca de óleo no histórico do veículo. Como referência, o intervalo depende do motor e da recomendação do fabricante. Seu Palio está com ${Number(mileage).toLocaleString('pt-BR')} km; confirme a especificação no manual ou com um mecânico.`
-  if (lower.includes('vencid') || lower.includes('atras')) return 'Pelo plano que montamos, há manutenções aguardando calibração. Informe o que já foi feito para ajustar os prazos do seu Palio.'
-  if (lower.includes('carro') || lower.includes('palio')) return `Seu Fiat Palio está com ${Number(mileage).toLocaleString('pt-BR')} km informados. Posso ajudar a organizar o plano, entender os gastos ou consultar os registros que você adicionou.`
-  return 'Posso ajudar a entender o plano de manutenção, acompanhar seus gastos e organizar os cuidados do Palio. Para uma orientação mecânica, confirme sempre com um profissional de confiança.'
+  if (lower.includes('óleo')) {
+    const latest = maintenance.filter((item) => item.status === 'Concluída' && /óleo/i.test(item.title)).sort((a, b) => (Date.parse(b.completedAt) || 0) - (Date.parse(a.completedAt) || 0))[0]
+    return latest ? `Seu último registro de serviço relacionado a óleo é “${latest.title}” em ${Number(latest.km || 0).toLocaleString('pt-BR')} km. O próximo intervalo depende do manual da versão ${vehicle?.version || 'do veículo'}, que ainda precisa ser confirmado.` : `Não há troca de óleo registrada. O intervalo depende da versão e da orientação do fabricante; o catálogo ainda não tem uma fonte verificada para este veículo. Quilometragem informada: ${Number(mileage).toLocaleString('pt-BR')} km.`
+  }
+  if (lower.includes('vencid') || lower.includes('atras')) return `Há ${maintenance.filter((item) => item.status === 'Atrasada').length} item(ns) marcados como atrasados nos seus registros. Isso não é uma avaliação técnica: confirme o plano no manual do veículo.`
+  if (lower.includes('carro')) return `${vehicle?.brand || 'Veículo'} ${vehicle?.model || ''} ${vehicle?.year || ''} · ${vehicle?.version || 'versão não informada'}. Quilometragem: ${Number(mileage).toLocaleString('pt-BR')} km. Posso organizar seus registros e gastos; recomendações específicas dependem de fonte confirmada.`
+  return 'Posso ajudar a organizar seus registros e gastos. Para especificações, defeitos conhecidos ou elegibilidade em concessionária, confira o manual e as fontes oficiais da marca.'
 }
 
-function Header({ page, vehicle, dark, setDark, profile, onProfile, onReminders }) {
-  const pageNames = { inicio: `Boa tarde, ${profile?.name || 'caio'}`, manutencoes: 'Manutenções', gastos: 'Gastos', copiloto: 'Copiloto', historico: 'Histórico' }
-  const isDarkHeader = page === 'inicio' || page === 'gastos' || page === 'copiloto' || (page === 'manutencoes' && dark)
+function Header({ page, vehicle, profile, onProfile, onReminders, reminderCount = 0 }) {
+  const pageNames = { inicio: profile?.name ? `Olá, ${profile.name}` : 'Início', manutencoes: 'Manutenções', gastos: 'Gastos', copiloto: 'Copiloto', historico: 'Histórico', catalogo: 'Catálogo técnico' }
   return (
-    <header className={`app-header ${isDarkHeader ? 'header-dark' : ''}`}>
+    <header className="app-header">
       <div className="brand-row">
         <div className="brand-symbol">ℒ</div>
-        <div className="brand-title-wrap"><strong>{pageNames[page]}</strong>{vehicle && <span>{vehicle.brand} {vehicle.model}<i>+ veículo</i></span>}</div>
-        {page === 'manutencoes' && <label className="tiny-toggle" title="Modo severo"><input type="checkbox" checked={dark} onChange={(event) => setDark(event.target.checked)} /><span /></label>}
-        {page === 'copiloto' && <div className="brand-wordmark">LembraCar</div>}
-        <div className="header-actions">{page !== 'copiloto' && <button className="icon-button notification-icon" aria-label="Notificações" onClick={onReminders}><Bell size={18} /><b>1</b></button>}<button className="avatar-button" onClick={onProfile} aria-label="Abrir perfil">{(vehicle?.model || 'C').slice(0, 1)}</button></div>
+        <div className="brand-title-wrap"><strong>{pageNames[page]}</strong>{vehicle && <span>{vehicle.brand} {vehicle.model}</span>}</div>
+        <div className="header-actions"><button className="icon-button notification-icon" aria-label={`Lembretes (${reminderCount})`} onClick={onReminders}><Bell size={18} />{reminderCount > 0 && <b>{reminderCount}</b>}</button><button className="avatar-button" onClick={onProfile} aria-label="Abrir perfil">{(profile?.name || vehicle?.model || 'P').slice(0, 1)}</button></div>
       </div>
     </header>
   )
@@ -250,42 +246,37 @@ function BottomNav({ page, onNavigate }) {
   return <nav className="bottom-nav" aria-label="Navegação principal">{navItems.map(({ id, label, icon: Icon }) => <button key={id} className={page === id ? 'selected' : ''} onClick={() => onNavigate(id)}><Icon size={20} strokeWidth={page === id ? 2.5 : 1.8} /><span>{label}</span></button>)}</nav>
 }
 
-function DesktopSidebar({ page, profile, vehicle, onNavigate, onProfile }) {
+function DesktopSidebar({ page, profile, vehicle, onNavigate, onProfile, onVehicle }) {
   return <aside className="desktop-sidebar">
-    <button className="sidebar-brand" onClick={() => onNavigate('inicio')}><span className="brand-symbol">ℒ</span><strong>LembraCar</strong></button>
+      <button className="sidebar-brand" aria-label="Ir para o início" onClick={() => onNavigate('inicio')}><span className="brand-symbol">ℒ</span></button>
     <div className="sidebar-label">MENU PRINCIPAL</div>
-    <nav aria-label="Navegação para desktop">{navItems.map(({ id, label, icon: Icon }) => <button key={id} className={page === id ? 'active' : ''} onClick={() => onNavigate(id)}><Icon size={19} /><span>{label}</span>{id === 'manutencoes' && <i>5</i>}</button>)}</nav>
-    <div className="sidebar-vehicle"><span className="sidebar-car"><Car size={20} /></span><div><b>{vehicle?.brand} {vehicle?.model}</b><small>{vehicle?.plate} · {vehicle?.year}</small></div><ChevronDown size={15} /></div>
-    <button className="sidebar-profile" onClick={onProfile}><span className="avatar-button">{(profile?.name || 'R').slice(0, 1)}</span><span><b>{profile?.name || 'Rafael'}</b><small>Meu perfil</small></span><MoreHorizontal size={17} /></button>
+    <nav aria-label="Navegação para desktop">{navItems.map(({ id, label, icon: Icon }) => <button key={id} className={page === id ? 'active' : ''} onClick={() => onNavigate(id)}><Icon size={19} /><span>{label}</span></button>)}</nav>
+    <button className="sidebar-vehicle" onClick={onVehicle}><span className="sidebar-car"><Car size={20} /></span><div><b>{vehicle?.brand} {vehicle?.model}</b><small>{vehicle?.plate || 'Placa não informada'} · {vehicle?.year || 'ano'}</small></div><Pencil size={14} /></button>
+    <button className="sidebar-profile" onClick={onProfile}><span className="avatar-button">{(profile?.name || 'P').slice(0, 1)}</span><span><b>{profile?.name || 'Meu perfil'}</b><small>Meu perfil</small></span><MoreHorizontal size={17} /></button>
   </aside>
 }
 
-function HomePage({ vehicle, profile, mileage, setMileage, maintenance, firstDone, completedSteps, completedMaintenance, awaitingMaintenance, onMileageSave, onStep, onOpen, onToast, reminders }) {
+function HomePage({ vehicle, profile, mileage, maintenance, completedMaintenance, awaitingMaintenance, onMileageSave, onOpen, reminders }) {
   const [editing, setEditing] = useState(false)
+  const [mileageDraft, setMileageDraft] = useState(mileage)
   const remaining = awaitingMaintenance
-  const shown = vehicle?.model || 'Palio'
+  const shown = vehicle?.model || 'seu veículo'
   return <div className="home-stack">
     <section className="hero-card">
-      <div className="hero-greeting">{`Olá, ${profile?.name || 'caio'}.`} <span>Cuide do seu carro sem deixar nada para depois.</span></div>
-      <div className="hero-vehicle"><div className="car-tile"><Car size={29} /></div><div className="vehicle-name"><small>{vehicle?.brand || 'FIAT'}</small><strong>{shown}<span className="model-plus">+</span></strong><small>{vehicle?.plate || 'KOQ2B84'} · {vehicle?.year || '2012'}</small></div><div className="health-ring"><span>—</span><small>SAÚDE</small></div></div>
-      <button className="waiting-line" onClick={() => onOpen('manutencoes')}><Clock3 size={15} /><b>{remaining || 5} manutenções aguardam resposta</b><ChevronRight size={16} /></button>
+      <div className="hero-greeting">Meu veículo</div>
+      <div className="hero-vehicle"><div className="car-tile"><Car size={29} /></div><div className="vehicle-name"><small>{vehicle?.brand || 'VEÍCULO'}</small><strong>{shown}</strong><small>{vehicle?.plate || 'Placa não informada'} · {vehicle?.year || 'Ano não informado'}</small></div></div>
+      <button className="waiting-line" onClick={() => onOpen('manutencoes')}><Clock3 size={15} /><b>{remaining ? `${remaining} itens aguardam confirmação` : 'Consulte seus registros de manutenção'}</b><ChevronRight size={16} /></button>
       <div className="odometer-block"><strong>{Number(mileage).toLocaleString('pt-BR')} km</strong><span>no odômetro</span></div>
-      <div className="metrics-row"><div><Gauge size={15} /><span>33 km/dia<small>ritmo de uso</small></span><button aria-label="Editar ritmo" onClick={() => onToast('Ritmo de uso calculado pela quilometragem informada')}><Pencil size={12} /></button></div><div><Fuel size={15} /><span>—<small>consumo real</small></span></div></div>
-      <button className="yellow-button update-mileage" onClick={() => setEditing(!editing)}>{editing ? 'Salvar quilometragem' : 'Atualizar quilometragem'} <Gauge size={16} /></button>
-      {editing && <div className="inline-mileage"><input aria-label="Quilometragem atual" type="number" value={mileage} onChange={(event) => setMileage(Number(event.target.value))} /><span>km</span><button onClick={() => { onMileageSave(mileage); setEditing(false) }}><Check size={17} /></button></div>}
+      {!editing && <button className="yellow-button update-mileage" onClick={() => { setMileageDraft(mileage); setEditing(true) }}>Atualizar quilometragem <Gauge size={16} /></button>}
+      {editing && <form className="inline-mileage" onSubmit={(event) => { event.preventDefault(); onMileageSave(mileageDraft); setEditing(false) }}><input aria-label="Quilometragem atual" type="number" min="0" required value={mileageDraft} onChange={(event) => setMileageDraft(event.target.value)} /><span>km</span><button type="submit" aria-label="Salvar quilometragem"><Check size={17} /></button><button type="button" aria-label="Cancelar edição" onClick={() => setEditing(false)}><X size={17} /></button></form>}
     </section>
-    <section className="surface-card steps-card">
-      <div className="card-heading"><div><h2>Primeiros passos</h2><p>{completedSteps} de {firstSteps.length}</p></div><ChevronDown size={17} /></div>
-      <div className="progress-track"><i style={{ width: `${completedSteps / firstSteps.length * 100}%` }} /></div>
-      <div className="steps-list">{firstSteps.map((title, i) => <button className="step-row" key={title} onClick={() => i === 0 ? setEditing(true) : onStep(i)}><span className={`check-circle ${firstDone[i] ? 'checked' : ''}`}>{firstDone[i] && <Check size={13} />}</span><span className={firstDone[i] ? 'done-text' : ''}>{title}</span>{!firstDone[i] && <ChevronRight size={15} />}</button>)}</div>
-    </section>
-    <section className="surface-card summary-card"><div className="card-heading"><div><h2>Resumo das manutenções</h2><p>Do seu {shown}</p></div><Wrench size={18} /></div><div className="summary-stats"><div className="stat-red"><b>{Math.min(5, remaining)}</b><span>atrasadas</span></div><div className="stat-amber"><b>{maintenance.filter((item) => item.status === 'Em breve').length}</b><span>em breve</span></div><div className="stat-green"><b>{completedMaintenance}</b><span>em dia</span></div></div><button className="text-link" onClick={() => onOpen('manutencoes')}>Ver plano completo <ArrowRight size={15} /></button></section>
+    <section className="surface-card quick-actions-card"><h2>Acesso rápido</h2><div className="quick-actions"><button onClick={() => onOpen('manutencoes')}><Wrench size={17} /><span>Manutenções</span><ChevronRight size={15} /></button><button onClick={() => onOpen('gastos')}><Wallet size={17} /><span>Gastos do veículo</span><ChevronRight size={15} /></button><button onClick={() => onOpen('catalogo')}><BookOpen size={17} /><span>Fontes oficiais</span><ChevronRight size={15} /></button></div></section>
+    <section className="surface-card summary-card"><div className="card-heading"><div><h2>Resumo das manutenções</h2><p>Do seu {shown}</p></div><Wrench size={18} /></div><div className="summary-stats"><div className="stat-red"><b>{maintenance.filter((item) => item.status === 'Atrasada').length}</b><span>atrasadas</span></div><div className="stat-amber"><b>{maintenance.filter((item) => item.status === 'Em breve').length}</b><span>em breve</span></div><div className="stat-green"><b>{completedMaintenance}</b><span>registradas</span></div></div><button className="text-link" onClick={() => onOpen('manutencoes')}>Ver registros <ArrowRight size={15} /></button></section>
     {reminders.length > 0 && <section className="surface-card summary-card"><h2>Seus lembretes</h2>{reminders.map((item) => <p className="reminder-row" key={item.id}><CalendarDays size={16} />{item.title}</p>)}</section>}
-    <section className="support-card"><ShieldCheck size={18} /><div><strong>Seu carro em boas mãos</strong><span>Consulte o plano, registre serviços e acompanhe tudo por aqui.</span></div><Info size={16} /></section>
   </div>
 }
 
-function MaintenancePage({ maintenance, onComplete, onPremium, onCalibrate, onReminder, onManual, dark, setDark }) {
+function MaintenancePage({ maintenance, onComplete, onReminder, onManual, vehicle }) {
   const [tab, setTab] = useState('manutencoes')
   const [filter, setFilter] = useState('todas')
   const countComplete = maintenance.filter((item) => item.status === 'Concluída').length
@@ -293,112 +284,121 @@ function MaintenancePage({ maintenance, onComplete, onPremium, onCalibrate, onRe
   const sourceList = tab === 'revisoes' ? revisionItems : maintenance
   const list = filter === 'atrasadas' ? sourceList.filter((item) => item.status === 'Atrasada') : filter === 'em breve' ? sourceList.filter((item) => item.status === 'Em breve') : filter === 'em dia' ? sourceList.filter((item) => item.status === 'Concluída') : sourceList
   return <div className="page-content maintenance-page">
-    <div className="segment-control"><button className={tab === 'manutencoes' ? 'active' : ''} onClick={() => setTab('manutencoes')}>Manutenções <span>17</span></button><button className={tab === 'revisoes' ? 'active' : ''} onClick={() => setTab('revisoes')}>Revisões</button></div>
-    <section className="surface-card calibration-card"><div className="calibrate-header"><span className="round-icon"><CircleHelp size={18} /></span><div><strong>Calibrar seu plano</strong><small>Faltam 5 · Leva uns 2 minutos</small></div></div><p>Responda o que já fez para ajustarmos os prazos de cada manutenção.</p><button className="yellow-button" onClick={onCalibrate}>Calibrar <SlidersHorizontal size={16} /></button></section>
-    <div className="filter-chips">{['Todas', 'Atrasadas', 'Em breve', 'Em dia'].map((value) => { const key = value.toLowerCase(); const count = value === 'Todas' ? maintenance.length : value === 'Atrasadas' ? maintenance.filter((item) => item.status === 'Atrasada').length : value === 'Em breve' ? maintenance.filter((item) => item.status === 'Em breve').length : countComplete; return <button key={value} className={filter === key ? 'chip-active' : ''} onClick={() => setFilter(key)}><ShieldCheck size={12} />{value === 'Todas' ? `Todas ${count}` : `${value} ${count}`}</button> })}</div>
-    <div className="list-intro"><span>SEU PLANO TEM 17</span><span>{countComplete} concluídas · 12 completas no Premium</span></div>
-    {tab === 'revisoes' && revisionItems.length === 0 && <section className="surface-card revision-empty"><CalendarDays size={19} /><b>Nenhuma revisão registrada ainda</b><span>Adicione uma revisão no histórico para acompanhá-la aqui.</span></section>}
-    <div className="maintenance-list">{list.map((item, i) => { const Icon = typeof item.icon === 'function' ? item.icon : Wrench; return <button className={`maintenance-row ${item.status === 'Concluída' ? 'row-complete' : ''}`} key={`${item.title}-${i}`} onClick={() => onComplete(item)}><span className="maintenance-icon"><Icon size={17} /></span><span className="maintenance-copy"><b>{item.title}</b><small>{item.detail}</small></span><span className="maintenance-status">{item.status}<ChevronRight size={15} /></span></button> })}</div>
-    <button className="premium-bar" onClick={onPremium}><span>♛ +12 manutenções do manual</span><ArrowRight size={16} /></button>
-    <section className="surface-card next-review"><div className="card-heading"><div><h2>Próxima revisão</h2><p>Exemplo · plano preventivo</p></div><Sparkles size={18} /></div><p>Organize os cuidados do seu {countComplete ? 'Palio' : 'carro'} e acompanhe o que vem a seguir.</p><button className="yellow-button" onClick={onReminder}>Organizar minha próxima revisão <ArrowRight size={16} /></button></section>
-    <div className="inline-severe"><span>Modo severo</span><label className="tiny-toggle"><input type="checkbox" checked={dark} onChange={(event) => setDark(event.target.checked)} /><span /></label></div>
+    <div className="segment-control"><button className={tab === 'manutencoes' ? 'active' : ''} onClick={() => setTab('manutencoes')}>Manutenções <span>{maintenance.length}</span></button><button className={tab === 'revisoes' ? 'active' : ''} onClick={() => setTab('revisoes')}>Revisões</button></div>
+    <section className="surface-card calibration-card"><div className="calibrate-header"><span className="round-icon"><CircleHelp size={18} /></span><div><strong>Plano por confirmar</strong><small>{vehicle?.brand || 'Marca'} {vehicle?.model || ''} · {vehicle?.year || 'ano não informado'}</small></div></div><p>Os intervalos variam por ano e motorização. Registre serviços já feitos e consulte os dados oficiais disponíveis.</p></section>
+    <div className="filter-chips">{['Todas', 'Atrasadas', 'Em breve', 'Em dia'].map((value) => { const key = value.toLowerCase(); const scope = tab === 'revisoes' ? revisionItems : maintenance; const count = value === 'Todas' ? scope.length : value === 'Atrasadas' ? scope.filter((item) => item.status === 'Atrasada').length : value === 'Em breve' ? scope.filter((item) => item.status === 'Em breve').length : scope.filter((item) => item.status === 'Concluída').length; return <button key={value} className={filter === key ? 'chip-active' : ''} onClick={() => setFilter(key)}><ShieldCheck size={12} />{value === 'Todas' ? `Todas ${count}` : `${value} ${count}`}</button> })}</div>
+    <div className="list-intro"><span>{maintenance.length} REGISTROS</span><span>{countComplete} concluídas · dados técnicos exigem fonte específica</span></div>
+    {list.length ? <div className="maintenance-list">{list.map((item, i) => { const Icon = typeof item.icon === 'function' ? item.icon : Wrench; const Row = item.status === 'Concluída' ? 'div' : 'button'; return <Row className={`maintenance-row ${item.status === 'Concluída' ? 'row-complete' : ''}`} key={`${item.title}-${i}`} onClick={Row === 'button' ? () => onComplete(item) : undefined}><span className="maintenance-icon"><Icon size={17} /></span><span className="maintenance-copy"><b>{item.title}</b><small>{item.detail}</small></span><span className="maintenance-status">{item.status}{Row === 'button' && <ChevronRight size={15} />}</span></Row> })}</div> : <section className="surface-card revision-empty"><Wrench size={19} /><b>{tab === 'revisoes' ? 'Nenhuma revisão registrada' : 'Nenhum serviço registrado'}</b><span>Registre um serviço feito ou consulte as fontes disponíveis no Catálogo.</span><button className="yellow-button" onClick={onManual}>Registrar serviço <Plus size={16} /></button></section>}
+    <section className="surface-card next-review"><div className="card-heading"><div><h2>Próxima revisão</h2><p>Sem agenda técnica confirmada</p></div><CalendarDays size={18} /></div><p>Cadastre um lembrete com base no manual do seu veículo ou na orientação da concessionária.</p><button className="yellow-button" onClick={onReminder}>Criar lembrete <ArrowRight size={16} /></button></section>
   </div>
 }
 
 function ExpensesPage({ expenses, total, onAdd, onRemove }) {
   const [view, setView] = useState('extrato')
-  const buckets = expenses.reduce((acc, item) => { acc[item.type] = (acc[item.type] || 0) + Number(item.amount); return acc }, {})
+  const currentMonth = new Date().toISOString().slice(0, 7)
+  const monthExpenses = expenses.filter((item) => String(item.date || '').slice(0, 7) === currentMonth)
+  const monthTotal = monthExpenses.reduce((sum, item) => sum + Number(item.amount || 0), 0)
+  const buckets = monthExpenses.reduce((acc, item) => { acc[item.type] = (acc[item.type] || 0) + Number(item.amount); return acc }, {})
   return <div className="page-content expenses-page">
     <div className="segment-control"><button className={view === 'extrato' ? 'active' : ''} onClick={() => setView('extrato')}><Menu size={14} />Extrato</button><button className={view === 'graficos' ? 'active' : ''} onClick={() => setView('graficos')}><SlidersHorizontal size={14} />Gráficos</button></div>
-    <section className="surface-card month-total"><small>ESTE MÊS</small><strong>{money(total)}</strong><p>No mesmo passo de setembro.</p><div className="month-stat"><div><b>{expenses.length}</b><span>LANÇAMENTOS</span></div><div><b>{expenses.length ? money(total / expenses.length) : '—'}</b><span>TICKET MÉDIO</span></div></div></section>
-    {view === 'graficos' ? <section className="surface-card chart-card"><h2>Seus gastos por categoria</h2>{['Abastecimento', 'Manutenção', 'Gasto avulso', 'Conta fixa'].map((type) => <div className="chart-row" key={type}><span>{type}</span><div className="chart-track"><i style={{ width: `${total ? Math.max(8, (buckets[type] || 0) / total * 100) : 3}%` }} /></div><b>{money(buckets[type] || 0)}</b></div>)}<p className="muted-note">Os gráficos ficam mais completos quando você registrar seus gastos.</p></section> : expenses.length ? <section className="surface-card expenses-list"><h2>Seu extrato</h2>{expenses.map((item) => <div className="expense-row" key={item.id}><span className="round-icon"><Wallet size={17} /></span><span><b>{item.title}</b><small>{item.type} · {new Date(item.date).toLocaleDateString('pt-BR')}</small></span><strong>{money(item.amount)}</strong><button className="remove-expense" title={`Remover ${item.title}`} aria-label={`Remover ${item.title}`} onClick={() => onRemove(item.id)}><X size={15} /></button></div>)}</section> : <section className="surface-card empty-expenses"><div className="empty-wallet"><Wallet size={27} /></div><h2>Todo custo do seu Palio, num lugar só.</h2><p>Abastecimentos, seguro, IPVA e manutenção, tudo somado por mês.</p><button className="yellow-button" onClick={onAdd}>Registrar primeiro gasto <Plus size={16} /></button></section>}
-    <button className="quick-add-expense" onClick={onAdd}><Plus size={23} /></button>
+    <section className="surface-card month-total"><small>ESTE MÊS</small><strong>{money(monthTotal)}</strong><p>Valores dos registros neste mês.</p><div className="month-stat"><div><b>{monthExpenses.length}</b><span>LANÇAMENTOS</span></div><div><b>{monthExpenses.length ? money(monthTotal / monthExpenses.length) : '—'}</b><span>TICKET MÉDIO</span></div></div></section>
+    {view === 'graficos' ? <section className="surface-card chart-card"><h2>Seus gastos por categoria</h2>{['Abastecimento', 'Manutenção', 'Gasto avulso', 'Conta fixa'].map((type) => <div className="chart-row" key={type}><span>{type}</span><div className="chart-track"><i style={{ width: `${monthTotal ? (buckets[type] || 0) / monthTotal * 100 : 0}%` }} /></div><b>{money(buckets[type] || 0)}</b></div>)}<p className="muted-note">Os gráficos consideram apenas os lançamentos do mês atual.</p></section> : expenses.length ? <section className="surface-card expenses-list"><h2>Seu extrato</h2>{expenses.map((item) => <div className="expense-row" key={item.id}><span className="round-icon"><Wallet size={17} /></span><span><b>{item.title}</b><small>{item.type} · {displayDate(item.date)}</small></span><strong>{money(item.amount)}</strong><button className="remove-expense" title={`Remover ${item.title}`} aria-label={`Remover ${item.title}`} onClick={() => onRemove(item.id)}><X size={15} /></button></div>)}</section> : <section className="surface-card empty-expenses"><div className="empty-wallet"><Wallet size={27} /></div><h2>Seus gastos, num lugar só.</h2><p>Registre abastecimentos, despesas e serviços para acompanhar os valores por mês.</p><button className="yellow-button" onClick={onAdd}>Registrar primeiro gasto <Plus size={16} /></button></section>}
   </div>
 }
 
 function CopilotPage({ vehicle, profile, mileage, conversation, query, setQuery, onSubmit, onSuggestion }) {
-  const suggestions = ['O que está vencido?', 'Como meu carro está?', 'Quais gastos pesam mais?', 'Tem algo esse mês?']
+  const suggestions = ['O que está vencido?', 'Qual é a quilometragem do meu carro?', 'Quanto gastei este mês?', 'Quando registrei a última troca de óleo?']
   return <div className="page-content copilot-page">
-    <div className="copilot-intro"><div className="copilot-avatar">ℒ</div><h1>Oi, {profile?.name || 'caio'}. Eu já li o histórico do seu {vehicle?.model || 'Palio'}.</h1><p>São 17 manutenções no radar e {Number(mileage).toLocaleString('pt-BR')} km rodados. Pergunte com suas palavras, ou toque em uma sugestão.</p></div>
-    {conversation.length === 0 ? <><h2 className="section-title">Sugestões para começar</h2><div className="suggestion-grid">{suggestions.map((text, i) => <button key={text} className="suggestion-card" onClick={() => onSuggestion(text)}><span className="suggestion-dot">{['⚠', '◎', '↗', '⌕'][i]}</span><b>{text}</b><ChevronRight size={14} /></button>)}</div></> : <div className="conversation-list">{conversation.map((message, i) => <div key={i} className={`chat-bubble ${message.role}`}>{message.text}</div>)}</div>}
-    <section className="recent-conversations"><h2>Conversas recentes</h2><div className="recent-empty"><MessageCircle size={23} /><span>{conversation.length ? 'Esta conversa está em andamento' : 'Restam 3 perguntas neste mês.'}</span></div></section>
+    <div className="copilot-intro"><div className="copilot-avatar">ℒ</div><h1>Olá{profile?.name ? `, ${profile.name}` : ''}. Vamos organizar os dados do seu {vehicle?.model || 'veículo'}.</h1><p>{Number(mileage).toLocaleString('pt-BR')} km informados. Pergunte sobre seus registros, gastos e fontes de manutenção disponíveis.</p></div>
+    {conversation.length === 0 ? <><h2 className="section-title">Sugestões para começar</h2><div className="suggestion-grid">{suggestions.map((text, i) => <button key={text} className="suggestion-card" onClick={() => onSuggestion(text)}><span className="suggestion-dot" aria-hidden="true">{['⚠', '◎', '↗', '⌕'][i]}</span><b>{text}</b><ChevronRight size={14} /></button>)}</div></> : <div className="conversation-list">{conversation.map((message, i) => <div key={i} className={`chat-bubble ${message.role}`}>{message.text}</div>)}</div>}
+    <section className="recent-conversations"><h2>Conversa atual</h2><div className="recent-empty"><MessageCircle size={23} /><span>{conversation.length ? `${conversation.filter((message) => message.role === 'user').length} pergunta(s) nesta conversa` : 'Envie uma pergunta para começar.'}</span></div></section>
     <form className="chat-composer" onSubmit={(event) => { event.preventDefault(); onSubmit() }}><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Pergunte ao Copiloto..." aria-label="Mensagem para o Copiloto" /><button aria-label="Enviar mensagem"><ArrowRight size={19} /></button></form><small className="copilot-footnote">O Copiloto pode errar. Confirme com um mecânico.</small>
   </div>
 }
 
-function HistoryPage({ maintenance, expenses, reminders, firstDone, completedSteps, onRegister }) {
+function HistoryPage({ maintenance, expenses, reminders, onRegister }) {
   const hasRecords = maintenance.some((item) => item.status === 'Concluída') || expenses.length > 0 || reminders.length > 0
-  const steps = ['Conta criada', 'Palio monitorado', 'Plano de manutenção', 'Informe a quilometragem', 'Registre o 1º abastecimento', 'Registre a 1ª manutenção']
-  const historyProgress = Math.max(3, completedSteps)
   return <div className="page-content history-page">
-    {hasRecords && <section className="surface-card report-card"><div className="report-kicker">LAUDO DE MANUTENÇÕES</div><h2>Mostre que seu Palio foi bem cuidado</h2><p>Cada manutenção registrada entra no PDF, pra mostrar na venda.</p><div className="report-preview"><div className="report-brand">ℒ <span>LembraCar</span></div><b>Histórico de Manutenção</b><span>Fiat PALIO FIRE ECONOMY 2012　 KOQ2B84</span><hr /><div>MANUTENÇÕES　　COM NOTA FISCAL　　INVESTIDOS</div><p>Seu laudo começa na primeira manutenção registrada.</p></div><button className="outline-button" onClick={onRegister}>Registrar manutenção <Plus size={16} /></button></section>}
-    <section className="surface-card history-start"><div className="history-progress-heading"><h2>Seu Histórico está começando</h2><b>{historyProgress} de 6</b></div><p>Ele nasce com o cadastro e cresce a cada registro. Cada dado completa uma parte.</p><div className="progress-track"><i style={{ width: `${historyProgress / 6 * 100}%` }} /></div><div className="steps-list">{steps.map((step, index) => <div className="step-row" key={step}><span className={`check-circle ${firstDone[index] || index < 3 ? 'checked' : ''}`}>{(firstDone[index] || index < 3) && <Check size={13} />}</span><span className={firstDone[index] || index < 3 ? '' : 'muted-step'}>{step}</span></div>)}</div></section>
+    {hasRecords && <section className="surface-card report-card"><div className="report-kicker">HISTÓRICO LOCAL</div><h2>Registros do seu veículo</h2><p>Consulte os serviços, gastos e lembretes que você anotou.</p><div className="report-preview"><div className="report-brand">ℒ </div><b>Histórico de manutenção</b><span>Dados registrados neste dispositivo</span><hr /><div>{maintenance.filter((item) => item.status === 'Concluída').length} MANUTENÇÕES　 ·　 {expenses.length} GASTOS</div><p>Este resumo não substitui notas fiscais ou documento técnico.</p></div><button className="outline-button" onClick={onRegister}>Registrar manutenção <Plus size={16} /></button></section>}
+    <section className="surface-card history-start"><div className="history-progress-heading"><h2>Seu histórico</h2><b>{maintenance.filter((item) => item.status === 'Concluída').length} serviços</b></div><p>Registros locais de manutenção, gastos e lembretes.</p></section>
     <h2 className="section-title timeline-heading">Linha do tempo <small>{maintenance.filter((item) => item.status === 'Concluída').length} manutenções</small></h2>
-    <section className="surface-card timeline-card"><b>{new Date().getFullYear()}</b><div className="timeline-item"><span className="timeline-pin">ℒ</span><div><strong>Histórico iniciado</strong><small>{new Date().toLocaleDateString('pt-BR')}</small></div></div>{maintenance.filter((item) => item.status === 'Concluída').map((item, i) => <div className="timeline-item" key={`${item.title}${i}`}><span className="timeline-pin timeline-check"><Check size={12} /></span><div><strong>{item.title}</strong><small>{new Date(item.completedAt || Date.now()).toLocaleDateString('pt-BR')} · {Number(mileageSafe(item.km)).toLocaleString('pt-BR')} km</small></div></div>)}{expenses.map((item) => <div className="timeline-item" key={item.id}><span className="timeline-pin"><Fuel size={12} /></span><div><strong>{item.title}</strong><small>{new Date(item.date).toLocaleDateString('pt-BR')}</small></div></div>)}</section>
+    <section className="surface-card timeline-card">
+      {!hasRecords && <p>Nenhum registro ainda.</p>}
+      {historyEntries(maintenance, expenses, reminders).map((item) => {
+        const Icon = item.kind === 'Serviço' ? Check : item.kind === 'Lembrete' ? CalendarDays : Wallet
+        return <div className="timeline-item" key={item.key}>
+          <span className="timeline-pin"><Icon size={12} /></span>
+          <div><strong>{item.title}</strong><small>{item.kind} · {displayDate(item.date)}{item.km != null ? ` · ${Number(item.km).toLocaleString('pt-BR')} km` : ''}</small></div>
+        </div>
+      })}
+    </section>
   </div>
 }
 
-function mileageSafe(value) { return Number(value || 0) }
+function CatalogPage({ data, query, results, searchStatus, onSearch, onContribute }) {
+  const counts = data.counts || {}
+  const [showFipe, setShowFipe] = useState(false)
+  return <div className="page-content catalog-page">
+    <section className="surface-card catalog-intro"><span className="catalog-kicker">BASE AUTOMOTIVA BRASIL</span><h1>Catálogo técnico</h1><p>Pesquise veículos com cobertura revisada e ajude a completar os dados. Planos de manutenção e condições de garantia só aparecem quando associados a uma fonte e versão específicas.</p></section>
+    <section className="surface-card"><button className="yellow-button" onClick={() => setShowFipe(!showFipe)} aria-expanded={showFipe}>{showFipe ? 'Fechar consulta FIPE' : 'Consultar Tabela FIPE'}</button>{showFipe && <FipeLookup />}</section>
+    <section className="surface-card catalog-coverage"><h2>Estado da base</h2><div className="catalog-count-grid"><div><b>{counts.brands ?? data.brands.length}</b><span>marcas na lista inicial</span></div><div><b>{counts.models ?? 0}</b><span>modelos verificados</span></div><div><b>{counts.manuals ?? 0}</b><span>manuais conferidos</span></div><div><b>{counts.schedules ?? 0}</b><span>planos verificados</span></div></div><p className="muted-note">Marcas com cobertura “lista inicial” ainda não têm dados de modelo confirmados. Não usamos intervalos genéricos para prever manutenção.</p></section>
+    <section className="surface-card catalog-search"><h2>Buscar modelo com dados revisados</h2><form onSubmit={(event) => { event.preventDefault(); onSearch() }}><input aria-label="Buscar marca ou modelo" value={query} onChange={(event) => onSearch(event.target.value)} placeholder="Ex.: Toyota Corolla" /><button className="yellow-button">Buscar <Search size={16} /></button></form>{searchStatus === 'loading' && <p role="status">Buscando modelos…</p>}{searchStatus === 'error' && <p role="alert">Não foi possível buscar no catálogo. Tente novamente.</p>}{searchStatus === 'done' && results.length === 0 && <p className="muted-note">Nenhum modelo revisado encontrado para “{query}”. Envie uma fonte pública para ampliar a cobertura.</p>}{results.length > 0 && <div className="catalog-results">{results.map((item) => <div key={item.id}><Car size={18} /><span><b>{item.brand} {item.model}</b><small>{item.generation || 'Versão não especificada'} · anos {item.model_year_from || '—'}–{item.model_year_to || 'atual'}</small></span><i>Dados revisados</i></div>)}</div>}</section>
+    <section className="surface-card catalog-brands"><h2>30 marcas na cobertura inicial</h2><div className="brand-coverage-list">{data.brands.map((brand) => <div key={brand.id}><span><b>{brand.name}</b><small>{brand.verified_models ? `${brand.verified_models} modelo(s) revisado(s)` : 'Aguardando dados por modelo'}</small></span><i>{brand.coverage_status === 'verified' ? 'Verificada' : 'Em estruturação'}</i></div>)}</div></section>
+    <section className="surface-card catalog-sources"><h2>Fontes registradas</h2>{data.sources.map((source) => <a href={source.url} target="_blank" rel="noreferrer" key={source.id}><span><b>{source.organization}</b><small>{source.title}</small></span><ArrowUpRight size={15} /></a>)}<p className="muted-note">Dados de recall podem ser consultados também pelo serviço oficial da Senatran usando placa ou chassi.</p><a href="https://www.gov.br/pt-br/servicos/realizar-consulta-sobre-recall-de-veiculos?id=10560&origem=servico" target="_blank" rel="noreferrer"><span><b>Senatran</b><small>Consultar recall deste veículo</small></span><ArrowUpRight size={15} /></a></section>
+    <form className="surface-card catalog-contribution" onSubmit={async (event) => { event.preventDefault(); const target = event.currentTarget; const form = new FormData(target); const submit = target.querySelector('button'); submit.disabled = true; const saved = await onContribute({ kind: 'document_link', contributorLabel: String(form.get('contributor') || ''), payload: { brand: String(form.get('brand') || ''), title: String(form.get('title') || ''), url: String(form.get('url') || '') } }); if (saved) target.reset(); submit.disabled = false }}><h2>Contribuir com uma fonte</h2><p>Envie um link público para manual, revisão, garantia, boletim ou recall. A informação fica pendente até ser revisada.</p><label className="form-field">Marca<input name="brand" placeholder="Ex.: Toyota" required /></label><label className="form-field">Título da fonte<input name="title" placeholder="Ex.: Manual do proprietário 2025" required /></label><label className="form-field">Link público<input name="url" type="url" placeholder="https://..." required /></label><label className="form-field">Seu nome (opcional)<input name="contributor" /></label><button className="yellow-button">Enviar para revisão <ArrowRight size={16} /></button></form>
+  </div>
+}
 
-function Onboarding({ step, setStep, draft, setDraft, plate, setPlate, busy, lookedUp, onLookup, onFinish, onToast, onEnter }) {
-  const [focusCity, setFocusCity] = useState(false)
+function Onboarding({ step, setStep, draft, setDraft, onFinish, onToast }) {
+  const [showFipe, setShowFipe] = useState(false)
   const set = (key, value) => setDraft((old) => ({ ...old, [key]: value }))
-  const choices = {
-    3: ['Quebra na estrada', 'Gastar demais com oficina', 'Segurança da família', 'Perder valor na revenda', 'Outros'],
-    4: ['Menos de 3 meses', 'Cerca de 1 ano', 'Entre 1 e 5 anos', 'Mais de 5 anos'],
-    5: ['Quase só fim de semana', 'Cidade, todo dia', 'Rodo bastante, viajo', 'Uso profissional'],
-  }
-  const [answers, setAnswers] = useState({})
-  const titles = { 3: 'O que mais te preocupa no seu veículo?', 4: 'Há quanto tempo você tem esse carro?', 5: 'Como você usa o PALIO?' }
   const advance = () => {
-    if (step === 1) { if (!plate.trim()) { onToast('Informe a placa do seu veículo'); return } if (!lookedUp) { onLookup(); return } }
-    if (step === 7) { onFinish(); return }
+    if (step === 1) {
+      if (!draft.make.trim() || !draft.model.trim() || !/^[0-9]{4}$/.test(draft.year) || Number(draft.year) < 1950 || Number(draft.year) > new Date().getFullYear() + 1) { onToast('Informe marca, modelo e ano para continuar'); return }
+    }
+    if (step === 2) { setStep(step + 1); return }
+    if (step === 4) { onFinish(); return }
     setStep(step + 1)
   }
   return <div className="onboarding">
-    <div className="onboarding-top"><span className="phone-notch" /><button onClick={() => step === 1 ? onEnter() : setStep(step - 1)} aria-label="Voltar"><ArrowLeft size={21} /></button><div className="onboarding-top-brand">{step > 5 ? 'Seu mecânico' : ''}</div><button className="skip-button" onClick={() => step === 1 ? onEnter() : setStep(Math.min(step + 1, 7))}>{step === 1 ? 'Já tem conta? Entrar' : ''}</button></div>
-    {step === 1 && <div className="onboarding-content plate-step"><small className="eyebrow">QUAL A PLACA DO SEU VEÍCULO?</small><h1>Qual a placa do seu veículo?</h1><p>Informe a placa para preencher um exemplo de veículo e revisar os dados antes de continuar.</p><label className="plate-input"><span>BRASIL</span><input aria-label="Placa do veículo" autoFocus value={plate} onChange={(event) => { setPlate(event.target.value.toUpperCase()); setDraft((old) => ({ ...old, plate: event.target.value.toUpperCase() })) }} maxLength={7} placeholder="ABC1D23" /></label><button className="no-plate" onClick={() => { setPlate('KOQ2B84'); setDraft((old) => ({ ...old, plate: 'KOQ2B84' })); onToast('Placa de demonstração preenchida; os dados não vêm de consulta externa.') }}><Search size={16} /> Não lembro a placa <ChevronRight size={15} /></button><div className="privacy-note"><Info size={13} /> Este protótipo não consulta uma base de placas.</div>{lookedUp && <div className="lookup-result"><CheckCircle2 size={18} /><span><b>Dados de demonstração · Fiat Palio 1.0 Fire Flex</b><small>2012 · Flex · valor FIPE ilustrativo R$ 26.010,00</small></span></div>}<button className="yellow-button onboarding-cta" disabled={busy} onClick={advance}>{busy ? 'Preparando exemplo…' : lookedUp ? 'Conferir veículo' : 'Ver veículo de exemplo'} <ArrowRight size={16} /></button></div>}
-    {step === 2 && <div className="onboarding-content found-step"><small className="eyebrow">ACHAMOS SEU CARRO</small><Car size={42} /><h1>FIAT Palio 1.0 Fire Flex</h1><div className="fipe-card"><span>REFERÊNCIA FIPE</span><b>R$ 26.010,00</b><div><span>PLACA<br /><b>{plate || 'KOQ2B84'}</b></span><span>ANO<br /><b>2012</b></span><span>COMBUSTÍVEL<br /><b>Flex</b></span></div></div><p>Confira os dados e continue para personalizar seu plano.</p><button className="yellow-button onboarding-cta" onClick={advance}>Sim, é esse <Check size={17} /></button><button className="link-button" onClick={() => setStep(1)}>Não é esse</button></div>}
-    {step === 3 && <OnboardingChoices title={titles[3]} subtitle="Sua resposta define o que o plano coloca em primeiro lugar." choices={choices[3]} selected={answers[step]} onSelect={(v) => setAnswers({ ...answers, [step]: v })} onNext={advance} />}
-    {step === 4 && <OnboardingChoices title={titles[4]} subtitle="" choices={choices[4]} selected={answers[step]} onSelect={(v) => setAnswers({ ...answers, [step]: v })} onNext={advance} />}
-    {step === 5 && <OnboardingChoices title={titles[5]} subtitle="Quem roda mais troca óleo antes. É isso que a gente ajusta." choices={choices[5]} selected={answers[step]} onSelect={(v) => setAnswers({ ...answers, [step]: v })} onNext={advance} />}
-    {step === 6 && <div className="onboarding-content city-step"><small className="eyebrow">ÚLTIMOS AJUSTES</small><h1>Em que cidade você mora?</h1><p>Falta pouco pro plano do seu carro ficar pronto.</p><label className="form-field">Cidade <span>(opcional)</span><input autoFocus value={draft.city} onChange={(event) => set('city', event.target.value)} onFocus={() => setFocusCity(true)} /></label><button className="outline-button location-button" onClick={() => { set('city', 'Rio de Janeiro - RJ'); setFocusCity(false) }}><Map size={16} /> Usar minha localização <Settings2 size={15} /></button><label className="form-field">Seu WhatsApp <span>(opcional)</span><input type="tel" placeholder="(11) 98765-4321" onChange={(event) => set('phone', event.target.value)} /></label><p className="microcopy">Avisos por WhatsApp não estão conectados. O número informado não é salvo nem enviado.</p><button className="yellow-button onboarding-cta" onClick={advance}>Continuar <ArrowRight size={16} /></button></div>}
-    {step === 7 && <div className="onboarding-content account-step"><div className="brand-mark-large">ℒ <span>LembraCar</span></div><h1>Seu mecânico<br /><mark>de bolso</mark></h1><p>Pela placa, a gente mostra o que o seu veículo já deveria ter trocado.</p><p>Leva 2 minutos.</p><div className="app-preview"><div><Car size={17} /> Palio · 2012</div><strong>54.260 km</strong><span>Resumo das manutenções　<span className="green">✓</span> em dia</span><span className="yellow-bar" /></div><button className="yellow-button onboarding-cta" onClick={onFinish}>Começar <ArrowRight size={17} /></button><button className="link-button" onClick={onEnter}>Já tem conta? Entrar</button></div>}
-    <div className="onboarding-progress"><span style={{ width: `${Math.max(8, step / 7 * 100)}%` }} /></div>
+    <div className="onboarding-top"><span className="phone-notch" />{step > 1 && <button onClick={() => setStep(step - 1)} aria-label="Voltar"><ArrowLeft size={21} /></button>}<div className="onboarding-top-brand">{step > 2 ? 'Seu veículo' : ''}</div></div>
+    {step === 1 && <div className="onboarding-content plate-step"><small className="eyebrow">CADASTRO DO VEÍCULO</small><h1>Qual veículo vamos acompanhar?</h1><p>O catálogo cruza os dados técnicos por modelo, ano e motorização. Você pode preencher os dados ou consultar a Tabela FIPE.</p><button className="link-button" type="button" aria-expanded={showFipe} onClick={() => setShowFipe(!showFipe)}>{showFipe ? 'Fechar consulta FIPE' : 'Consultar Tabela FIPE'}</button>{showFipe && <FipeLookup onUse={(item) => { setDraft((old) => ({ ...old, make: item.brand, model: item.model, version: '', year: String(item.modelYear) })); setShowFipe(false) }} />}<label className="form-field">Marca<input autoFocus value={draft.make} onChange={(event) => set('make', event.target.value)} placeholder="Ex.: Toyota" required /></label><label className="form-field">Modelo<input value={draft.model} onChange={(event) => set('model', event.target.value)} placeholder="Ex.: Corolla" required /></label><label className="form-field">Versão / motor <span>(opcional)</span><input value={draft.version} onChange={(event) => set('version', event.target.value)} placeholder="Ex.: 2.0 Flex" /></label><label className="form-field">Ano<input type="number" min="1950" max={new Date().getFullYear() + 1} value={draft.year} onChange={(event) => set('year', event.target.value)} placeholder="2022" required /></label><button className="yellow-button onboarding-cta" disabled={!draft.make.trim() || !draft.model.trim() || !draft.year} onClick={advance}>Continuar <ArrowRight size={16} /></button></div>}
+    {step === 2 && <div className="onboarding-content found-step"><small className="eyebrow">DADOS INFORMADOS</small><Car size={42} /><h1>{draft.make} {draft.model}</h1><div className="fipe-card"><span>VERSÃO E ANO</span><b>{draft.version || 'Versão não informada'}</b><div><span>ANO<br /><b>{draft.year}</b></span><span>COBERTURA<br /><b>A confirmar</b></span></div></div><p>Cadastro baseado nos dados que você informou. O plano depende de documentação específica disponível no catálogo.</p><button className="yellow-button onboarding-cta" onClick={advance}>Confirmar veículo <Check size={17} /></button><button className="link-button" onClick={() => setStep(1)}>Editar dados</button></div>}
+    {step === 3 && <div className="onboarding-content city-step"><small className="eyebrow">ÚLTIMOS AJUSTES</small><h1>Em que cidade você mora?</h1><p>Opcional. Pode ajudar a organizar serviços locais futuramente.</p><label className="form-field">Cidade <span>(opcional)</span><input autoFocus value={draft.city} onChange={(event) => set('city', event.target.value)} /></label><label className="form-field">Seu nome <span>(opcional)</span><input value={draft.name} onChange={(event) => set('name', event.target.value)} placeholder="Como podemos chamar você?" /></label><button className="yellow-button onboarding-cta" onClick={advance}>Continuar <ArrowRight size={16} /></button></div>}
+    {step === 4 && <div className="onboarding-content account-step"><div className="brand-mark-large">ℒ </div><h1>Seu veículo<br /><mark>organizado</mark></h1><p>Cadastre serviços e gastos, consulte a cobertura do catálogo e acompanhe seus lembretes.</p><div className="app-preview"><div><Car size={17} /> {draft.make} {draft.model} · {draft.year}</div><strong>{draft.version || 'Versão a confirmar'}</strong><span>Dados técnicos: consulte as fontes disponíveis.</span><span className="yellow-bar" /></div><button className="yellow-button onboarding-cta" onClick={onFinish}>Começar <ArrowRight size={17} /></button></div>}
+    <div className="onboarding-progress"><span style={{ width: `${Math.max(8, step / 4 * 100)}%` }} /></div>
   </div>
 }
 
-function OnboardingChoices({ title, subtitle, choices, selected, onSelect, onNext }) {
-  return <div className="onboarding-content choices-step"><h1>{title}</h1>{subtitle && <p>{subtitle}</p>}<div className="choice-list">{choices.map((choice, index) => <button key={choice} className={`choice-row ${selected === choice ? 'choice-selected' : ''}`} onClick={() => onSelect(choice)}><span className="choice-icon">{[<ShieldCheck size={15} />, <Wallet size={15} />, <Car size={15} />, <Zap size={15} />, <MoreHorizontal size={15} />][index]}</span>{choice}<span className="radio-circle">{selected === choice && <i />}</span></button>)}</div><button className="yellow-button onboarding-cta" disabled={!selected} onClick={onNext}>Continuar <ArrowRight size={16} /></button></div>
-}
-
-function Modal({ name, close, onExpense, onMaintenance, onReminder, onCalibrate, onToast, profile, setProfile, mileage, setMileage }) {
-  const [title, setTitle] = useState('')
+function Modal({ name, close, onEditVehicle, onExpense, onMaintenance, onCompleteMaintenance, onReminder, onToast, profile, setProfile, mileage, setMileage, vehicle, setVehicle, reminders = [], initialTitle = '', initialMileage = mileage, maintenanceItem = {} }) {
+  const [title, setTitle] = useState(initialTitle)
   const [amount, setAmount] = useState('')
   const [type, setType] = useState('Abastecimento')
   const [date, setDate] = useState('')
-  const [note, setNote] = useState('')
-  const [mileageDraft, setMileageDraft] = useState(mileage)
+  const [mileageDraft, setMileageDraft] = useState(initialMileage)
+  const [liters, setLiters] = useState('')
+  const [fuelMileage, setFuelMileage] = useState(mileage)
   const [nameDraft, setNameDraft] = useState(profile?.name || '')
   const [checked, setChecked] = useState({})
-  const submitExpense = (event) => { event.preventDefault(); if (!title.trim() || !amount) return; onExpense({ title: title.trim(), amount: Number(amount), type }) }
-  const submitMaintenance = (event) => { event.preventDefault(); if (!title.trim()) return; onMaintenance(title.trim(), amount) }
+  const submitExpense = (event) => { event.preventDefault(); if (!title.trim() || !amount) return; onExpense({ title: title.trim(), amount: Number(amount), type, ...(type === 'Abastecimento' ? { liters: liters ? Number(liters) : null, mileage: fuelMileage ? Number(fuelMileage) : null } : {}), date: date || new Date().toISOString() }) }
+  const submitMaintenance = (event) => { event.preventDefault(); if (!title.trim()) return; onMaintenance(title.trim(), amount, mileageDraft, date, checked.invoice || false) }
   const submitReminder = (event) => { event.preventDefault(); if (!title.trim()) return; onReminder(title.trim(), date) }
-  const modalTitles = { expense: 'Registrar gasto', maintenance: 'Registrar manutenção', reminder: 'Criar novo lembrete', calibrate: 'Calibrar seu plano', premium: 'As 12 manutenções do seu Palio', profile: 'Seu perfil', notifications: 'Avisos e lembretes' }
-  return <div className="modal-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) close() }}><section className="modal-card"><div className="modal-handle" /><div className="modal-heading"><div><h2>{modalTitles[name]}</h2><p>Palio · KOQ2B84</p></div><button className="close-modal" onClick={close} aria-label="Fechar"><X size={19} /></button></div>
-    {name === 'expense' && <form onSubmit={submitExpense}><label className="form-field">Tipo do gasto<select value={type} onChange={(e) => setType(e.target.value)}>{['Abastecimento', 'Manutenção', 'Gasto avulso', 'Conta fixa'].map((x) => <option key={x}>{x}</option>)}</select></label><label className="form-field">Descrição<input autoFocus value={title} onChange={(e) => setTitle(e.target.value)} placeholder={type === 'Abastecimento' ? 'Gasolina, etanol…' : 'Ex.: troca de óleo'} required /></label><label className="form-field">Valor<input type="number" min="0.01" step="0.01" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="R$ 0,00" required /></label>{type === 'Abastecimento' && <><label className="form-field">Litros <span>(opcional)</span><input type="number" step="0.01" placeholder="Ex.: 38" /></label><label className="form-field">Quilometragem <span>(opcional)</span><input type="number" placeholder={String(mileage)} /></label></>}<button className="yellow-button modal-submit">Salvar gasto <Check size={17} /></button></form>}
-    {name === 'maintenance' && <form onSubmit={(event) => { event.preventDefault(); if (title.trim()) onMaintenance(title.trim(), amount, mileageDraft) }}><label className="form-field">O que foi feito?<input autoFocus value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Ex.: troca de óleo" required /></label><label className="form-field">Quilometragem<input type="number" value={mileageDraft} onChange={(e) => setMileageDraft(Number(e.target.value))} /></label><label className="form-field">Valor gasto <span>(opcional)</span><input type="number" step="0.01" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="R$ 0,00" /></label><label className="check-option"><input type="checkbox" /> Tenho nota fiscal do serviço</label><button className="yellow-button modal-submit">Registrar manutenção <Check size={17} /></button></form>}
-    {name === 'reminder' && <form onSubmit={submitReminder}><label className="form-field">O que lembrar?<input autoFocus value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Ex.: revisão do carro" required /></label><label className="form-field">Quando?<input type="date" value={date} onChange={(e) => setDate(e.target.value)} /></label><label className="check-option"><input type="checkbox" defaultChecked /> Receber um aviso no celular</label><button className="yellow-button modal-submit">Criar lembrete <CalendarDays size={17} /></button></form>}
-    {name === 'calibrate' && <div className="calibrate-modal"><p>Quais destes serviços você já fez no seu Palio?</p>{initialMaintenance.slice(0, 5).map((item) => <label className="calibration-choice" key={item.title}><input type="checkbox" checked={!!checked[item.title]} onChange={(e) => setChecked({ ...checked, [item.title]: e.target.checked })} /><span>{item.title}<small>{item.detail}</small></span></label>)}<button className="yellow-button modal-submit" onClick={onCalibrate}>Montar meu plano <ArrowRight size={17} /></button><button className="link-button" onClick={close}>Agora não</button></div>}
-    {name === 'premium' && <div className="premium-modal"><div className="premium-price"><span>ANUAL</span><strong>R$ 89,00<small>/ano</small></strong><p>Economize 25% em comparação com o plano mensal.</p></div><div className="premium-perks">{['Revisões automáticas', 'Laudo de Manutenções', 'Copiloto com IA', '12 manutenções do manual'].map((x) => <span key={x}><CheckCircle2 size={15} /> {x}</span>)}</div><button className="yellow-button modal-submit" onClick={() => { close(); onToast('A assinatura Premium ficará disponível em breve') }}>Assinar e liberar as 12 <ArrowRight size={17} /></button><button className="link-button" onClick={close}>Continuar no plano grátis</button></div>}
-    {name === 'profile' && <form onSubmit={(e) => { e.preventDefault(); setProfile((old) => ({ ...old, name: nameDraft || 'Rafael' })); close(); onToast('Perfil atualizado') }}><label className="form-field">Seu nome<input value={nameDraft} onChange={(e) => setNameDraft(e.target.value)} /></label><label className="form-field">Seu veículo<input readOnly value="Fiat Palio 1.0 Fire Flex · 2012" /></label><button className="yellow-button modal-submit">Salvar perfil <Check size={17} /></button></form>}
-    {name === 'notifications' && <div className="notification-list">{[{ title: 'Troca de óleo do motor', detail: 'Aguardando calibração' }, { title: 'Lembretes no celular', detail: 'Toque para ligar os avisos' }].map((item, i) => <button key={item.title} onClick={() => i === 1 && onToast('Avisos ativados para este veículo')}><span className="round-icon"><Bell size={17} /></span><span><b>{item.title}</b><small>{item.detail}</small></span><ChevronRight size={16} /></button>)}</div>}
+  useEffect(() => {
+    const dismiss = (event) => { if (event.key === 'Escape') close() }
+    window.addEventListener('keydown', dismiss)
+    return () => window.removeEventListener('keydown', dismiss)
+  }, [close])
+
+  const modalTitles = { expense: 'Registrar gasto', maintenance: 'Registrar manutenção', 'complete-maintenance': 'Concluir serviço', reminder: 'Criar novo lembrete', profile: 'Seu perfil', vehicle: 'Editar veículo', notifications: 'Avisos e lembretes' }
+  return <div className="modal-backdrop" onMouseDown={(event) => { if (event.target === event.currentTarget) close() }}><section className="modal-card" role="dialog" aria-modal="true" aria-labelledby="dialog-title"><div className="modal-handle" /><div className="modal-heading"><div><h2 id="dialog-title">{modalTitles[name]}</h2><p>{vehicle?.brand || 'Veículo'} {vehicle?.model || ''} · {vehicle?.year || 'ano não informado'}</p></div><button className="close-modal" onClick={close} aria-label="Fechar"><X size={19} /></button></div>
+    {name === 'expense' && <form onSubmit={submitExpense}><label className="form-field">Tipo do gasto<select value={type} onChange={(e) => setType(e.target.value)}>{['Abastecimento', 'Manutenção', 'Gasto avulso', 'Conta fixa'].map((x) => <option key={x}>{x}</option>)}</select></label><label className="form-field">Descrição<input autoFocus value={title} onChange={(e) => setTitle(e.target.value)} placeholder={type === 'Abastecimento' ? 'Gasolina, etanol…' : 'Ex.: troca de óleo'} required /></label><label className="form-field">Valor<input type="number" min="0.01" step="0.01" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="R$ 0,00" required /></label><label className="form-field">Data<input type="date" value={date} onChange={(e) => setDate(e.target.value)} /></label>{type === 'Abastecimento' && <><label className="form-field">Litros <span>(opcional)</span><input type="number" min="0" step="0.01" value={liters} onChange={(e) => setLiters(e.target.value)} placeholder="Ex.: 38" /></label><label className="form-field">Quilometragem <span>(opcional)</span><input type="number" min="0" value={fuelMileage} onChange={(e) => setFuelMileage(e.target.value)} /></label></>}<button className="yellow-button modal-submit">Salvar gasto <Check size={17} /></button></form>}
+    {name === 'maintenance' && <form onSubmit={submitMaintenance}><label className="form-field">O que foi feito?<input autoFocus value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Ex.: troca de óleo" required /></label><label className="form-field">Quilometragem<input type="number" min="0" value={mileageDraft} onChange={(e) => setMileageDraft(Number(e.target.value))} /></label><label className="form-field">Valor gasto <span>(opcional)</span><input type="number" min="0" step="0.01" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="R$ 0,00" /></label><label className="form-field">Data<input type="date" value={date} onChange={(e) => setDate(e.target.value)} /></label><label className="check-option"><input type="checkbox" checked={checked.invoice || false} onChange={(e) => setChecked((old) => ({ ...old, invoice: e.target.checked }))} /> Tenho nota fiscal do serviço</label><button className="yellow-button modal-submit">Registrar manutenção <Check size={17} /></button></form>}
+    {name === 'complete-maintenance' && <form onSubmit={(event) => { event.preventDefault(); onCompleteMaintenance(maintenanceItem, amount, mileageDraft, date) }}><label className="form-field">Serviço<input value={title} readOnly required /></label><label className="form-field">Quilometragem<input type="number" min="0" value={mileageDraft} onChange={(e) => setMileageDraft(Number(e.target.value))} /></label><label className="form-field">Valor gasto <span>(opcional)</span><input type="number" min="0" step="0.01" value={amount} onChange={(e) => setAmount(e.target.value)} /></label><label className="form-field">Data<input type="date" value={date} onChange={(e) => setDate(e.target.value)} /></label><button className="yellow-button modal-submit">Marcar como concluído <Check size={17} /></button></form>}
+    {name === 'reminder' && <form onSubmit={submitReminder}><label className="form-field">O que lembrar?<input autoFocus value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Ex.: revisão do carro" required /></label><label className="form-field">Quando?<input type="date" value={date} onChange={(e) => setDate(e.target.value)} /></label><p className="muted-note">O lembrete fica salvo no painel; avisos automáticos no celular ainda não estão conectados.</p><button className="yellow-button modal-submit">Criar lembrete <CalendarDays size={17} /></button></form>}
+    {name === 'profile' && <form onSubmit={(e) => { e.preventDefault(); setProfile((old) => ({ ...old, name: nameDraft.trim() })); close(); onToast('Perfil atualizado') }}><label className="form-field">Seu nome<input value={nameDraft} onChange={(e) => setNameDraft(e.target.value)} /></label><label className="form-field">Seu veículo<input readOnly value={`${vehicle?.brand || ''} ${vehicle?.model || ''} ${vehicle?.version || ''} · ${vehicle?.year || ''}`.trim()} /></label><button className="yellow-button modal-submit">Salvar perfil <Check size={17} /></button><button type="button" className="link-button" onClick={onEditVehicle}>Editar veículo</button></form>}
+    {name === 'vehicle' && <form onSubmit={(e) => { e.preventDefault(); const form = e.currentTarget; setVehicle((old) => ({ ...old, brand: form.elements.namedItem('brand').value.trim(), model: form.elements.namedItem('model').value.trim(), version: form.elements.namedItem('version').value.trim(), year: form.elements.namedItem('year').value, plate: form.elements.namedItem('plate').value.toUpperCase() })); close(); onToast('Veículo atualizado') }}><label className="form-field">Marca<input name="brand" defaultValue={vehicle?.brand || ''} required /></label><label className="form-field">Modelo<input name="model" defaultValue={vehicle?.model || ''} required /></label><label className="form-field">Versão / motor<input name="version" defaultValue={vehicle?.version || ''} /></label><div className="form-row"><label className="form-field">Ano<input name="year" type="number" min="1950" max={new Date().getFullYear() + 1} defaultValue={vehicle?.year || ''} required /></label><label className="form-field">Placa<input name="plate" defaultValue={vehicle?.plate || ''} maxLength="7" /></label></div><button className="yellow-button modal-submit">Salvar veículo <Check size={17} /></button></form>}
+    {name === 'notifications' && <div className="notification-list">{reminders.length ? reminders.map((item) => <div key={item.id}><span className="round-icon"><Bell size={17} /></span><span><b>{item.title}</b><small>{item.date ? new Date(`${item.date}T12:00:00`).toLocaleDateString('pt-BR') : 'Data não definida'} · lembrete salvo</small></span></div>) : <div><span className="round-icon"><Bell size={17} /></span><span><b>Nenhum lembrete cadastrado</b><small>Crie um lembrete para vê-lo aqui. Avisos automáticos não estão conectados.</small></span></div>}<button className="yellow-button modal-submit" type="button" onClick={() => { close(); document.dispatchEvent(new CustomEvent('lembracar:new-reminder')) }}>Criar lembrete <Plus size={16} /></button></div>}
   </section></div>
 }
 
-function createReferenceGallery() {
-  if (!referenceFiles.length) return null
-  return <aside className="reference-gallery"><details><summary><BookOpen size={15} /> Referências visuais <span>{referenceFiles.length}</span></summary><div className="reference-grid">{referenceFiles.map((file, index) => <a key={file} href={`/references/${encodeURIComponent(file)}`} target="_blank" rel="noreferrer" title={file}><img loading="lazy" src={`/references/${encodeURIComponent(file)}`} alt={`Referência visual ${index + 1}`} /><span>{String(index + 1).padStart(2, '0')}</span></a>)}</div></details></aside>
-}
-
-createRoot(document.getElementById('root')).render(<><App />{createReferenceGallery()}</>)
+createRoot(document.getElementById('root')).render(<App />)

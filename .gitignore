@@ -3,3 +3,8 @@ dist/
 server/data/
 contact-sheet.jpg
 contact-detail.jpg
+
+playwright-report/
+test-results/
+.env
+.env.*

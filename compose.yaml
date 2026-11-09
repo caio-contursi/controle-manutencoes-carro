@@ -1,0 +1,10 @@
+services:
+  painel:
+    build: .
+    ports:
+      - "127.0.0.1:5173:5173"
+    volumes:
+      - ./server/data:/app/server/data
+    environment:
+      LEMBRACAR_FIPE_TOKEN: "${LEMBRACAR_FIPE_TOKEN:-}"
+    restart: unless-stopped
