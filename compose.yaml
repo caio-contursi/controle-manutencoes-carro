@@ -1,10 +1,30 @@
 services:
   painel:
     build: .
+    depends_on:
+      db:
+        condition: service_healthy
     ports:
       - "127.0.0.1:5173:5173"
     volumes:
       - ./server/data:/app/server/data
     environment:
+      DATABASE_URL: "postgresql://catalogo:${CATALOG_DB_PASSWORD:-catalogo-local}@db:5432/catalogo"
       LEMBRACAR_FIPE_TOKEN: "${LEMBRACAR_FIPE_TOKEN:-}"
     restart: unless-stopped
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: catalogo
+      POSTGRES_USER: catalogo
+      POSTGRES_PASSWORD: "${CATALOG_DB_PASSWORD:-catalogo-local}"
+    volumes:
+      - catalog-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "catalogo", "-d", "catalogo"]
+      interval: 3s
+      timeout: 3s
+      retries: 15
+    restart: unless-stopped
+volumes:
+  catalog-db:

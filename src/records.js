@@ -4,6 +4,27 @@ export function displayDate(value) {
   return Number.isNaN(date.getTime()) ? 'Data não informada' : date.toLocaleDateString('pt-BR')
 }
 
+export function calendarMonth(value = new Date()) {
+  if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)) return value.slice(0, 7)
+  if (!value) return ''
+  const date = new Date(value)
+  if (Number.isNaN(date.getTime())) return ''
+  return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`
+}
+
+export function summarizeExpenses(expenses, month = calendarMonth()) {
+  const summary = { total: 0, count: 0, buckets: {} }
+  for (const expense of expenses) {
+    if (!expense.date || calendarMonth(expense.date) !== month) continue
+    const amount = Number(expense.amount)
+    if (!Number.isFinite(amount)) continue
+    summary.total += amount
+    summary.count++
+    summary.buckets[expense.type] = (summary.buckets[expense.type] || 0) + amount
+  }
+  return summary
+}
+
 export function mileageFromRecord(current, recorded) {
   if (recorded == null || recorded === '' || !Number.isFinite(Number(recorded))) return current
   return Math.max(current, Number(recorded))

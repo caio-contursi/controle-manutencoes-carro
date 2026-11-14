@@ -1,13 +1,14 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import {
-  ArrowDownLeft, ArrowLeft, ArrowRight, ArrowUpRight, Bell, BookOpen, CalendarDays, Car, Check,
+  ArrowDownLeft, ArrowLeft, ArrowRight, Bell, BookOpen, CalendarDays, Car, Check,
   CheckCircle2, ChevronDown, ChevronRight, CircleHelp, ClipboardList, Clock3,
   Droplet, FileText, Fuel, Gauge, History, Home, Info, KeyRound, Map, Menu,
   MessageCircle, MoreHorizontal, Pencil, Plus, Search, Settings2, ShieldCheck,
   SlidersHorizontal, Sparkles, Wallet, Wrench, X, Zap,
 } from 'lucide-react'
-import { displayDate, historyEntries, mileageFromRecord } from './records.js'
+import { calendarMonth, displayDate, historyEntries, mileageFromRecord, summarizeExpenses } from './records.js'
+import { loadState, usePersistentState } from './usePersistentState.js'
 import FipeLookup from './FipeLookup.jsx'
 import './styles.css'
 
@@ -21,32 +22,6 @@ const navItems = [
 ]
 
 const initialMaintenance = []
-
-function loadState(key, fallback) {
-  try { return JSON.parse(localStorage.getItem(key)) ?? fallback } catch { return fallback }
-}
-
-function usePersistentState(key, fallback) {
-  const [state, setState] = useState(() => loadState(key, fallback))
-  const [hydrated, setHydrated] = useState(false)
-  const shortKey = key.replace('lembracar.', '')
-  useEffect(() => {
-    let active = true
-    fetch('/api/state').then((response) => response.ok ? response.json() : Promise.reject(new Error('API indisponível'))).then((stored) => {
-      if (!active) return
-      if (Object.prototype.hasOwnProperty.call(stored, shortKey)) {
-        localStorage.setItem(key, JSON.stringify(stored[shortKey]))
-        setState(stored[shortKey])
-      }
-    }).catch(() => {}).finally(() => { if (active) setHydrated(true) })
-    return () => { active = false }
-  }, [key, shortKey])
-  useEffect(() => { localStorage.setItem(key, JSON.stringify(state)) }, [key, state])
-  useEffect(() => {
-    if (hydrated) fetch(`/api/state/${shortKey}`, { method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ value: state }) }).catch(() => {})
-  }, [hydrated, key, shortKey, state])
-  return [state, setState, hydrated]
-}
 
 function money(value) {
   return Number(value || 0).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
@@ -67,11 +42,6 @@ function App() {
   const [toast, setToast] = useState('')
   const [query, setQuery] = useState('')
   const [conversation, setConversation] = useState([])
-  const [catalogData, setCatalogData] = useState({ brands: [], sources: [], counts: null })
-  const [catalogQuery, setCatalogQuery] = useState('')
-  const [catalogResults, setCatalogResults] = useState([])
-  const catalogRequest = useRef(0)
-  const [catalogSearchStatus, setCatalogSearchStatus] = useState('idle')
   const [onStep, setOnStep] = useState(1)
   const [draft, setDraft] = useState({ make: '', model: '', version: '', year: '', city: '', name: '' })
 
@@ -87,16 +57,13 @@ function App() {
     return () => clearTimeout(timer)
   }, [toast])
   useEffect(() => {
-    Promise.all([fetch('/api/catalog/brands').then((r) => r.json()), fetch('/api/catalog/sources').then((r) => r.json()), fetch('/api/catalog/health').then((r) => r.json())])
-      .then(([brands, sources, health]) => setCatalogData({ brands: brands.brands || [], sources: sources.sources || [], counts: health.counts || null })).catch(() => {})
-  }, [])
-  useEffect(() => {
     const openReminder = () => setModal('reminder')
     document.addEventListener('lembracar:new-reminder', openReminder)
     return () => document.removeEventListener('lembracar:new-reminder', openReminder)
   }, [])
 
-  const monthExpenses = useMemo(() => expenses.filter((item) => String(item.date || '').slice(0, 7) === new Date().toISOString().slice(0, 7)).reduce((sum, item) => sum + Number(item.amount || 0), 0), [expenses])
+  const currentMonth = calendarMonth()
+  const expenseSummary = useMemo(() => summarizeExpenses(expenses, currentMonth), [expenses, currentMonth])
   const completedMaintenance = maintenance.filter((item) => item.status === 'Concluída').length
   const awaitingMaintenance = maintenance.filter((item) => item.status === 'Aguardando resposta').length
 
@@ -151,37 +118,13 @@ function App() {
     setToast('Lembrete criado')
   }
   const submitChat = (question = query) => {
-    if (!question.trim()) return
     const prompt = question.trim()
-    setConversation((old) => [...old, { role: 'user', text: prompt }])
+    if (!prompt) return
+    const month = calendarMonth()
+    const spend = month === currentMonth ? expenseSummary.total : summarizeExpenses(expenses, month).total
+    const answer = answerFor(prompt, mileage, spend, vehicle, maintenance)
+    setConversation((old) => [...old, { role: 'user', text: prompt }, { role: 'assistant', text: answer }])
     setQuery('')
-    setTimeout(() => setConversation((old) => [...old, { role: 'assistant', text: answerFor(prompt, mileage, monthExpenses, vehicle, maintenance) }]), 350)
-  }
-  const searchCatalog = async (value = catalogQuery) => {
-    setCatalogQuery(value)
-    const request = ++catalogRequest.current
-    setCatalogResults([])
-    if (!value.trim()) { setCatalogSearchStatus('idle'); return }
-    setCatalogSearchStatus('loading')
-    try {
-      const response = await fetch(`/api/catalog/search?q=${encodeURIComponent(value)}`)
-      const data = await response.json()
-      if (!response.ok) throw new Error('Busca indisponível')
-      if (request === catalogRequest.current) {
-        setCatalogResults(data.vehicles || [])
-        setCatalogSearchStatus('done')
-      }
-    } catch {
-      if (request === catalogRequest.current) setCatalogSearchStatus('error')
-    }
-  }
-  const contributeSource = async (data) => {
-    try {
-      const response = await fetch('/api/catalog/contributions', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
-      if (!response.ok) throw new Error('invalid')
-      setToast('Fonte enviada para revisão do catálogo')
-      return true
-    } catch { setToast('Não foi possível registrar. Confira os dados e tente novamente.'); return false }
   }
 
   return (
@@ -190,16 +133,15 @@ function App() {
         <Onboarding step={onStep} setStep={setOnStep} draft={draft} setDraft={setDraft} onFinish={completeOnboarding} onToast={setToast} />
       ) : (
         <>
-          <DesktopSidebar page={page} profile={profile} vehicle={vehicle} onNavigate={movePage} onProfile={() => setModal('profile')} onVehicle={() => setModal('vehicle')} />
           <div className="app-main">
-            <Header page={page} vehicle={vehicle} profile={profile} onProfile={() => setModal('profile')} onReminders={() => setModal('notifications')} reminderCount={reminders.length} />
+            <Header onNavigate={movePage} onVehicle={() => setModal('vehicle')} page={page} vehicle={vehicle} profile={profile} onProfile={() => setModal('profile')} onReminders={() => setModal('notifications')} reminderCount={reminders.length} />
             <section className="screen-content" key={page}>
               {page === 'inicio' && <HomePage vehicle={vehicle} profile={profile} mileage={mileage} maintenance={maintenance} completedMaintenance={completedMaintenance} awaitingMaintenance={awaitingMaintenance} onMileageSave={saveMileage} onOpen={movePage} reminders={reminders} />}
               {page === 'manutencoes' && <MaintenancePage maintenance={maintenance} onComplete={(item) => { setServiceTitleDraft(item); setModal('complete-maintenance') }} onReminder={() => setModal('reminder')} onManual={() => { setServiceTitleDraft({ title: '', km: mileage }); setModal('maintenance') }} vehicle={vehicle} />}
-              {page === 'gastos' && <ExpensesPage expenses={expenses} total={monthExpenses} onAdd={() => setModal('expense')} onRemove={removeExpense} />}
+              {page === 'gastos' && <ExpensesPage expenses={expenses} summary={expenseSummary} onAdd={() => setModal('expense')} onRemove={removeExpense} />}
               {page === 'copiloto' && <CopilotPage vehicle={vehicle} profile={profile} mileage={mileage} conversation={conversation} query={query} setQuery={setQuery} onSubmit={submitChat} onSuggestion={submitChat} />}
               {page === 'historico' && <HistoryPage maintenance={maintenance} expenses={expenses} reminders={reminders} onRegister={() => { setServiceTitleDraft({ title: '', km: mileage }); setModal('maintenance') }} />}
-              {page === 'catalogo' && <CatalogPage data={catalogData} query={catalogQuery} results={catalogResults} searchStatus={catalogSearchStatus} onSearch={searchCatalog} onContribute={contributeSource} />}
+              {page === 'catalogo' && <CatalogPage />}
             </section>
             {fabOpen && <div className="fab-menu">
               <button onClick={() => { setFabOpen(false); setModal('reminder') }}>Criar novo lembrete <CalendarDays size={17} /></button>
@@ -207,7 +149,6 @@ function App() {
               <button onClick={() => { setFabOpen(false); setModal('expense') }}>Registrar gasto <Wallet size={17} /></button>
             </div>}
             {page !== 'copiloto' && <button className={`fab ${fabOpen ? 'fab-open' : ''}`} aria-label={fabOpen ? 'Fechar ações' : 'Adicionar'} onClick={() => setFabOpen(!fabOpen)}>{fabOpen ? <X size={25} /> : <Plus size={26} />}</button>}
-            <BottomNav page={page} onNavigate={movePage} />
           </div>
         </>
       )}
@@ -218,42 +159,79 @@ function App() {
 }
 
 function answerFor(question, mileage, spend, vehicle, maintenance) {
-  const lower = question.toLowerCase()
+  const normalize = (text) => text.toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '')
+  const lower = normalize(question)
   if (lower.includes('gasto') || lower.includes('gaste')) return `Neste mês você registrou ${money(spend)} em gastos do seu carro. Anote cada abastecimento e manutenção para acompanhar sua média ao longo do tempo.`
-  if (lower.includes('óleo')) {
-    const latest = maintenance.filter((item) => item.status === 'Concluída' && /óleo/i.test(item.title)).sort((a, b) => (Date.parse(b.completedAt) || 0) - (Date.parse(a.completedAt) || 0))[0]
-    return latest ? `Seu último registro de serviço relacionado a óleo é “${latest.title}” em ${Number(latest.km || 0).toLocaleString('pt-BR')} km. O próximo intervalo depende do manual da versão ${vehicle?.version || 'do veículo'}, que ainda precisa ser confirmado.` : `Não há troca de óleo registrada. O intervalo depende da versão e da orientação do fabricante; o catálogo ainda não tem uma fonte verificada para este veículo. Quilometragem informada: ${Number(mileage).toLocaleString('pt-BR')} km.`
+  if (lower.includes('oleo')) {
+    const latest = maintenance.reduce((found, item) => {
+      if (item.status !== 'Concluída' || !/\boleo\b/.test(normalize(item.title || ''))) return found
+      if (!found || (Date.parse(item.completedAt) || 0) > (Date.parse(found.completedAt) || 0)) return item
+      return found
+    }, null)
+    if (!latest) return 'Você ainda não registrou uma troca de óleo. Para conferir o intervalo, consulte o manual da sua versão no Catálogo.'
+    const date = latest.completedAt ? ` em ${displayDate(latest.completedAt)}` : ''
+    const recordedMileage = latest.km != null ? ` · ${Number(latest.km).toLocaleString('pt-BR')} km` : ''
+    return `Último serviço registrado relacionado a óleo${date} · ${latest.title}${recordedMileage}.`
   }
   if (lower.includes('vencid') || lower.includes('atras')) return `Há ${maintenance.filter((item) => item.status === 'Atrasada').length} item(ns) marcados como atrasados nos seus registros. Isso não é uma avaliação técnica: confirme o plano no manual do veículo.`
-  if (lower.includes('carro')) return `${vehicle?.brand || 'Veículo'} ${vehicle?.model || ''} ${vehicle?.year || ''} · ${vehicle?.version || 'versão não informada'}. Quilometragem: ${Number(mileage).toLocaleString('pt-BR')} km. Posso organizar seus registros e gastos; recomendações específicas dependem de fonte confirmada.`
+  if (/quilometragem|odometro|\bkm\b/.test(lower)) return `Quilometragem informada: ${Number(mileage).toLocaleString('pt-BR')} km.`
+  if (lower.includes('carro')) return `${vehicle?.brand || 'Veículo'} ${vehicle?.model || ''} ${vehicle?.year || ''} · ${vehicle?.version || 'versão não informada'}. Quilometragem: ${Number(mileage).toLocaleString('pt-BR')} km.`
   return 'Posso ajudar a organizar seus registros e gastos. Para especificações, defeitos conhecidos ou elegibilidade em concessionária, confira o manual e as fontes oficiais da marca.'
 }
 
-function Header({ page, vehicle, profile, onProfile, onReminders, reminderCount = 0 }) {
+function Header({ page, vehicle, profile, onNavigate, onVehicle, onProfile, onReminders, reminderCount = 0 }) {
+  const drawer = useRef(null)
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const wideScreen = window.matchMedia('(min-width: 900px)')
+    const closeOnResize = () => {
+      if (wideScreen.matches) drawer.current?.close()
+    }
+    wideScreen.addEventListener('change', closeOnResize)
+    return () => wideScreen.removeEventListener('change', closeOnResize)
+  }, [])
+
+  function openMenu() {
+    drawer.current.showModal()
+    setMenuOpen(true)
+  }
+
   const pageNames = { inicio: profile?.name ? `Olá, ${profile.name}` : 'Início', manutencoes: 'Manutenções', gastos: 'Gastos', copiloto: 'Copiloto', historico: 'Histórico', catalogo: 'Catálogo técnico' }
   return (
-    <header className="app-header">
+    <header className="app-header app-header-navigation">
       <div className="brand-row">
-        <div className="brand-symbol">ℒ</div>
-        <div className="brand-title-wrap"><strong>{pageNames[page]}</strong>{vehicle && <span>{vehicle.brand} {vehicle.model}</span>}</div>
-        <div className="header-actions"><button className="icon-button notification-icon" aria-label={`Lembretes (${reminderCount})`} onClick={onReminders}><Bell size={18} />{reminderCount > 0 && <b>{reminderCount}</b>}</button><button className="avatar-button" onClick={onProfile} aria-label="Abrir perfil">{(profile?.name || vehicle?.model || 'P').slice(0, 1)}</button></div>
+        <button type="button" className="icon-button nav-toggle" aria-label="Abrir menu"
+          aria-expanded={menuOpen} aria-controls="mobile-navigation" aria-haspopup="dialog" onClick={openMenu}>
+          <Menu size={22} />
+        </button>
+        <Navigation page={page} onNavigate={onNavigate} className="top-navigation" />
+        {page !== 'catalogo' && <div className="brand-title-wrap"><strong>{pageNames[page]}</strong>{vehicle && <span>{vehicle.brand} {vehicle.model}</span>}</div>}
+        <div className="header-actions"><button type="button" className="icon-button header-vehicle" aria-label="Editar veículo" title="Editar veículo" onClick={onVehicle}><Car size={18} /></button><button className="icon-button notification-icon" aria-label={`Lembretes (${reminderCount})`} onClick={onReminders}><Bell size={18} />{reminderCount > 0 && <b>{reminderCount}</b>}</button><button className="avatar-button" onClick={onProfile} aria-label="Abrir perfil">{(profile?.name || vehicle?.model || 'P').slice(0, 1)}</button></div>
       </div>
+      <dialog ref={drawer} className="nav-drawer" id="mobile-navigation" aria-labelledby="mobile-navigation-title"
+        onClose={() => setMenuOpen(false)}
+        onClick={(event) => { if (event.target === event.currentTarget) drawer.current.close() }}>
+        <div className="nav-drawer-content">
+          <div className="nav-drawer-heading">
+            <h2 id="mobile-navigation-title">Menu</h2>
+            <button type="button" className="icon-button" aria-label="Fechar menu" onClick={() => drawer.current.close()}><X size={22} /></button>
+          </div>
+          <Navigation page={page} onNavigate={(id) => { drawer.current.close(); onNavigate(id) }} className="drawer-navigation" />
+        </div>
+      </dialog>
     </header>
   )
 }
 
-function BottomNav({ page, onNavigate }) {
-  return <nav className="bottom-nav" aria-label="Navegação principal">{navItems.map(({ id, label, icon: Icon }) => <button key={id} className={page === id ? 'selected' : ''} onClick={() => onNavigate(id)}><Icon size={20} strokeWidth={page === id ? 2.5 : 1.8} /><span>{label}</span></button>)}</nav>
-}
-
-function DesktopSidebar({ page, profile, vehicle, onNavigate, onProfile, onVehicle }) {
-  return <aside className="desktop-sidebar">
-      <button className="sidebar-brand" aria-label="Ir para o início" onClick={() => onNavigate('inicio')}><span className="brand-symbol">ℒ</span></button>
-    <div className="sidebar-label">MENU PRINCIPAL</div>
-    <nav aria-label="Navegação para desktop">{navItems.map(({ id, label, icon: Icon }) => <button key={id} className={page === id ? 'active' : ''} onClick={() => onNavigate(id)}><Icon size={19} /><span>{label}</span></button>)}</nav>
-    <button className="sidebar-vehicle" onClick={onVehicle}><span className="sidebar-car"><Car size={20} /></span><div><b>{vehicle?.brand} {vehicle?.model}</b><small>{vehicle?.plate || 'Placa não informada'} · {vehicle?.year || 'ano'}</small></div><Pencil size={14} /></button>
-    <button className="sidebar-profile" onClick={onProfile}><span className="avatar-button">{(profile?.name || 'P').slice(0, 1)}</span><span><b>{profile?.name || 'Meu perfil'}</b><small>Meu perfil</small></span><MoreHorizontal size={17} /></button>
-  </aside>
+function Navigation({ page, onNavigate, className }) {
+  return <nav className={className} aria-label="Navegação principal">
+    {navItems.map(({ id, label, icon: Icon }) => (
+      <button type="button" key={id} aria-current={page === id ? 'page' : undefined} onClick={() => onNavigate(id)}>
+        <Icon size={18} aria-hidden="true" /><span>{label}</span>
+      </button>
+    ))}
+  </nav>
 }
 
 function HomePage({ vehicle, profile, mileage, maintenance, completedMaintenance, awaitingMaintenance, onMileageSave, onOpen, reminders }) {
@@ -293,26 +271,37 @@ function MaintenancePage({ maintenance, onComplete, onReminder, onManual, vehicl
   </div>
 }
 
-function ExpensesPage({ expenses, total, onAdd, onRemove }) {
+function ExpensesPage({ expenses, summary, onAdd, onRemove }) {
   const [view, setView] = useState('extrato')
-  const currentMonth = new Date().toISOString().slice(0, 7)
-  const monthExpenses = expenses.filter((item) => String(item.date || '').slice(0, 7) === currentMonth)
-  const monthTotal = monthExpenses.reduce((sum, item) => sum + Number(item.amount || 0), 0)
-  const buckets = monthExpenses.reduce((acc, item) => { acc[item.type] = (acc[item.type] || 0) + Number(item.amount); return acc }, {})
+  const { total: monthTotal, count, buckets } = summary
   return <div className="page-content expenses-page">
     <div className="segment-control"><button className={view === 'extrato' ? 'active' : ''} onClick={() => setView('extrato')}><Menu size={14} />Extrato</button><button className={view === 'graficos' ? 'active' : ''} onClick={() => setView('graficos')}><SlidersHorizontal size={14} />Gráficos</button></div>
-    <section className="surface-card month-total"><small>ESTE MÊS</small><strong>{money(monthTotal)}</strong><p>Valores dos registros neste mês.</p><div className="month-stat"><div><b>{monthExpenses.length}</b><span>LANÇAMENTOS</span></div><div><b>{monthExpenses.length ? money(monthTotal / monthExpenses.length) : '—'}</b><span>TICKET MÉDIO</span></div></div></section>
+    <section className="surface-card month-total"><small>ESTE MÊS</small><strong>{money(monthTotal)}</strong><p>Valores dos registros neste mês.</p><div className="month-stat"><div><b>{count}</b><span>LANÇAMENTOS</span></div><div><b>{count ? money(monthTotal / count) : '—'}</b><span>TICKET MÉDIO</span></div></div></section>
     {view === 'graficos' ? <section className="surface-card chart-card"><h2>Seus gastos por categoria</h2>{['Abastecimento', 'Manutenção', 'Gasto avulso', 'Conta fixa'].map((type) => <div className="chart-row" key={type}><span>{type}</span><div className="chart-track"><i style={{ width: `${monthTotal ? (buckets[type] || 0) / monthTotal * 100 : 0}%` }} /></div><b>{money(buckets[type] || 0)}</b></div>)}<p className="muted-note">Os gráficos consideram apenas os lançamentos do mês atual.</p></section> : expenses.length ? <section className="surface-card expenses-list"><h2>Seu extrato</h2>{expenses.map((item) => <div className="expense-row" key={item.id}><span className="round-icon"><Wallet size={17} /></span><span><b>{item.title}</b><small>{item.type} · {displayDate(item.date)}</small></span><strong>{money(item.amount)}</strong><button className="remove-expense" title={`Remover ${item.title}`} aria-label={`Remover ${item.title}`} onClick={() => onRemove(item.id)}><X size={15} /></button></div>)}</section> : <section className="surface-card empty-expenses"><div className="empty-wallet"><Wallet size={27} /></div><h2>Seus gastos, num lugar só.</h2><p>Registre abastecimentos, despesas e serviços para acompanhar os valores por mês.</p><button className="yellow-button" onClick={onAdd}>Registrar primeiro gasto <Plus size={16} /></button></section>}
   </div>
 }
 
 function CopilotPage({ vehicle, profile, mileage, conversation, query, setQuery, onSubmit, onSuggestion }) {
   const suggestions = ['O que está vencido?', 'Qual é a quilometragem do meu carro?', 'Quanto gastei este mês?', 'Quando registrei a última troca de óleo?']
+  const messages = useRef(null)
+  useEffect(() => {
+    const list = messages.current
+    if (list) list.scrollTop = list.scrollHeight
+  }, [conversation])
+
   return <div className="page-content copilot-page">
-    <div className="copilot-intro"><div className="copilot-avatar">ℒ</div><h1>Olá{profile?.name ? `, ${profile.name}` : ''}. Vamos organizar os dados do seu {vehicle?.model || 'veículo'}.</h1><p>{Number(mileage).toLocaleString('pt-BR')} km informados. Pergunte sobre seus registros, gastos e fontes de manutenção disponíveis.</p></div>
-    {conversation.length === 0 ? <><h2 className="section-title">Sugestões para começar</h2><div className="suggestion-grid">{suggestions.map((text, i) => <button key={text} className="suggestion-card" onClick={() => onSuggestion(text)}><span className="suggestion-dot" aria-hidden="true">{['⚠', '◎', '↗', '⌕'][i]}</span><b>{text}</b><ChevronRight size={14} /></button>)}</div></> : <div className="conversation-list">{conversation.map((message, i) => <div key={i} className={`chat-bubble ${message.role}`}>{message.text}</div>)}</div>}
-    <section className="recent-conversations"><h2>Conversa atual</h2><div className="recent-empty"><MessageCircle size={23} /><span>{conversation.length ? `${conversation.filter((message) => message.role === 'user').length} pergunta(s) nesta conversa` : 'Envie uma pergunta para começar.'}</span></div></section>
-    <form className="chat-composer" onSubmit={(event) => { event.preventDefault(); onSubmit() }}><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Pergunte ao Copiloto..." aria-label="Mensagem para o Copiloto" /><button aria-label="Enviar mensagem"><ArrowRight size={19} /></button></form><small className="copilot-footnote">O Copiloto pode errar. Confirme com um mecânico.</small>
+    <div className="copilot-intro"><h1>Olá{profile?.name ? `, ${profile.name}` : ''}. Vamos organizar os dados do seu {vehicle?.model || 'veículo'}.</h1><p>{Number(mileage).toLocaleString('pt-BR')} km informados. Pergunte sobre seus registros, gastos e fontes de manutenção disponíveis.</p></div>
+    {conversation.length === 0 && <section className="copilot-suggestions" aria-labelledby="copilot-suggestions-title">
+      <h2 className="section-title" id="copilot-suggestions-title">Sugestões para começar</h2>
+      <div className="suggestion-grid">{suggestions.map((text, i) => <button key={text} className="suggestion-card" onClick={() => onSuggestion(text)}><span className="suggestion-dot" aria-hidden="true">{['⚠', '◎', '↗', '⌕'][i]}</span><b>{text}</b><ChevronRight size={14} /></button>)}</div>
+    </section>}
+    <section className="recent-conversations">
+      <h2 id="copilot-conversation-title">Conversa atual</h2>
+      {conversation.length > 0
+        ? <div className="conversation-list" aria-labelledby="copilot-conversation-title" role="log" ref={messages} tabIndex={0}>{conversation.map((message, i) => <div key={i} className={`chat-bubble ${message.role}`}>{message.text}</div>)}</div>
+        : <div className="recent-empty"><MessageCircle size={23} aria-hidden="true" /><span>Envie uma pergunta para começar.</span></div>}
+    </section>
+    <form className="chat-composer" onSubmit={(event) => { event.preventDefault(); onSubmit() }}><input value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Pergunte ao Copiloto..." aria-label="Mensagem para o Copiloto" /><button aria-label="Enviar mensagem" disabled={!query.trim()}><ArrowRight size={19} /></button></form><small className="copilot-footnote">O Copiloto pode errar. Confirme com um mecânico.</small>
   </div>
 }
 
@@ -335,17 +324,27 @@ function HistoryPage({ maintenance, expenses, reminders, onRegister }) {
   </div>
 }
 
-function CatalogPage({ data, query, results, searchStatus, onSearch, onContribute }) {
-  const counts = data.counts || {}
-  const [showFipe, setShowFipe] = useState(false)
+// Ranked by 2006–2025 passenger-car registrations in the Fenabrave series compiled by Ranking Auto.
+const upcomingCatalogBrands = [
+  'Mitsubishi', 'Kia', 'CAOA Chery', 'BMW', 'BYD', 'Mercedes-Benz',
+  'Audi', 'Land Rover', 'Chery', 'GWM', 'Volvo', 'JAC', 'Suzuki',
+  'Porsche', 'Chrysler',
+]
+
+function CatalogPage() {
   return <div className="page-content catalog-page">
-    <section className="surface-card catalog-intro"><span className="catalog-kicker">BASE AUTOMOTIVA BRASIL</span><h1>Catálogo técnico</h1><p>Pesquise veículos com cobertura revisada e ajude a completar os dados. Planos de manutenção e condições de garantia só aparecem quando associados a uma fonte e versão específicas.</p></section>
-    <section className="surface-card"><button className="yellow-button" onClick={() => setShowFipe(!showFipe)} aria-expanded={showFipe}>{showFipe ? 'Fechar consulta FIPE' : 'Consultar Tabela FIPE'}</button>{showFipe && <FipeLookup />}</section>
-    <section className="surface-card catalog-coverage"><h2>Estado da base</h2><div className="catalog-count-grid"><div><b>{counts.brands ?? data.brands.length}</b><span>marcas na lista inicial</span></div><div><b>{counts.models ?? 0}</b><span>modelos verificados</span></div><div><b>{counts.manuals ?? 0}</b><span>manuais conferidos</span></div><div><b>{counts.schedules ?? 0}</b><span>planos verificados</span></div></div><p className="muted-note">Marcas com cobertura “lista inicial” ainda não têm dados de modelo confirmados. Não usamos intervalos genéricos para prever manutenção.</p></section>
-    <section className="surface-card catalog-search"><h2>Buscar modelo com dados revisados</h2><form onSubmit={(event) => { event.preventDefault(); onSearch() }}><input aria-label="Buscar marca ou modelo" value={query} onChange={(event) => onSearch(event.target.value)} placeholder="Ex.: Toyota Corolla" /><button className="yellow-button">Buscar <Search size={16} /></button></form>{searchStatus === 'loading' && <p role="status">Buscando modelos…</p>}{searchStatus === 'error' && <p role="alert">Não foi possível buscar no catálogo. Tente novamente.</p>}{searchStatus === 'done' && results.length === 0 && <p className="muted-note">Nenhum modelo revisado encontrado para “{query}”. Envie uma fonte pública para ampliar a cobertura.</p>}{results.length > 0 && <div className="catalog-results">{results.map((item) => <div key={item.id}><Car size={18} /><span><b>{item.brand} {item.model}</b><small>{item.generation || 'Versão não especificada'} · anos {item.model_year_from || '—'}–{item.model_year_to || 'atual'}</small></span><i>Dados revisados</i></div>)}</div>}</section>
-    <section className="surface-card catalog-brands"><h2>30 marcas na cobertura inicial</h2><div className="brand-coverage-list">{data.brands.map((brand) => <div key={brand.id}><span><b>{brand.name}</b><small>{brand.verified_models ? `${brand.verified_models} modelo(s) revisado(s)` : 'Aguardando dados por modelo'}</small></span><i>{brand.coverage_status === 'verified' ? 'Verificada' : 'Em estruturação'}</i></div>)}</div></section>
-    <section className="surface-card catalog-sources"><h2>Fontes registradas</h2>{data.sources.map((source) => <a href={source.url} target="_blank" rel="noreferrer" key={source.id}><span><b>{source.organization}</b><small>{source.title}</small></span><ArrowUpRight size={15} /></a>)}<p className="muted-note">Dados de recall podem ser consultados também pelo serviço oficial da Senatran usando placa ou chassi.</p><a href="https://www.gov.br/pt-br/servicos/realizar-consulta-sobre-recall-de-veiculos?id=10560&origem=servico" target="_blank" rel="noreferrer"><span><b>Senatran</b><small>Consultar recall deste veículo</small></span><ArrowUpRight size={15} /></a></section>
-    <form className="surface-card catalog-contribution" onSubmit={async (event) => { event.preventDefault(); const target = event.currentTarget; const form = new FormData(target); const submit = target.querySelector('button'); submit.disabled = true; const saved = await onContribute({ kind: 'document_link', contributorLabel: String(form.get('contributor') || ''), payload: { brand: String(form.get('brand') || ''), title: String(form.get('title') || ''), url: String(form.get('url') || '') } }); if (saved) target.reset(); submit.disabled = false }}><h2>Contribuir com uma fonte</h2><p>Envie um link público para manual, revisão, garantia, boletim ou recall. A informação fica pendente até ser revisada.</p><label className="form-field">Marca<input name="brand" placeholder="Ex.: Toyota" required /></label><label className="form-field">Título da fonte<input name="title" placeholder="Ex.: Manual do proprietário 2025" required /></label><label className="form-field">Link público<input name="url" type="url" placeholder="https://..." required /></label><label className="form-field">Seu nome (opcional)<input name="contributor" /></label><button className="yellow-button">Enviar para revisão <ArrowRight size={16} /></button></form>
+    <section className="surface-card catalog-intro">
+      <h1>Catálogo técnico (marcas vendidas em território nacional)</h1>
+    </section>
+    <FipeLookup className="catalog-fipe" />
+    <section className="surface-card catalog-brands">
+      <h2>Próximas marcas que serão catalogadas</h2>
+      <div className="brand-coverage-list">
+        {upcomingCatalogBrands.map((name) => <div key={name}>
+          <span><b>{name}</b></span><i>Em estruturação</i>
+        </div>)}
+      </div>
+    </section>
   </div>
 }
 

@@ -1,0 +1,5 @@
+brand,model,model_year,version,fuel,transmission,edition,manual_url,manual_condition,oil_km,oil_months,evidence_page
+fiat,Palio,2016,Attractive 1.0,Flex,Manual,Palio 2016,https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/196/2016/handbook-2016-palio.pdf,,10000,12,A-33
+fiat,Scudo,2023,Cargo 1.5 Diesel,Diesel,Manual,Scudo 2023,https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/508/2023/handbook-scudo-2023_2023.pdf,,,,
+volkswagen,Gol,2015,Track 1.0 Totalflex,Flex,Manual,154.5B1.GOL.66,https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-gol/my-2015_154-5b1-gol-66.pdf,,,,
+volkswagen,Polo,2025,Track 1.0 Totalflex,Flex,Manual,25C.5B1.POL.66,https://www.vw.com.br/idhub/content/dam/onehub_pkw/importers/br/literatura-de-bordo/manual-novo-polo/my25/Polo_BR_25C.5B1.POL_66_LOW.pdf,Edição indicada pela VW a partir de 21/10/2024; confirme a edição pela data de fabricação.,,,

@@ -23,18 +23,6 @@ CREATE TABLE IF NOT EXISTS sources (
   notes TEXT,
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
-CREATE TABLE IF NOT EXISTS vehicle_manual_coverage (
-  id INTEGER PRIMARY KEY,
-  brand_id INTEGER NOT NULL REFERENCES brands(id),
-  vehicle_id INTEGER REFERENCES vehicles(id),
-  powertrain_id INTEGER REFERENCES powertrains(id),
-  document_id INTEGER NOT NULL REFERENCES documents(id),
-  model_year_from INTEGER,
-  model_year_to INTEGER,
-  edition TEXT,
-  region TEXT NOT NULL DEFAULT 'BR',
-  notes TEXT
-);
 
 CREATE TABLE IF NOT EXISTS vehicles (
   id INTEGER PRIMARY KEY,

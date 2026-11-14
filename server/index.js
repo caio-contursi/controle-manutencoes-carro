@@ -1,3 +1,4 @@
+import { openPostgresCatalog } from './db/postgres.js'
 import { registerFipeRoute } from './fipe.js'
 import express from 'express'
 import fs from 'node:fs/promises'
@@ -12,7 +13,10 @@ const dataFile = path.join(dataDirectory, 'state.json')
 const catalogFile = path.join(dataDirectory, 'catalog.sqlite')
 const allowedKeys = new Set(['profile', 'vehicle', 'mileage', 'maintenance', 'expenses', 'reminders', 'firstSteps', 'dark', 'page'])
 const app = express()
-const catalog = createCatalog(catalogFile)
+const postgres = process.env.DATABASE_URL
+  ? await openPostgresCatalog(process.env.DATABASE_URL, catalogFile)
+  : null
+const catalog = postgres ? null : createCatalog(catalogFile)
 app.disable('x-powered-by')
 registerFipeRoute(app)
 app.use(express.json({ limit: '256kb' }))
@@ -57,18 +61,41 @@ app.put('/api/state/:key', async (request, response) => {
 
 app.get('/api/health', (_request, response) => response.json({ status: 'ok', storage: 'local' }))
 
-app.get('/api/catalog/health', (_request, response) => response.json({ status: 'ok', storage: 'sqlite', counts: catalogCounts(catalog) }))
-app.get('/api/catalog/brands', (_request, response) => response.json({ brands: listBrands(catalog) }))
-app.get('/api/catalog/search', (request, response) => response.json({ vehicles: searchVehicles(catalog, request.query.q || '') }))
-app.get('/api/catalog/sources', (_request, response) => response.json({ sources: catalog.prepare('SELECT id,organization,title,url,source_type,accessed_on,notes FROM sources ORDER BY organization,title').all() }))
-app.get('/api/catalog/vehicles/:id', (request, response) => {
-  const result = getVerifiedVehicle(catalog, request.params.id)
-  if (!result) return response.status(404).json({ error: 'Veículo verificado não encontrado.' })
-  return response.json(result)
-})
-app.post('/api/catalog/contributions', (request, response) => {
+const catalogRoute = (handler) => async (request, response) => {
   try {
-    const result = submitContribution(catalog, request.body)
+    await handler(request, response)
+  } catch (error) {
+    console.error('Erro no catálogo:', error.message)
+    response.status(503).json({ error: 'Catálogo temporariamente indisponível.' })
+  }
+}
+
+app.get('/api/catalog/health', catalogRoute(async (_request, response) => {
+  response.json({ status: 'ok', storage: postgres ? 'postgresql' : 'sqlite', counts: postgres ? await postgres.counts() : catalogCounts(catalog) })
+}))
+app.get('/api/catalog/coverage', catalogRoute(async (_request, response) => {
+  response.json(postgres ? await postgres.coverage() : { available: false })
+}))
+app.get('/api/catalog/brands', catalogRoute(async (_request, response) => {
+  response.json({ brands: postgres ? await postgres.brands() : listBrands(catalog) })
+}))
+app.get('/api/catalog/search', catalogRoute(async (request, response) => {
+  const query = request.query.q || ''
+  response.json({ vehicles: postgres ? await postgres.search(query) : searchVehicles(catalog, query) })
+}))
+app.get('/api/catalog/sources', catalogRoute(async (_request, response) => {
+  const sources = postgres ? await postgres.sources() :
+    catalog.prepare('SELECT id,organization,title,url,source_type,accessed_on,notes FROM sources ORDER BY organization,title').all()
+  response.json({ sources })
+}))
+app.get('/api/catalog/vehicles/:id', catalogRoute(async (request, response) => {
+  const result = postgres ? await postgres.vehicle(request.params.id) : getVerifiedVehicle(catalog, request.params.id)
+  if (!result) return response.status(404).json({ error: 'Veículo verificado não encontrado.' })
+  response.json(result)
+}))
+app.post('/api/catalog/contributions', async (request, response) => {
+  try {
+    const result = postgres ? await postgres.contribute(request.body) : submitContribution(catalog, request.body)
     return response.status(201).json(result)
   } catch (error) {
     const status = ['invalid_contribution','contribution_too_large'].includes(error.message) ? 400 : 500
@@ -79,8 +106,21 @@ app.post('/api/catalog/contributions', (request, response) => {
 const production = process.argv.includes('--production')
 if (production) {
   const buildDirectory = path.join(root, 'dist')
-  app.use(express.static(buildDirectory, { index: false }))
-  app.get('*', (_request, response) => response.sendFile(path.join(buildDirectory, 'index.html')))
+  const assetsDirectory = path.join(buildDirectory, 'assets')
+  const indexFile = path.join(buildDirectory, 'index.html')
+  app.use(express.static(buildDirectory, {
+    index: false,
+    setHeaders(response, file) {
+      if (path.dirname(file) === assetsDirectory && /-[\w-]{8}\.[a-z0-9]+$/i.test(path.basename(file))) {
+        response.set('Cache-Control', 'public, max-age=31536000, immutable')
+      } else if (file === indexFile) {
+        response.set('Cache-Control', 'no-cache')
+      }
+    },
+  }))
+  app.get('*', (_request, response) => response.sendFile(indexFile, {
+    headers: { 'Cache-Control': 'no-cache' },
+  }))
 } else {
   const { createServer: createViteServer } = await import('vite')
   const vite = await createViteServer({ server: { middlewareMode: true }, appType: 'spa' })

@@ -1,0 +1,1 @@
+server/db/imports/*.csv text eol=lf
