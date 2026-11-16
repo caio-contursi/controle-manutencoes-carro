@@ -20,7 +20,7 @@ O SQLite tem estrutura para marcas, modelos, gerações, motores, manuais, plano
 
 As 30 marcas iniciais são uma lista de cobertura do mercado brasileiro, não um ranking exato. A lista é vinculada ao portal de emplacamentos da [Fenabrave](https://www.fenabrave.org.br/portalv2/Conteudo/Emplacamentos), que deve ser consultado periodicamente para manter a cobertura do mercado. As fontes de recall registradas incluem o [dataset da Senatran](https://dados.transportes.gov.br/dataset/recall) e a [consulta oficial de recall](https://www.gov.br/pt-br/servicos/realizar-consulta-sobre-recall-de-veiculos?id=10560&origem=servico).
 
-Na primeira inicialização, o catálogo importa 600 links de manuais oficiais, com 638 referências por modelo e ano. No painel **Catálogo**, busque a marca ou o modelo e expanda o resultado para ver os PDFs e as fontes. As referências seguem o ano indicado na fonte, quando disponível. Intervalos de manutenção e elegibilidade para revisão ou garantia dependem da versão e da confirmação da concessionária.
+Ao iniciar, o catálogo cadastra 837 links de manuais oficiais, com 880 referências por modelo e ano. Bancos existentes recebem os novos manuais na próxima inicialização. No painel **Catálogo**, busque a marca ou o modelo e expanda o resultado para ver os PDFs e as fontes. As referências seguem o ano indicado na fonte, quando disponível. Intervalos de manutenção e elegibilidade para revisão ou garantia dependem da versão e da confirmação da concessionária.
 
 ## API do catálogo
 

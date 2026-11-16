@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 
-export function importOwnerManuals(db) {
-  const rows = JSON.parse(fs.readFileSync(new URL('./owner-manuals.json', import.meta.url), 'utf8'))
+export function importOwnerManuals(db, filename = 'owner-manuals.json') {
+  const rows = JSON.parse(fs.readFileSync(new URL(filename, import.meta.url), 'utf8'))
   const startedAt = new Date().toISOString()
   const brand = db.prepare('SELECT id FROM brands WHERE name=?')
   const setPartial = db.prepare("UPDATE brands SET coverage_status='partial' WHERE id=? AND coverage_status='roster_only'")

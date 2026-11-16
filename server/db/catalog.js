@@ -27,11 +27,15 @@ export function createCatalog(filePath) {
 function migrate(db) {
   db.exec('BEGIN IMMEDIATE')
   try {
-    if (db.prepare('PRAGMA user_version').get().user_version < 2) {
+    const { user_version: version } = db.prepare('PRAGMA user_version').get()
+    if (version < 2) {
       db.exec(`ALTER TABLE vehicle_manual_coverage ADD COLUMN source_id INTEGER REFERENCES sources(id);
         CREATE INDEX IF NOT EXISTS idx_manual_coverage_vehicle ON vehicle_manual_coverage(vehicle_id);`)
       importOwnerManuals(db)
-      db.exec('PRAGMA user_version = 2')
+    }
+    if (version < 3) {
+      importOwnerManuals(db, 'owner-manuals-chevrolet-fiat.json')
+      db.exec('PRAGMA user_version = 3')
     }
     db.exec('COMMIT')
   } catch (error) {
