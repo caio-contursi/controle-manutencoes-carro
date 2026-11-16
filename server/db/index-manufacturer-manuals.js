@@ -46,6 +46,7 @@ for (const [brand, source, sourceModel = 'Versa'] of sources) {
         || title.match(/^(.+?) (20\d{2})\s*-\s*Manual de instruções$/i)
     } else if (brand === 23) {
       match = url.pathname.match(/\/manual-([a-z0-9-]+)-(20\d{2})\.pdf$/i)
+        || url.pathname.match(/\/(celta)\/(2015)-MY155_Celta\.pdf$/i)
       if (match && title !== match[2]) continue
     } else if (brand === 48) {
       const filename = decodeURIComponent(url.pathname.split('/').at(-1))

@@ -1,6 +1,7 @@
 import { isFipeFamilyQuery, loadFipeBrandModels, loadFipeFamilyVersions, loadFipeFamilyYears } from './fipe-family.js'
 import { manualToken, registerManualRoute } from './manual-pdf.js'
 import { verifiedOwnerManual, supportedFipeBrands } from './db/fipe-matches.js'
+import { manualsByModelYear } from './db/manufacturer-manuals.js'
 
 const baseUrl = 'https://fipe.parallelum.com.br/api/v2/cars'
 
@@ -50,7 +51,11 @@ export function registerFipeRoute(app) {
         : await requestUpstream(path)
       if (year) {
         const manual = verifiedOwnerManual(request.query, data)
-        data.manuals = manual ? [{ ...manual, token: manualToken(manual.external_url) }] : []
+        const manuals = manual ? [manual] : []
+        if (!manual && brand === '23' && /^celta(?:\s|$)/i.test(data.model) && year.startsWith(data.modelYear + '-')) {
+          manuals.push(...manualsByModelYear(brand, data))
+        }
+        data.manuals = manuals.map((entry) => ({ ...entry, token: manualToken(entry.external_url) }))
       }
       return response.set('Cache-Control', year ? 'no-store' : 'private, max-age=300').json(data)
     } catch (error) {

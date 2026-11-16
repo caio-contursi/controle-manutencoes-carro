@@ -97,6 +97,7 @@ export default function FipeLookup({ onUse, className = '' }) {
       {result.manuals?.map((manual) => {
         const pdf = manual.token && '/api/catalog/manual-pdf?token=' + encodeURIComponent(manual.token)
         return <div className="fipe-manual" key={manual.external_url + manual.edition}>
+          {manual.matchLevel === 'model-year' && <p className="muted-note">{manual.notes}</p>}
           <div className="fipe-manual-actions">
             <a href={pdf || manual.external_url} target="_blank" rel="noreferrer">Visualizar manual</a>
             {pdf && <a href={pdf + '&download=1'} download>Baixar PDF</a>}

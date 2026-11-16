@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import test from 'node:test'
-import { fipePath } from '../server/fipe.js'
+import { fipePath, registerFipeRoute } from '../server/fipe.js'
 import { ownerManuals, supportedFipeBrands, verifiedOwnerManual } from '../server/db/fipe-matches.js'
 
 test('builds each step of a FIPE lookup', () => {
@@ -50,4 +50,37 @@ test('cada vínculo de manual tem chave única, fonte e evidência', () => {
       assert.equal(verifiedOwnerManual({ brand, model, year }, { codeFipe, modelYear: Number(year.split('-')[0]) }).external_url, manual.external_url)
     }
   }
+})
+
+test('consulta FIPE exibe o manual do Celta publicado para o ano-modelo', async (t) => {
+  const routes = new Map()
+  registerFipeRoute({ get: (path, handler) => routes.set(path, handler) })
+  const lookup = routes.get('/api/fipe/cars')
+  let quote
+  t.mock.method(globalThis, 'fetch', async () => ({ ok: true, json: async () => quote }))
+
+  async function consult(model, year, details = {}) {
+    quote = { model, modelYear: year, fuel: 'Flex', price: 'R$ 25.000,00', ...details }
+    const response = {
+      set: () => response,
+      json: (data) => data,
+    }
+    return lookup({ query: { brand: '23', model: '123', year: year + '-5' } }, response)
+  }
+
+  for (let year = 2008; year <= 2015; year++) {
+    const { price, manuals } = await consult('Celta Life 1.0 MPFI 8V Flex 4p', year)
+    assert.equal(price, 'R$ 25.000,00')
+    assert.equal(manuals.length, 1, String(year))
+    const [manual] = manuals
+    assert.equal(manual.matchLevel, 'model-year')
+    assert.match(manual.external_url, /chevrolet\.com\.br\/.+\/celta\//)
+    assert.match(manual.external_url, new RegExp(String(year)))
+    assert.ok(manual.token)
+  }
+
+  assert.deepEqual((await consult('Celta Life', 2007)).manuals, [])
+  assert.deepEqual((await consult('Celta Life', 2015, { modelYear: 2014 })).manuals, [])
+  assert.deepEqual((await consult('CeltaPlus', 2014)).manuals, [])
+  assert.deepEqual((await consult('Onix LT', 2014)).manuals, [])
 })
