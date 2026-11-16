@@ -43,6 +43,17 @@ async function selectFipe(page) {
   await expect(page.getByText('R$ 25.000,00', { exact: true })).toBeVisible()
 }
 
+test('consulta manuais antes de cadastrar um veículo', async ({ page, request }) => {
+  await seed(request, { profile: null, vehicle: null })
+  await page.goto('/')
+  await button(page, 'Consultar manuais').click()
+  await page.getByLabel('Buscar marca ou modelo').fill('Fiat Palio')
+  await page.getByText('Fiat Palio', { exact: true }).click()
+  await expect(page.getByRole('link', { name: 'Abrir PDF do Fiat Palio, 2016' })).toBeVisible()
+  await button(page, 'Voltar ao cadastro').click()
+  await expect(page.getByRole('heading', { name: 'Qual veículo vamos acompanhar?' })).toBeVisible()
+})
+
 test('cadastro: consulta FIPE, volta, confirma e preserva o perfil ao recarregar', async ({ page, request }) => {
   await seed(request, { profile: null, vehicle: null })
   await mockFipe(page)

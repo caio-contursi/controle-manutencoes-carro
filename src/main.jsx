@@ -72,6 +72,7 @@ function App() {
   const [catalogResults, setCatalogResults] = useState([])
   const catalogRequest = useRef(0)
   const [catalogSearchStatus, setCatalogSearchStatus] = useState('idle')
+  const [guestCatalog, setGuestCatalog] = useState(false)
   const [onStep, setOnStep] = useState(1)
   const [draft, setDraft] = useState({ make: '', model: '', version: '', year: '', city: '', name: '' })
 
@@ -184,10 +185,16 @@ function App() {
     } catch { setToast('Não foi possível registrar. Confira os dados e tente novamente.'); return false }
   }
 
+  const catalog = <CatalogPage data={catalogData} query={catalogQuery} results={catalogResults} searchStatus={catalogSearchStatus} onSearch={searchCatalog} onContribute={guestCatalog ? undefined : contributeSource} />
   return (
     <main className={`app-shell ${page === 'onboarding' ? 'onboarding-shell' : ''}`}>
-      {!pageIsReady ? <div className="app-loading" role="status">Carregando seus dados…</div> : !profile || !vehicle ? (
-        <Onboarding step={onStep} setStep={setOnStep} draft={draft} setDraft={setDraft} onFinish={completeOnboarding} onToast={setToast} />
+      {!pageIsReady ? <div className="app-loading" role="status">Carregando seus dados…</div> : guestCatalog ? (
+        <div className="app-main"><section className="screen-content">
+          <button className="link-button" type="button" onClick={() => setGuestCatalog(false)}>Voltar ao cadastro</button>
+          {catalog}
+        </section></div>
+      ) : !profile || !vehicle ? (
+        <Onboarding step={onStep} setStep={setOnStep} draft={draft} setDraft={setDraft} onFinish={completeOnboarding} onToast={setToast} onCatalog={() => setGuestCatalog(true)} />
       ) : (
         <>
           <DesktopSidebar page={page} profile={profile} vehicle={vehicle} onNavigate={movePage} onProfile={() => setModal('profile')} onVehicle={() => setModal('vehicle')} />
@@ -199,7 +206,7 @@ function App() {
               {page === 'gastos' && <ExpensesPage expenses={expenses} total={monthExpenses} onAdd={() => setModal('expense')} onRemove={removeExpense} />}
               {page === 'copiloto' && <CopilotPage vehicle={vehicle} profile={profile} mileage={mileage} conversation={conversation} query={query} setQuery={setQuery} onSubmit={submitChat} onSuggestion={submitChat} />}
               {page === 'historico' && <HistoryPage maintenance={maintenance} expenses={expenses} reminders={reminders} onRegister={() => { setServiceTitleDraft({ title: '', km: mileage }); setModal('maintenance') }} />}
-              {page === 'catalogo' && <CatalogPage data={catalogData} query={catalogQuery} results={catalogResults} searchStatus={catalogSearchStatus} onSearch={searchCatalog} onContribute={contributeSource} />}
+              {page === 'catalogo' && catalog}
             </section>
             {fabOpen && <div className="fab-menu">
               <button onClick={() => { setFabOpen(false); setModal('reminder') }}>Criar novo lembrete <CalendarDays size={17} /></button>
@@ -352,7 +359,7 @@ function CatalogPage({ data, query, results, searchStatus, onSearch, onContribut
     </section>
     <section className="surface-card catalog-brands"><h2>30 marcas na cobertura inicial</h2><div className="brand-coverage-list">{data.brands.map((brand) => <div key={brand.id}><span><b>{brand.name}</b><small>{brand.verified_models ? `${brand.verified_models} modelo(s) revisado(s)` : 'Aguardando dados por modelo'}</small></span><i>{{ verified: 'Verificada', partial: 'Cobertura parcial', roster_only: 'Em estruturação' }[brand.coverage_status]}</i></div>)}</div></section>
     <section className="surface-card catalog-sources"><h2>Fontes registradas</h2>{data.sources.map((source) => <a href={source.url} target="_blank" rel="noreferrer" key={source.id}><span><b>{source.organization}</b><small>{source.title}</small></span><ArrowUpRight size={15} /></a>)}<p className="muted-note">Dados de recall podem ser consultados também pelo serviço oficial da Senatran usando placa ou chassi.</p><a href="https://www.gov.br/pt-br/servicos/realizar-consulta-sobre-recall-de-veiculos?id=10560&origem=servico" target="_blank" rel="noreferrer"><span><b>Senatran</b><small>Consultar recall deste veículo</small></span><ArrowUpRight size={15} /></a></section>
-    <form className="surface-card catalog-contribution" onSubmit={async (event) => { event.preventDefault(); const target = event.currentTarget; const form = new FormData(target); const submit = target.querySelector('button'); submit.disabled = true; const saved = await onContribute({ kind: 'document_link', contributorLabel: String(form.get('contributor') || ''), payload: { brand: String(form.get('brand') || ''), title: String(form.get('title') || ''), url: String(form.get('url') || '') } }); if (saved) target.reset(); submit.disabled = false }}><h2>Contribuir com uma fonte</h2><p>Envie um link público para manual, revisão, garantia, boletim ou recall. A informação fica pendente até ser revisada.</p><label className="form-field">Marca<input name="brand" placeholder="Ex.: Toyota" required /></label><label className="form-field">Título da fonte<input name="title" placeholder="Ex.: Manual do proprietário 2025" required /></label><label className="form-field">Link público<input name="url" type="url" placeholder="https://..." required /></label><label className="form-field">Seu nome (opcional)<input name="contributor" /></label><button className="yellow-button">Enviar para revisão <ArrowRight size={16} /></button></form>
+    {onContribute && <form className="surface-card catalog-contribution" onSubmit={async (event) => { event.preventDefault(); const target = event.currentTarget; const form = new FormData(target); const submit = target.querySelector('button'); submit.disabled = true; const saved = await onContribute({ kind: 'document_link', contributorLabel: String(form.get('contributor') || ''), payload: { brand: String(form.get('brand') || ''), title: String(form.get('title') || ''), url: String(form.get('url') || '') } }); if (saved) target.reset(); submit.disabled = false }}><h2>Contribuir com uma fonte</h2><p>Envie um link público para manual, revisão, garantia, boletim ou recall. A informação fica pendente até ser revisada.</p><label className="form-field">Marca<input name="brand" placeholder="Ex.: Toyota" required /></label><label className="form-field">Título da fonte<input name="title" placeholder="Ex.: Manual do proprietário 2025" required /></label><label className="form-field">Link público<input name="url" type="url" placeholder="https://..." required /></label><label className="form-field">Seu nome (opcional)<input name="contributor" /></label><button className="yellow-button">Enviar para revisão <ArrowRight size={16} /></button></form>}
   </div>
 }
 
@@ -380,7 +387,7 @@ function CatalogResult({ item }) {
   </details>
 }
 
-function Onboarding({ step, setStep, draft, setDraft, onFinish, onToast }) {
+function Onboarding({ step, setStep, draft, setDraft, onFinish, onToast, onCatalog }) {
   const [showFipe, setShowFipe] = useState(false)
   const set = (key, value) => setDraft((old) => ({ ...old, [key]: value }))
   const advance = () => {
@@ -393,6 +400,7 @@ function Onboarding({ step, setStep, draft, setDraft, onFinish, onToast }) {
   }
   return <div className="onboarding">
     <div className="onboarding-top"><span className="phone-notch" />{step > 1 && <button onClick={() => setStep(step - 1)} aria-label="Voltar"><ArrowLeft size={21} /></button>}<div className="onboarding-top-brand">{step > 2 ? 'Seu veículo' : ''}</div></div>
+    {step === 1 && <button className="link-button" type="button" onClick={onCatalog}>Consultar manuais</button>}
     {step === 1 && <div className="onboarding-content plate-step"><small className="eyebrow">CADASTRO DO VEÍCULO</small><h1>Qual veículo vamos acompanhar?</h1><p>O catálogo cruza os dados técnicos por modelo, ano e motorização. Você pode preencher os dados ou consultar a Tabela FIPE.</p><button className="link-button" type="button" aria-expanded={showFipe} onClick={() => setShowFipe(!showFipe)}>{showFipe ? 'Fechar consulta FIPE' : 'Consultar Tabela FIPE'}</button>{showFipe && <FipeLookup onUse={(item) => { setDraft((old) => ({ ...old, make: item.brand, model: item.model, version: '', year: String(item.modelYear) })); setShowFipe(false) }} />}<label className="form-field">Marca<input autoFocus value={draft.make} onChange={(event) => set('make', event.target.value)} placeholder="Ex.: Toyota" required /></label><label className="form-field">Modelo<input value={draft.model} onChange={(event) => set('model', event.target.value)} placeholder="Ex.: Corolla" required /></label><label className="form-field">Versão / motor <span>(opcional)</span><input value={draft.version} onChange={(event) => set('version', event.target.value)} placeholder="Ex.: 2.0 Flex" /></label><label className="form-field">Ano<input type="number" min="1950" max={new Date().getFullYear() + 1} value={draft.year} onChange={(event) => set('year', event.target.value)} placeholder="2022" required /></label><button className="yellow-button onboarding-cta" disabled={!draft.make.trim() || !draft.model.trim() || !draft.year} onClick={advance}>Continuar <ArrowRight size={16} /></button></div>}
     {step === 2 && <div className="onboarding-content found-step"><small className="eyebrow">DADOS INFORMADOS</small><Car size={42} /><h1>{draft.make} {draft.model}</h1><div className="fipe-card"><span>VERSÃO E ANO</span><b>{draft.version || 'Versão não informada'}</b><div><span>ANO<br /><b>{draft.year}</b></span><span>COBERTURA<br /><b>A confirmar</b></span></div></div><p>Cadastro baseado nos dados que você informou. O plano depende de documentação específica disponível no catálogo.</p><button className="yellow-button onboarding-cta" onClick={advance}>Confirmar veículo <Check size={17} /></button><button className="link-button" onClick={() => setStep(1)}>Editar dados</button></div>}
     {step === 3 && <div className="onboarding-content city-step"><small className="eyebrow">ÚLTIMOS AJUSTES</small><h1>Em que cidade você mora?</h1><p>Opcional. Pode ajudar a organizar serviços locais futuramente.</p><label className="form-field">Cidade <span>(opcional)</span><input autoFocus value={draft.city} onChange={(event) => set('city', event.target.value)} /></label><label className="form-field">Seu nome <span>(opcional)</span><input value={draft.name} onChange={(event) => set('name', event.target.value)} placeholder="Como podemos chamar você?" /></label><button className="yellow-button onboarding-cta" onClick={advance}>Continuar <ArrowRight size={16} /></button></div>}
