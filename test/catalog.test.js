@@ -3,6 +3,7 @@ import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 import test from 'node:test'
+import { DatabaseSync } from 'node:sqlite'
 import { createCatalog, catalogCounts, listBrands, searchVehicles, getVerifiedVehicle, submitContribution } from '../server/db/catalog.js'
 
 function fixture() {
@@ -15,10 +16,31 @@ test('seeds 30 Brazilian-market brands and zero unsourced technical claims', (t)
   const f = fixture(); t.after(f.cleanup)
   const counts = catalogCounts(f.database)
   assert.equal(counts.brands, 30)
-  assert.equal(counts.models, 0)
+  assert.equal(counts.models, 127)
+  assert.equal(counts.manuals, 600)
+  assert.equal(f.database.prepare('SELECT COUNT(*) AS count FROM vehicle_manual_coverage').get().count, 638)
   assert.equal(counts.schedules, 0)
   assert.equal(counts.issues, 0)
-  assert.equal(listBrands(f.database).every((brand) => brand.coverage_status === 'roster_only'), true)
+  assert.equal(listBrands(f.database).filter((brand) => brand.coverage_status === 'partial').length, 10)
+})
+
+test('returns manuals with their model, year references and original sources', (t) => {
+  const f = fixture(); t.after(f.cleanup)
+  const [aircross] = searchVehicles(f.database, 'citroën c3 aircross')
+  assert.equal(aircross.manuals.length, 1)
+  const [manual] = aircross.manuals
+  assert.equal(manual.model_year_from, 2024)
+  assert.equal(manual.model_year_to, 2025)
+  assert.match(manual.external_url, /c3-aircross-2024_2025\.pdf$/)
+  assert.equal(manual.source_url, 'https://www.citroen.com.br/meu-citroen/manuais.html')
+  assert.deepEqual(getVerifiedVehicle(f.database, aircross.id).manuals, aircross.manuals)
+  const [hb20] = searchVehicles(f.database, 'hyundai hb20')
+  assert.equal(hb20.manuals.length, 2)
+  assert.equal(hb20.manuals.every((entry) => entry.model_year_from === null && entry.model_year_to === null), true)
+  const [captur] = searchVehicles(f.database, 'renault captur')
+  assert.equal(captur.manuals.some((entry) => entry.model_year_from === 2019), false)
+  const [oroch] = searchVehicles(f.database, 'renault oroch')
+  assert.equal(oroch.manuals.some((entry) => entry.model_year_from === 2015), false)
 })
 
 test('keeps unpublished or draft vehicles out of catalog search', (t) => {
@@ -54,15 +76,28 @@ test('database requires evidence sources for maintenance rules and known issues'
   assert.throws(() => f.database.prepare("INSERT INTO known_issues(vehicle_id,title,description,evidence_type) VALUES(?,?,?,?)").run(vehicleId, 'Falha', 'Descrição', 'community_report'))
 })
 
-test('catalog initialization can be repeated without duplicating brands or sources', (t) => {
+test('updates an existing version 1 catalog and keeps its records after reopening', (t) => {
   const directory = fs.mkdtempSync(path.join(os.tmpdir(), 'lembracar-migration-'))
-  t.after(() => fs.rmSync(directory, { recursive: true, force: true }))
-  let db = createCatalog(path.join(directory, 'catalog.sqlite'))
-  assert.equal(catalogCounts(db).brands, 30)
+  const filePath = path.join(directory, 'catalog.sqlite')
+  let db = new DatabaseSync(filePath)
+  t.after(() => {
+    if (db.isOpen) db.close()
+    fs.rmSync(directory, { recursive: true, force: true })
+  })
+  db.exec(fs.readFileSync(new URL('../server/db/schema.sql', import.meta.url), 'utf8'))
+  db.exec('PRAGMA user_version = 1')
+  submitContribution(db, { kind: 'document_link', payload: { url: 'https://example.test/source' } })
   db.close()
-  db = createCatalog(path.join(directory, 'catalog.sqlite'))
-  assert.equal(catalogCounts(db).brands, 30)
-  assert.equal(db.prepare('SELECT COUNT(*) AS count FROM sources').get().count, 3)
-  assert.equal(db.prepare('PRAGMA user_version').get().user_version, 1)
+
+  db = createCatalog(filePath)
+  const counts = catalogCounts(db)
+  assert.equal(counts.manuals, 600)
+  assert.equal(counts.pendingContributions, 1)
+  const sources = db.prepare('SELECT COUNT(*) AS count FROM sources').get().count
   db.close()
+  db = createCatalog(filePath)
+  assert.deepEqual(catalogCounts(db), counts)
+  assert.equal(db.prepare('SELECT COUNT(*) AS count FROM sources').get().count, sources)
+  assert.equal(db.prepare('SELECT COUNT(*) AS count FROM vehicle_manual_coverage').get().count, 638)
+  assert.equal(db.prepare('PRAGMA user_version').get().user_version, 2)
 })

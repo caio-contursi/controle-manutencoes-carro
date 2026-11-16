@@ -2,6 +2,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import { DatabaseSync } from 'node:sqlite'
 import { fileURLToPath } from 'node:url'
+import { importOwnerManuals } from './owner-manuals.js'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
 const names = [
@@ -16,16 +17,27 @@ const senatranUrl = 'https://www.gov.br/pt-br/servicos/realizar-consulta-sobre-r
 export function createCatalog(filePath) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true })
   const db = new DatabaseSync(filePath)
-  db.exec(`PRAGMA foreign_keys = ON; PRAGMA journal_mode = WAL;`)
+  db.exec(`PRAGMA foreign_keys = ON; PRAGMA busy_timeout = 5000; PRAGMA journal_mode = WAL;`)
   db.exec(fs.readFileSync(path.join(here, 'schema.sql'), 'utf8'))
-  migrate(db)
   seed(db)
+  migrate(db)
   return db
 }
 
 function migrate(db) {
-  const version = db.prepare('PRAGMA user_version').get().user_version
-  if (version < 1) db.exec('PRAGMA user_version = 1')
+  db.exec('BEGIN IMMEDIATE')
+  try {
+    if (db.prepare('PRAGMA user_version').get().user_version < 2) {
+      db.exec(`ALTER TABLE vehicle_manual_coverage ADD COLUMN source_id INTEGER REFERENCES sources(id);
+        CREATE INDEX IF NOT EXISTS idx_manual_coverage_vehicle ON vehicle_manual_coverage(vehicle_id);`)
+      importOwnerManuals(db)
+      db.exec('PRAGMA user_version = 2')
+    }
+    db.exec('COMMIT')
+  } catch (error) {
+    db.exec('ROLLBACK')
+    throw error
+  }
 }
 
 function seed(db) {
@@ -85,9 +97,19 @@ export function searchVehicles(db, query = '') {
   const terms = String(query).slice(0, 100).trim().split(/\s+/).filter(Boolean)
   const searchable = "lower(b.name || ' ' || v.model || ' ' || COALESCE(v.generation,''))"
   const filters = terms.map(() => `AND instr(${searchable}, lower(?)) > 0`).join(' ')
-  return db.prepare(`SELECT v.id, b.name AS brand, v.model, v.generation, v.model_year_from, v.model_year_to, v.status
+  const vehicles = db.prepare(`SELECT v.id, b.name AS brand, v.model, v.generation, v.model_year_from, v.model_year_to, v.status
     FROM vehicles v JOIN brands b ON b.id=v.brand_id WHERE v.status='published' ${filters}
     ORDER BY b.name,v.model LIMIT 100`).all(...terms)
+  const manuals = vehicleManuals(db)
+  return vehicles.map((vehicle) => ({ ...vehicle, manuals: manuals.all(vehicle.id) }))
+}
+
+function vehicleManuals(db) {
+  return db.prepare(`SELECT c.id,d.title,d.external_url,s.url AS source_url,c.model_year_from,c.model_year_to,c.edition,c.notes
+    FROM vehicle_manual_coverage c JOIN documents d ON d.id=c.document_id
+    JOIN sources s ON s.id=COALESCE(c.source_id,d.source_id)
+    WHERE c.vehicle_id=? AND d.document_type='owner_manual' AND d.status='verified'
+    ORDER BY c.model_year_from DESC,c.model_year_to DESC,c.id`)
 }
 
 export function getVerifiedVehicle(db, id) {
@@ -99,7 +121,8 @@ export function getVerifiedVehicle(db, id) {
     WHERE ms.vehicle_id=? AND ms.review_status='verified' ORDER BY mi.name`).all(vehicle.id)
   const issues = db.prepare(`SELECT title,component,description,symptom,severity,evidence_type,model_year_from,model_year_to
     FROM known_issues WHERE vehicle_id=? AND review_status='verified' ORDER BY severity,title`).all(vehicle.id)
-  return { vehicle, schedules, issues, eligibility: { result: 'needs_dealer_confirmation', message: 'A elegibilidade para revisão ou garantia precisa ser confirmada pela concessionária com o chassi, ano e histórico do veículo.' } }
+  const manuals = vehicleManuals(db).all(vehicle.id)
+  return { vehicle, schedules, issues, manuals, eligibility: { result: 'needs_dealer_confirmation', message: 'A elegibilidade para revisão ou garantia precisa ser confirmada pela concessionária com o chassi, ano e histórico do veículo.' } }
 }
 
 export function submitContribution(db, input) {

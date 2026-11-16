@@ -342,11 +342,42 @@ function CatalogPage({ data, query, results, searchStatus, onSearch, onContribut
     <section className="surface-card catalog-intro"><span className="catalog-kicker">BASE AUTOMOTIVA BRASIL</span><h1>Catálogo técnico</h1><p>Pesquise veículos com cobertura revisada e ajude a completar os dados. Planos de manutenção e condições de garantia só aparecem quando associados a uma fonte e versão específicas.</p></section>
     <section className="surface-card"><button className="yellow-button" onClick={() => setShowFipe(!showFipe)} aria-expanded={showFipe}>{showFipe ? 'Fechar consulta FIPE' : 'Consultar Tabela FIPE'}</button>{showFipe && <FipeLookup />}</section>
     <section className="surface-card catalog-coverage"><h2>Estado da base</h2><div className="catalog-count-grid"><div><b>{counts.brands ?? data.brands.length}</b><span>marcas na lista inicial</span></div><div><b>{counts.models ?? 0}</b><span>modelos verificados</span></div><div><b>{counts.manuals ?? 0}</b><span>manuais conferidos</span></div><div><b>{counts.schedules ?? 0}</b><span>planos verificados</span></div></div><p className="muted-note">Marcas com cobertura “lista inicial” ainda não têm dados de modelo confirmados. Não usamos intervalos genéricos para prever manutenção.</p></section>
-    <section className="surface-card catalog-search"><h2>Buscar modelo com dados revisados</h2><form onSubmit={(event) => { event.preventDefault(); onSearch() }}><input aria-label="Buscar marca ou modelo" value={query} onChange={(event) => onSearch(event.target.value)} placeholder="Ex.: Toyota Corolla" /><button className="yellow-button">Buscar <Search size={16} /></button></form>{searchStatus === 'loading' && <p role="status">Buscando modelos…</p>}{searchStatus === 'error' && <p role="alert">Não foi possível buscar no catálogo. Tente novamente.</p>}{searchStatus === 'done' && results.length === 0 && <p className="muted-note">Nenhum modelo revisado encontrado para “{query}”. Envie uma fonte pública para ampliar a cobertura.</p>}{results.length > 0 && <div className="catalog-results">{results.map((item) => <div key={item.id}><Car size={18} /><span><b>{item.brand} {item.model}</b><small>{item.generation || 'Versão não especificada'} · anos {item.model_year_from || '—'}–{item.model_year_to || 'atual'}</small></span><i>Dados revisados</i></div>)}</div>}</section>
-    <section className="surface-card catalog-brands"><h2>30 marcas na cobertura inicial</h2><div className="brand-coverage-list">{data.brands.map((brand) => <div key={brand.id}><span><b>{brand.name}</b><small>{brand.verified_models ? `${brand.verified_models} modelo(s) revisado(s)` : 'Aguardando dados por modelo'}</small></span><i>{brand.coverage_status === 'verified' ? 'Verificada' : 'Em estruturação'}</i></div>)}</div></section>
+    <section className="surface-card catalog-search">
+      <h2>Buscar modelo com dados revisados</h2>
+      <form onSubmit={(event) => { event.preventDefault(); onSearch() }}><input aria-label="Buscar marca ou modelo" value={query} onChange={(event) => onSearch(event.target.value)} placeholder="Ex.: Honda Civic" /><button className="yellow-button">Buscar <Search size={16} /></button></form>
+      {searchStatus === 'loading' && <p role="status">Buscando modelos…</p>}
+      {searchStatus === 'error' && <p role="alert">Não foi possível buscar no catálogo. Tente novamente.</p>}
+      {searchStatus === 'done' && results.length === 0 && <p className="muted-note">Nenhum modelo revisado encontrado para “{query}”. Envie uma fonte pública para ampliar a cobertura.</p>}
+      {results.length > 0 && <div className="catalog-results">{results.map((item) => <CatalogResult key={item.id} item={item} />)}</div>}
+    </section>
+    <section className="surface-card catalog-brands"><h2>30 marcas na cobertura inicial</h2><div className="brand-coverage-list">{data.brands.map((brand) => <div key={brand.id}><span><b>{brand.name}</b><small>{brand.verified_models ? `${brand.verified_models} modelo(s) revisado(s)` : 'Aguardando dados por modelo'}</small></span><i>{{ verified: 'Verificada', partial: 'Cobertura parcial', roster_only: 'Em estruturação' }[brand.coverage_status]}</i></div>)}</div></section>
     <section className="surface-card catalog-sources"><h2>Fontes registradas</h2>{data.sources.map((source) => <a href={source.url} target="_blank" rel="noreferrer" key={source.id}><span><b>{source.organization}</b><small>{source.title}</small></span><ArrowUpRight size={15} /></a>)}<p className="muted-note">Dados de recall podem ser consultados também pelo serviço oficial da Senatran usando placa ou chassi.</p><a href="https://www.gov.br/pt-br/servicos/realizar-consulta-sobre-recall-de-veiculos?id=10560&origem=servico" target="_blank" rel="noreferrer"><span><b>Senatran</b><small>Consultar recall deste veículo</small></span><ArrowUpRight size={15} /></a></section>
     <form className="surface-card catalog-contribution" onSubmit={async (event) => { event.preventDefault(); const target = event.currentTarget; const form = new FormData(target); const submit = target.querySelector('button'); submit.disabled = true; const saved = await onContribute({ kind: 'document_link', contributorLabel: String(form.get('contributor') || ''), payload: { brand: String(form.get('brand') || ''), title: String(form.get('title') || ''), url: String(form.get('url') || '') } }); if (saved) target.reset(); submit.disabled = false }}><h2>Contribuir com uma fonte</h2><p>Envie um link público para manual, revisão, garantia, boletim ou recall. A informação fica pendente até ser revisada.</p><label className="form-field">Marca<input name="brand" placeholder="Ex.: Toyota" required /></label><label className="form-field">Título da fonte<input name="title" placeholder="Ex.: Manual do proprietário 2025" required /></label><label className="form-field">Link público<input name="url" type="url" placeholder="https://..." required /></label><label className="form-field">Seu nome (opcional)<input name="contributor" /></label><button className="yellow-button">Enviar para revisão <ArrowRight size={16} /></button></form>
   </div>
+}
+
+function CatalogResult({ item }) {
+  const manuals = item.manuals || []
+  const model = <><Car size={18} /><span><b>{item.brand} {item.model}</b>{item.generation && <small>{item.generation}</small>}</span></>
+  if (!manuals.length) return <div>{model}<i>Dados revisados</i></div>
+
+  return <details className="catalog-manuals">
+    <summary>{model}<span>{manuals.length === 1 ? '1 referência' : `${manuals.length} referências`}</span><ChevronDown size={16} /></summary>
+    <ul>{manuals.map((manual) => {
+      const { model_year_from: firstYear, model_year_to: lastYear } = manual
+      const year = firstYear && lastYear && firstYear !== lastYear
+        ? `${firstYear}/${lastYear}`
+        : firstYear || lastYear || manual.notes || 'Ano não especificado'
+      return <li key={manual.id}>
+        <b>{year}</b>
+        {manual.edition && <small>{manual.edition}</small>}
+        <div>
+          <a href={manual.external_url} target="_blank" rel="noreferrer" aria-label={`Abrir PDF do ${item.brand} ${item.model}, ${year}`}>Abrir PDF <ArrowUpRight size={14} /></a>
+          <a href={manual.source_url} target="_blank" rel="noreferrer">Fonte oficial</a>
+        </div>
+      </li>
+    })}</ul>
+  </details>
 }
 
 function Onboarding({ step, setStep, draft, setDraft, onFinish, onToast }) {

@@ -301,6 +301,22 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
   border-top: 1px solid var(--line);
 }
 .fab { box-shadow: 0 3px 8px #173f9f26; }
+.catalog-manuals { border: 1px solid var(--line); border-radius: 10px; }
+.catalog-manuals > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 54px;
+  padding: 10px;
+  cursor: pointer;
+}
+.catalog-manuals > summary > span:first-of-type { flex: 1; }
+.catalog-manuals > summary > svg { flex: none; color: var(--royal); }
+.catalog-manuals[open] > summary > svg:last-child { transform: rotate(180deg); }
+.catalog-manuals ul { margin: 0; padding: 0 10px; list-style: none; }
+.catalog-manuals li { display: grid; gap: 5px; padding: 10px 0; border-top: 1px solid var(--line); }
+.catalog-manuals li > div { display: flex; flex-wrap: wrap; gap: 10px; }
+.catalog-manuals a { display: inline-flex; align-items: center; gap: 2px; color: var(--royal); }
 @media (max-width: 899px) {
   .screen-content { padding-inline: 14px; }
 }
