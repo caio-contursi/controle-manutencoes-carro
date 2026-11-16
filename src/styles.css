@@ -482,8 +482,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .fipe-manual-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
+  gap: 12px;
 }
 .fipe-manual-actions a {
   display: inline-flex;

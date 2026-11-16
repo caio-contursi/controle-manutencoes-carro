@@ -84,7 +84,7 @@ async function selectFipe(page, familyRequests, open = true) {
   await expect(page.getByText('R$ 25.000,00', { exact: true })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Manutenção', exact: true })).toHaveCount(0)
   await expect(page.getByRole('link', { name: 'Visualizar manual' })).toHaveAttribute('href', '/api/catalog/manual-pdf?token=pdf-test')
-  await expect(page.getByRole('link', { name: 'Baixar PDF' })).toHaveAttribute('href', '/api/catalog/manual-pdf?token=pdf-test&download=1')
+  await expect(page.getByRole('link', { name: 'Baixar manual em PDF' })).toHaveAttribute('href', '/api/catalog/manual-pdf?token=pdf-test&download=1')
 }
 
 test('cadastro: consulta FIPE, volta, confirma e preserva o perfil ao recarregar', async ({ page, request }) => {
