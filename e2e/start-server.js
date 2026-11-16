@@ -4,15 +4,17 @@ import { mkdtemp, rm } from 'node:fs/promises'
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 import { setTimeout } from 'node:timers/promises'
+import { isolatedPostgres } from '../test/postgres-fixture.js'
 
 export default async function startServer(config) {
   const url = new URL(config.projects[0].use.baseURL)
   const health = new URL('/api/health', url)
   const existingServer = await fetch(health, { signal: AbortSignal.timeout(500) }).catch(() => null)
   if (existingServer) throw new Error('A porta do servidor de testes já está ocupada.')
+  const postgres = await isolatedPostgres()
   const directory = await mkdtemp(join(tmpdir(), 'painel-e2e-'))
   const server = spawn(process.execPath, ['server/index.js', '--production'], {
-    env: { ...process.env, PORT: url.port, HOST: url.hostname, LEMBRACAR_DATA_DIR: directory },
+    env: { ...process.env, PORT: url.port, HOST: url.hostname, LEMBRACAR_DATA_DIR: directory, DATABASE_URL: postgres.connectionString },
     stdio: ['ignore', 'ignore', 'inherit'],
     windowsHide: true,
   })
@@ -22,6 +24,7 @@ export default async function startServer(config) {
     server.kill()
     await closed
     await rm(directory, { recursive: true, force: true })
+    await postgres.cleanup()
   }
 
   try {

@@ -1,18 +1,28 @@
 import { registerFipeRoute } from './fipe.js'
 import express from 'express'
+import pg from 'pg'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { createCatalog, catalogCounts, listBrands, searchVehicles, getVerifiedVehicle, submitContribution } from './db/catalog.js'
+import { initializeCatalog, catalogCounts, listBrands, searchVehicles, getVerifiedVehicle, submitContribution } from './db/catalog.js'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
 const root = path.resolve(here, '..')
 const dataDirectory = process.env.LEMBRACAR_DATA_DIR ? path.resolve(process.env.LEMBRACAR_DATA_DIR) : path.join(here, 'data')
 const dataFile = path.join(dataDirectory, 'state.json')
-const catalogFile = path.join(dataDirectory, 'catalog.sqlite')
 const allowedKeys = new Set(['profile', 'vehicle', 'mileage', 'maintenance', 'expenses', 'reminders', 'firstSteps', 'dark', 'page'])
 const app = express()
-const catalog = createCatalog(catalogFile)
+if (!process.env.DATABASE_URL && !process.env.PGHOST) {
+  throw new Error('Configure DATABASE_URL ou PGHOST para conectar ao PostgreSQL.')
+}
+const catalog = new pg.Pool({ connectionString: process.env.DATABASE_URL, connectionTimeoutMillis: 5000 })
+catalog.on('error', (error) => console.error('Conexão do catálogo', error.message))
+try {
+  await initializeCatalog(catalog, path.join(dataDirectory, 'catalog.sqlite'))
+} catch (error) {
+  await catalog.end()
+  throw error
+}
 app.disable('x-powered-by')
 registerFipeRoute(app)
 app.use(express.json({ limit: '256kb' }))
@@ -57,18 +67,30 @@ app.put('/api/state/:key', async (request, response) => {
 
 app.get('/api/health', (_request, response) => response.json({ status: 'ok', storage: 'local' }))
 
-app.get('/api/catalog/health', (_request, response) => response.json({ status: 'ok', storage: 'sqlite', counts: catalogCounts(catalog) }))
-app.get('/api/catalog/brands', (_request, response) => response.json({ brands: listBrands(catalog) }))
-app.get('/api/catalog/search', (request, response) => response.json({ vehicles: searchVehicles(catalog, request.query.q || '') }))
-app.get('/api/catalog/sources', (_request, response) => response.json({ sources: catalog.prepare('SELECT id,organization,title,url,source_type,accessed_on,notes FROM sources ORDER BY organization,title').all() }))
-app.get('/api/catalog/vehicles/:id', (request, response) => {
-  const result = getVerifiedVehicle(catalog, request.params.id)
-  if (!result) return response.status(404).json({ error: 'Veículo verificado não encontrado.' })
-  return response.json(result)
+function catalogGet(route, handler) {
+  app.get('/api/catalog' + route, async (request, response) => {
+    try {
+      const result = await handler(request)
+      if (result === null) return response.status(404).json({ error: 'Veículo verificado não encontrado.' })
+      return response.json(result)
+    } catch (error) {
+      console.error('Consulta ao catálogo', error.message)
+      return response.status(500).json({ error: 'Não foi possível consultar o catálogo.' })
+    }
+  })
+}
+
+catalogGet('/health', async () => ({ status: 'ok', storage: 'postgresql', counts: await catalogCounts(catalog) }))
+catalogGet('/brands', async () => ({ brands: await listBrands(catalog) }))
+catalogGet('/search', async (request) => ({ vehicles: await searchVehicles(catalog, request.query.q || '') }))
+catalogGet('/sources', async () => {
+  const { rows: sources } = await catalog.query('SELECT id,organization,title,url,source_type,accessed_on,notes FROM sources ORDER BY organization,title')
+  return { sources }
 })
-app.post('/api/catalog/contributions', (request, response) => {
+catalogGet('/vehicles/:id', (request) => getVerifiedVehicle(catalog, request.params.id))
+app.post('/api/catalog/contributions', async (request, response) => {
   try {
-    const result = submitContribution(catalog, request.body)
+    const result = await submitContribution(catalog, request.body)
     return response.status(201).json(result)
   } catch (error) {
     const status = ['invalid_contribution','contribution_too_large'].includes(error.message) ? 400 : 500

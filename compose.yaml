@@ -6,5 +6,30 @@ services:
     volumes:
       - ./server/data:/app/server/data
     environment:
+      PGHOST: postgres
+      PGDATABASE: lembracar
+      PGUSER: lembracar
+      PGPASSWORD: "${POSTGRES_PASSWORD:-lembracar-local}"
       LEMBRACAR_FIPE_TOKEN: "${LEMBRACAR_FIPE_TOKEN:-}"
+    depends_on:
+      postgres:
+        condition: service_healthy
     restart: unless-stopped
+
+  postgres:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: lembracar
+      POSTGRES_USER: lembracar
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-lembracar-local}"
+    volumes:
+      - catalog-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD", "pg_isready", "-h", "127.0.0.1", "-U", "lembracar", "-d", "lembracar"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  catalog-data:
