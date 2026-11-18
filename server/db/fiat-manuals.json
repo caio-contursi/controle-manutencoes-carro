@@ -1,0 +1,4793 @@
+[
+  {
+    "model": "500",
+    "year": "2009",
+    "title": "Fiat 500 2009",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/301/2009/handbook-2009-fiat-500.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355209 - XII/2009.",
+    "fipeVariants": [
+      "5062/2009-1"
+    ]
+  },
+  {
+    "model": "500",
+    "year": "2012",
+    "title": "Fiat 500 2012",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/301/2012/handbook-2012-fiat-500.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355394 - II/2012.",
+    "fipeVariants": [
+      "5613/2012-5",
+      "5614/2012-5",
+      "5615/2012-1",
+      "5616/2012-1",
+      "5617/2012-1",
+      "6262/2012-1"
+    ]
+  },
+  {
+    "model": "500",
+    "year": "2013",
+    "title": "Fiat 500 2013",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/301/2013/handbook-2013-fiat-500.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355394 - IV/2013.",
+    "fipeVariants": [
+      "5613/2013-5",
+      "5614/2013-5",
+      "5615/2013-1",
+      "5616/2013-1",
+      "5617/2013-1",
+      "6262/2013-1"
+    ]
+  },
+  {
+    "model": "500",
+    "year": "2014",
+    "title": "Fiat 500 2014",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/301/2014/handbook-2014-fiat-500.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355559 - V/2014.",
+    "fipeVariants": [
+      "5613/2014-5",
+      "5614/2014-5",
+      "5615/2014-1",
+      "5616/2014-1",
+      "5617/2014-1",
+      "6262/2014-1",
+      "6885/2014-5",
+      "6886/2014-5"
+    ]
+  },
+  {
+    "model": "500",
+    "year": "2015",
+    "title": "Fiat 500 2015",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-500_2015_pt_BR_8528dd5308.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/500/info/manuais/2015",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355737 - V/2015.",
+    "fipeVariants": [
+      "5613/2015-5",
+      "5614/2015-5",
+      "5616/2015-1",
+      "6262/2015-1",
+      "6885/2015-5",
+      "6886/2015-5",
+      "7097/2015-1"
+    ]
+  },
+  {
+    "model": "500",
+    "year": "2017",
+    "title": "Fiat 500 2017",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/301/2017/handbook-2017-fiat-500.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355989 - X/2017.",
+    "fipeVariants": [
+      "5614/2017-5",
+      "6885/2017-5"
+    ]
+  },
+  {
+    "model": "500e",
+    "year": "2022",
+    "title": "Fiat 500e 2022",
+    "external_url": "https://startmycar-manuals.s3.amazonaws.com/published/Fiat-500e_2022_PT__ed86629c04.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/500/info/manuais/2022",
+    "notes": "Edição de fábrica digitalizada. Impresso 60351440 - EDIÇÃO 01 - JUN/2022.",
+    "fipeVariants": [
+      "9584/2022-4"
+    ]
+  },
+  {
+    "model": "Argo",
+    "year": "2018",
+    "title": "Fiat Argo 2018",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/358/2018/handbook-2018-argo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351070 - SET/2018.",
+    "fipeVariants": [
+      "7965/2018-5",
+      "7966/2018-5",
+      "7967/2018-5",
+      "7968/2018-5",
+      "7969/2018-5",
+      "7970/2018-5",
+      "7971/2018-5",
+      "11401/2018-5"
+    ]
+  },
+  {
+    "model": "Argo",
+    "year": "2019",
+    "title": "Fiat Argo 2019",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/358/2019/handbook-2019-argo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351070 - MAR/2019.",
+    "fipeVariants": [
+      "7965/2019-5",
+      "7966/2019-5",
+      "7967/2019-5",
+      "7968/2019-5",
+      "7969/2019-5",
+      "7970/2019-5",
+      "7971/2019-5",
+      "11401/2019-5"
+    ]
+  },
+  {
+    "model": "Argo",
+    "year": "2020",
+    "title": "Fiat Argo 2020",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/358/2020/handbook-2020-argo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351152 - EDIÇÃO 01 - JAN/2020.",
+    "fipeVariants": [
+      "7965/2020-5",
+      "7966/2020-5",
+      "7967/2020-5",
+      "7968/2020-5",
+      "7971/2020-5",
+      "8690/2020-5",
+      "8947/2020-5",
+      "11401/2020-5"
+    ]
+  },
+  {
+    "model": "Argo",
+    "year": "2021",
+    "title": "Fiat Argo 2021",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/358/2021/handbook-argo-2020_2021.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351294 - EDIÇÃO 01 - SET/2020.",
+    "fipeVariants": [
+      "7965/2021-5",
+      "7966/2021-5",
+      "7968/2021-5",
+      "8690/2021-5",
+      "8947/2021-5",
+      "11401/2021-5"
+    ]
+  },
+  {
+    "model": "Argo",
+    "year": "2022",
+    "title": "Fiat Argo 2022",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/358/2022/handbook-argo-2022_2022.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351492 - EDIÇÃO 01 - MAI/2022.",
+    "fipeVariants": [
+      "7965/2022-5",
+      "8690/2022-5",
+      "9543/2022-5",
+      "11401/2022-5"
+    ]
+  },
+  {
+    "model": "Argo",
+    "year": "2023",
+    "title": "Fiat Argo 2023",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/358/2023/handbook-argo-2023_2023.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "7965/2023-5",
+      "8690/2023-5",
+      "9543/2023-5",
+      "10392/2023-5",
+      "10393/2023-5",
+      "11401/2023-5"
+    ]
+  },
+  {
+    "model": "Argo",
+    "year": "2024",
+    "title": "Fiat Argo 2024",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/358/2024/handbook-argo-2023_2024.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "7965/2024-5",
+      "8690/2024-5",
+      "10392/2024-5",
+      "10393/2024-5",
+      "11401/2024-5"
+    ]
+  },
+  {
+    "model": "Argo",
+    "year": "2025",
+    "title": "Fiat Argo 2025",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/358/2025/handbook-argo-2024_2025.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "7965/2025-5",
+      "8690/2025-5",
+      "10392/2025-5",
+      "10393/2025-5",
+      "11213/2025-5",
+      "11256/2025-5",
+      "11401/2025-5"
+    ]
+  },
+  {
+    "model": "Argo",
+    "year": "2026",
+    "title": "Fiat Argo 2026",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/358/2026/MANUAIS-DE-BORDO-ARGO_2025-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "7965/2026-5",
+      "8690/2026-5",
+      "10392/2026-5",
+      "10393/2026-5",
+      "11401/2026-5"
+    ]
+  },
+  {
+    "model": "Brava",
+    "year": "2000",
+    "title": "Fiat Brava 2000",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Brava_2000_PT_BR_cbd471613d.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/brava/info/manuais/2000",
+    "notes": "Manual Fiat das versões brasileiras Brava SX e ELX 1.6 16V e HGT 1.8 16V, compartilhado com Marea.",
+    "fipeVariants": [
+      "440/2000-1",
+      "441/2000-1",
+      "442/2000-1"
+    ]
+  },
+  {
+    "model": "Brava",
+    "year": "2001",
+    "title": "Fiat Brava 2001",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Brava_2000_PT_BR_cbd471613d.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/brava/info/manuais/2000",
+    "notes": "Manual Fiat das versões brasileiras Brava SX e ELX 1.6 16V e HGT 1.8 16V, compartilhado com Marea.",
+    "fipeVariants": [
+      "440/2001-1",
+      "441/2001-1",
+      "442/2001-1"
+    ]
+  },
+  {
+    "model": "Brava",
+    "year": "2002",
+    "title": "Fiat Brava 2002",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Brava_2000_PT_BR_cbd471613d.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/brava/info/manuais/2000",
+    "notes": "Manual Fiat das versões brasileiras Brava SX e ELX 1.6 16V e HGT 1.8 16V, compartilhado com Marea.",
+    "fipeVariants": [
+      "440/2002-1",
+      "441/2002-1",
+      "442/2002-1"
+    ]
+  },
+  {
+    "model": "Brava",
+    "year": "2003",
+    "title": "Fiat Brava 2003",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Brava_2000_PT_BR_cbd471613d.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/brava/info/manuais/2000",
+    "notes": "Manual Fiat das versões brasileiras Brava SX e ELX 1.6 16V e HGT 1.8 16V, compartilhado com Marea.",
+    "fipeVariants": [
+      "440/2003-1",
+      "441/2003-1",
+      "442/2003-1"
+    ]
+  },
+  {
+    "model": "Bravo",
+    "year": "2011",
+    "title": "Fiat Bravo 2011",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/198/2011/handbook-2011-bravo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355161 - XII/2011.",
+    "fipeVariants": [
+      "5446/2011-5",
+      "5447/2011-5",
+      "5448/2011-5",
+      "5449/2011-5",
+      "5591/2011-1"
+    ]
+  },
+  {
+    "model": "Bravo",
+    "year": "2012",
+    "title": "Fiat Bravo 2012",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/198/2012/handbook-2012-bravo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355161 - III/2012.",
+    "fipeVariants": [
+      "5446/2012-5",
+      "5447/2012-5",
+      "5448/2012-5",
+      "5449/2012-5",
+      "5591/2012-1"
+    ]
+  },
+  {
+    "model": "Bravo",
+    "year": "2013",
+    "title": "Fiat Bravo 2013",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/198/2013/handbook-2013-bravo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355564 - V/2013.",
+    "fipeVariants": [
+      "5447/2013-5",
+      "5448/2013-5",
+      "5449/2013-5",
+      "5591/2013-1",
+      "6051/2013-5",
+      "6052/2013-5"
+    ]
+  },
+  {
+    "model": "Bravo",
+    "year": "2014",
+    "title": "Fiat Bravo 2014",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/198/2014/handbook-2014-bravo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355674 - IV/2014.",
+    "fipeVariants": [
+      "5447/2014-5",
+      "5448/2014-5",
+      "5449/2014-5",
+      "5591/2014-1",
+      "6051/2014-5",
+      "6052/2014-5",
+      "6515/2014-5",
+      "6516/2014-5"
+    ]
+  },
+  {
+    "model": "Bravo",
+    "year": "2015",
+    "title": "Fiat Bravo 2015",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/198/2015/handbook-2015-bravo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355732 - VIII/2015.",
+    "fipeVariants": [
+      "5448/2015-5",
+      "5449/2015-5",
+      "5591/2015-1",
+      "6051/2015-5",
+      "6052/2015-5",
+      "7132/2015-5",
+      "7133/2015-5"
+    ]
+  },
+  {
+    "model": "Bravo",
+    "year": "2016",
+    "title": "Fiat Bravo 2016",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/198/2016/handbook-2016-bravo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355732 - V/2016.",
+    "fipeVariants": [
+      "5448/2016-5",
+      "5449/2016-5",
+      "5591/2016-1",
+      "6051/2016-5",
+      "6052/2016-5",
+      "7132/2016-5",
+      "7133/2016-5"
+    ]
+  },
+  {
+    "model": "Coupé",
+    "year": "1995",
+    "title": "Fiat Coupé 1995",
+    "external_url": "https://www.manualdocarro.com.br/wp-content/uploads/2023/02/fiat-coupe_1996_8498f74ba6b6a6873518.pdf",
+    "source": "https://www.manualdocarro.com.br/1996-fiat-coupe-manual-do-proprietario/",
+    "notes": "Edição em português para o Coupé. Abrange a versão 2.0 16V aspirada comercializada oficialmente no Brasil de 1995 a 1996.",
+    "fipeVariants": [
+      "445/1995-1"
+    ]
+  },
+  {
+    "model": "Coupé",
+    "year": "1996",
+    "title": "Fiat Coupé 1996",
+    "external_url": "https://www.manualdocarro.com.br/wp-content/uploads/2023/02/fiat-coupe_1996_8498f74ba6b6a6873518.pdf",
+    "source": "https://www.manualdocarro.com.br/1996-fiat-coupe-manual-do-proprietario/",
+    "notes": "Edição em português para o Coupé. Abrange a versão 2.0 16V aspirada comercializada oficialmente no Brasil de 1995 a 1996.",
+    "fipeVariants": [
+      "445/1996-1"
+    ]
+  },
+  {
+    "model": "Cronos",
+    "year": "2018",
+    "title": "Fiat Cronos 2018",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/359/2018/handbook-2018-cronos.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351117 - AGO/2018.",
+    "fipeVariants": [
+      "8200/2018-5",
+      "8201/2018-5",
+      "8202/2018-5",
+      "8203/2018-5"
+    ]
+  },
+  {
+    "model": "Cronos",
+    "year": "2019",
+    "title": "Fiat Cronos 2019",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/359/2019/handbook-2019-cronos.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351117 - NOV/2018.",
+    "fipeVariants": [
+      "8199/2019-5",
+      "8200/2019-5",
+      "8201/2019-5",
+      "8202/2019-5",
+      "8203/2019-5",
+      "8518/2019-5"
+    ]
+  },
+  {
+    "model": "Cronos",
+    "year": "2020",
+    "title": "Fiat Cronos 2020",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/359/2020/handbook-2020-cronos.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351146 - EDIÇÃO 01 - JAN/2020.",
+    "fipeVariants": [
+      "8199/2020-5",
+      "8200/2020-5",
+      "8201/2020-5",
+      "8202/2020-5",
+      "8518/2020-5",
+      "8778/2020-5",
+      "9590/2020-5"
+    ]
+  },
+  {
+    "model": "Cronos",
+    "year": "2021",
+    "title": "Fiat Cronos 2021",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/359/2021/handbook-cronos-2020_2021.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351286 - EDIÇÃO 01 - NOV/2020.",
+    "fipeVariants": [
+      "8199/2021-5",
+      "8200/2021-5",
+      "8202/2021-5",
+      "8518/2021-5",
+      "8778/2021-5",
+      "9590/2021-5"
+    ]
+  },
+  {
+    "model": "Cronos",
+    "year": "2022",
+    "title": "Fiat Cronos 2022",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/359/2022/handbook-cronos-2022_2022.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351495 - EDIÇÃO 01 - MAI/2022.",
+    "fipeVariants": [
+      "8199/2022-5",
+      "8200/2022-5"
+    ]
+  },
+  {
+    "model": "Cronos",
+    "year": "2023",
+    "title": "Fiat Cronos 2023",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/359/2023/handbook-cronos-2023_2023.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "8200/2023-5",
+      "9988/2023-5",
+      "9989/2023-5",
+      "9990/2023-5",
+      "10394/2023-5"
+    ]
+  },
+  {
+    "model": "Cronos",
+    "year": "2024",
+    "title": "Fiat Cronos 2024",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/359/2024/handbook-cronos-2024_2024.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "8200/2024-5",
+      "9989/2024-5",
+      "9990/2024-5",
+      "10394/2024-5"
+    ]
+  },
+  {
+    "model": "Cronos",
+    "year": "2025",
+    "title": "Fiat Cronos 2025",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/359/2025/handbook-cronos-2025_2025.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "8200/2025-5",
+      "9989/2025-5",
+      "9990/2025-5",
+      "10394/2025-5"
+    ]
+  },
+  {
+    "model": "Cronos",
+    "year": "2026",
+    "title": "Fiat Cronos 2026",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/359/2026/MANUAIS-DE-BORDO-CRONOS_2025-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "8200/2026-5",
+      "9989/2026-5",
+      "9990/2026-5",
+      "10394/2026-5"
+    ]
+  },
+  {
+    "model": "Cronos",
+    "year": "2027",
+    "title": "Fiat Cronos 2027",
+    "external_url": "https://document-uploader-service.k8s.fcalatam.com.br/v1/file/download/MANUAL_SERVICE/6aa7fb2b7309f8108b1febad?file_name=MANUAIS-DE-BORDO-CRONOS_2026-2027-ED02-12-08-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "8200/2027-5",
+      "9989/2027-5",
+      "9990/2027-5",
+      "10394/2027-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2004",
+    "title": "Fiat Doblò 2004",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Doblo_2004_PT__b0fd32bcee.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/doblo/info/manuais/2004",
+    "notes": "Capítulo E: Doblò Cargo e EX 1.3 Fire 16V, Cargo, ELX e Adventure 1.8 8V a gasolina.",
+    "fipeVariants": [
+      "446/2004-1",
+      "447/2004-1",
+      "449/2004-1",
+      "451/2004-1",
+      "452/2004-1"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2007",
+    "title": "Fiat Doblò 2007",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2007/handbook-2007-doblo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60350988 - XII/2006.",
+    "fipeVariants": [
+      "3933/2007-1",
+      "3934/2007-1",
+      "3935/2007-5",
+      "4097/2007-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2008",
+    "title": "Fiat Doblò 2008",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2008/handbook-2008-doblo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355117 - III/2009.",
+    "fipeVariants": [
+      "3933/2008-1",
+      "3934/2008-1",
+      "3935/2008-5",
+      "4097/2008-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2009",
+    "title": "Fiat Doblò 2009",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2009/handbook-2009-doblo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355249 - XII/2009.",
+    "fipeVariants": [
+      "3933/2009-1",
+      "3934/2009-1",
+      "3935/2009-5",
+      "4097/2009-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2010",
+    "title": "Fiat Doblò 2010",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2010/handbook-2010-doblo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355249 - IV/2010.",
+    "fipeVariants": [
+      "3933/2010-1",
+      "3934/2010-1",
+      "3935/2010-5",
+      "4097/2010-5",
+      "5104/2010-5",
+      "5105/2010-5",
+      "5106/2010-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2011",
+    "title": "Fiat Doblò 2011",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2011/handbook-2011-doblo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355401 - VIII/2011.",
+    "fipeVariants": [
+      "3933/2011-1",
+      "3934/2011-1",
+      "5104/2011-5",
+      "5105/2011-5",
+      "5106/2011-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2012",
+    "title": "Fiat Doblò 2012",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2012/handbook-2012-doblo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355401 - V/2012.",
+    "fipeVariants": [
+      "3933/2012-1",
+      "3934/2012-1",
+      "5105/2012-5",
+      "5535/2012-5",
+      "5536/2012-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2013",
+    "title": "Fiat Doblò 2013",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2013/handbook-2013-doblo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355401 - VI/2013.",
+    "fipeVariants": [
+      "3933/2013-1",
+      "3934/2013-1",
+      "5105/2013-5",
+      "5535/2013-5",
+      "5536/2013-5",
+      "6053/2013-5",
+      "6054/2013-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2014",
+    "title": "Fiat Doblò 2014",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2014/handbook-2014-doblo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355705 - X/2014.",
+    "fipeVariants": [
+      "3933/2014-1",
+      "3934/2014-1",
+      "5105/2014-5",
+      "5535/2014-5",
+      "5536/2014-5",
+      "6053/2014-5",
+      "6054/2014-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2015",
+    "title": "Fiat Doblò 2015",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2015/handbook-2015-doblo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355705 - VIII/2015.",
+    "fipeVariants": [
+      "3933/2015-1",
+      "3934/2015-1",
+      "5105/2015-5",
+      "5535/2015-5",
+      "5536/2015-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2016",
+    "title": "Fiat Doblò 2016",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2016/handbook-2016-doblo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355705 - VI/2016.",
+    "fipeVariants": [
+      "3933/2016-1",
+      "3934/2016-1",
+      "5105/2016-5",
+      "5535/2016-5",
+      "5536/2016-5",
+      "7503/2016-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2017",
+    "title": "Fiat Doblò 2017",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2017/handbook-2017-doblo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355857 - II/2017.",
+    "fipeVariants": [
+      "3933/2017-1",
+      "5536/2017-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2018",
+    "title": "Fiat Doblò 2018",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2018/handbook-2018-doblo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351101 - AGO/2018.",
+    "fipeVariants": [
+      "3933/2018-1",
+      "5536/2018-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2019",
+    "title": "Fiat Doblò 2019",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2019/handbook-2019-doblo.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351101 - MAI/2019.",
+    "fipeVariants": [
+      "3933/2019-1",
+      "5536/2019-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2020",
+    "title": "Fiat Doblò 2020",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2020/handbook-doblo-2020_2020.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351101 - EDIÇÃO 01 - JAN/2020.",
+    "fipeVariants": [
+      "3933/2020-1",
+      "5536/2020-5"
+    ]
+  },
+  {
+    "model": "Doblò",
+    "year": "2021",
+    "title": "Fiat Doblò 2021",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/119/2021/handbook-doblo-2021_2021.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351272 - EDIÇÃO 03 - DEZ/2020.",
+    "fipeVariants": [
+      "3934/2021-1",
+      "5536/2021-5"
+    ]
+  },
+  {
+    "model": "Ducato",
+    "year": "2015",
+    "title": "Fiat Ducato 2015",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Ducato_2015_pt_BR_4eb82aee6b.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/ducato/info/manuais/2015",
+    "notes": "Impresso Fiat 60355787, julho de 2015. Ducato 2.3 MultiJet Economy 127 cv, para a linha brasileira até 2016.",
+    "fipeVariants": [
+      "5022/2015-3",
+      "5023/2015-3",
+      "5025/2015-3",
+      "5026/2015-3",
+      "5027/2015-3",
+      "5028/2015-3",
+      "5029/2015-3"
+    ]
+  },
+  {
+    "model": "Ducato",
+    "year": "2016",
+    "title": "Fiat Ducato 2016",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Ducato_2015_pt_BR_4eb82aee6b.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/ducato/info/manuais/2015",
+    "notes": "Impresso Fiat 60355787, julho de 2015. Ducato 2.3 MultiJet Economy 127 cv, para a linha brasileira até 2016.",
+    "fipeVariants": [
+      "5022/2016-3",
+      "5023/2016-3",
+      "5025/2016-3",
+      "5026/2016-3",
+      "5027/2016-3",
+      "5028/2016-3",
+      "5029/2016-3"
+    ]
+  },
+  {
+    "model": "Ducato",
+    "year": "2017",
+    "title": "Fiat Ducato 2017",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/560/2017/handbook-2017-ducato.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355947 - IX/2017.",
+    "fipeVariants": [
+      "5022/2017-3",
+      "5023/2017-3",
+      "5025/2017-3",
+      "5026/2017-3",
+      "5027/2017-3",
+      "5028/2017-3",
+      "5029/2017-3"
+    ]
+  },
+  {
+    "model": "Ducato",
+    "year": "2018",
+    "title": "Fiat Ducato 2018",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/560/2018/handbook-2018-ducato.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355947 - SET/2018.",
+    "fipeVariants": [
+      "8204/2018-3",
+      "8205/2018-3",
+      "8206/2018-3",
+      "8207/2018-3",
+      "8208/2018-3",
+      "8209/2018-3",
+      "8395/2018-3",
+      "8396/2018-3",
+      "8397/2018-3",
+      "8398/2018-3"
+    ]
+  },
+  {
+    "model": "Ducato",
+    "year": "2019",
+    "title": "Fiat Ducato 2019",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/560/2019/handbook-2019-ducato.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355947 - NOV/2019.",
+    "fipeVariants": [
+      "8204/2019-3",
+      "8205/2019-3",
+      "8206/2019-3",
+      "8207/2019-3",
+      "8208/2019-3",
+      "8209/2019-3",
+      "8395/2019-3",
+      "8396/2019-3",
+      "8397/2019-3"
+    ]
+  },
+  {
+    "model": "Ducato",
+    "year": "2020",
+    "title": "Fiat Ducato 2020",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/560/2020/handbook-2020-ducato.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355947 - EDIÇÃO 01 - JAN/2020.",
+    "fipeVariants": [
+      "8204/2020-3",
+      "8205/2020-3",
+      "8206/2020-3",
+      "8207/2020-3",
+      "8208/2020-3",
+      "8209/2020-3",
+      "8395/2020-3",
+      "8397/2020-3"
+    ]
+  },
+  {
+    "model": "Ducato",
+    "year": "2021",
+    "title": "Fiat Ducato 2021",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/560/2021/handbook-ducato-2020_2021.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355947 - EDIÇÃO 01 - SET/2020.",
+    "fipeVariants": [
+      "8204/2021-3",
+      "8205/2021-3",
+      "8206/2021-3",
+      "8207/2021-3",
+      "8208/2021-3",
+      "8209/2021-3",
+      "8395/2021-3",
+      "8397/2021-3"
+    ]
+  },
+  {
+    "model": "Ducato",
+    "year": "2023",
+    "title": "Fiat Ducato 2023",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/560/2023/handbook-ducato-2023_2023.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10659/2023-3",
+      "10660/2023-3",
+      "10661/2023-3",
+      "10662/2023-3",
+      "10663/2023-3"
+    ]
+  },
+  {
+    "model": "Ducato",
+    "year": "2024",
+    "title": "Fiat Ducato 2024",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/560/2024/handbook-ducato-2024_2024.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10659/2024-3",
+      "10660/2024-3",
+      "10661/2024-3",
+      "10662/2024-3",
+      "10663/2024-3"
+    ]
+  },
+  {
+    "model": "Ducato",
+    "year": "2026",
+    "title": "Fiat Ducato 2026",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/560/2026/MANUAIS-DE-BORDO-DUCATO_2025-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10659/2026-3",
+      "10660/2026-3",
+      "10661/2026-3",
+      "11609/2026-3",
+      "11610/2026-3"
+    ]
+  },
+  {
+    "model": "e-Scudo",
+    "year": "2023",
+    "title": "Fiat e-Scudo 2023",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/507/2023/handbook-e-scudo-2022_2023.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10369/2023-4"
+    ]
+  },
+  {
+    "model": "Fastback",
+    "year": "2023",
+    "title": "Fiat Fastback 2023",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/376/2023/handbook-fastback-2022_2023.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10101/2023-5",
+      "10102/2023-5",
+      "10103/2023-5"
+    ]
+  },
+  {
+    "model": "Fastback",
+    "year": "2024",
+    "title": "Fiat Fastback 2024",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/376/2024/handbook-fastback-2024_2024.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10101/2024-5",
+      "10102/2024-5",
+      "10103/2024-5",
+      "10754/2024-5"
+    ]
+  },
+  {
+    "model": "Fastback",
+    "year": "2025",
+    "title": "Fiat Fastback 2025",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/376/2025/handbook-fastback-2024_2025.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10101/2025-5",
+      "10102/2025-5",
+      "10103/2025-5",
+      "10754/2025-5",
+      "11262/2025-6",
+      "11263/2025-6",
+      "11264/2025-5"
+    ]
+  },
+  {
+    "model": "Fastback",
+    "year": "2027",
+    "title": "Fiat Fastback 2027",
+    "external_url": "https://document-uploader-service.k8s.fcalatam.com.br/v1/file/download/MANUAL_SERVICE/6ab3bd5bc971d551a27093f7?file_name=MANUAIS-DE-BORDO-FASTBACK_2026-2027-ED02-22-09-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10754/2027-5",
+      "11262/2027-6",
+      "11263/2027-6",
+      "12203/2027-5"
+    ]
+  },
+  {
+    "model": "Fastback Abarth",
+    "year": "2024",
+    "title": "Fiat Fastback Abarth 2024",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/376/2024/handbook-fast-abarth-2024_2024.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10881/2024-5"
+    ]
+  },
+  {
+    "model": "Fastback Abarth",
+    "year": "2026",
+    "title": "Fiat Fastback Abarth 2026",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/376/2026/MANUAIS-DE-BORDO-FASTBACK-ABARTH_2025-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10881/2026-5"
+    ]
+  },
+  {
+    "model": "Fastback Abarth",
+    "year": "2027",
+    "title": "Fiat Fastback Abarth 2027",
+    "external_url": "https://document-uploader-service.k8s.fcalatam.com.br/v1/file/download/MANUAL_SERVICE/6ab3bd86c971d551a27093f9?file_name=MANUAIS-DE-BORDO-FASTBACK-ABARTH_2026-2027-ED02-21-09-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10881/2027-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2004",
+    "title": "Fiat Fiorino 2004",
+    "external_url": "https://drive.usercontent.google.com/download?id=1eMk8soJs4CuCM85y2ef7DOElwAVs8xho&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2004.html",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "473/2004-1",
+      "474/2004-2"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2005",
+    "title": "Fiat Fiorino 2005",
+    "external_url": "https://drive.usercontent.google.com/download?id=13BsAa9p87-niWtnbuazySnMPTGyqzGkj&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2005.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60350886 - II/2005.",
+    "fipeVariants": [
+      "473/2005-1"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2007",
+    "title": "Fiat Fiorino 2007",
+    "external_url": "https://drive.usercontent.google.com/download?id=1ycepr-LA0StJ1MLzEA1VXZG2s1rXXvB_&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2007.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355013 - X/2006.",
+    "fipeVariants": [
+      "473/2007-1"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2009",
+    "title": "Fiat Fiorino 2009",
+    "external_url": "https://drive.usercontent.google.com/download?id=1_A02pzFGORR_O5M_8JZueDaMyJENL8QQ&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2009.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355277 - IX/2009.",
+    "fipeVariants": [
+      "473/2009-1"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2010",
+    "title": "Fiat Fiorino 2010",
+    "external_url": "https://drive.usercontent.google.com/download?id=1qGuqoh-q3gOp0eDDdu6CCWIeKsjZyeBw&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2010.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355277 - VII/2010.",
+    "fipeVariants": [
+      "473/2010-1"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2012",
+    "title": "Fiat Fiorino 2012",
+    "external_url": "https://drive.usercontent.google.com/download?id=1YYDx2U6aBA_eIfOcIdyedDcc_6QLTm34&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2012.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355277 - II/2012.",
+    "fipeVariants": [
+      "473/2012-1"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2013",
+    "title": "Fiat Fiorino 2013",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Fiorino_2013_PT_BR_abc0a2f64a.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/fiorino/info/manuais/2013",
+    "notes": "Impresso Fiat 60355277 de julho de 2013. Capítulo E, Fiorino 1.3 Fire Flex.",
+    "fipeVariants": [
+      "473/2013-1"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2014",
+    "title": "Fiat Fiorino 2014",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/255/2014/handbook-2014-fiorino.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355597 - X/2014.",
+    "fipeVariants": [
+      "6662/2014-5",
+      "6663/2014-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2015",
+    "title": "Fiat Fiorino 2015",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/255/2015/handbook-2015-fiorino.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355597 - IX/2015.",
+    "fipeVariants": [
+      "6662/2015-5",
+      "6663/2015-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2016",
+    "title": "Fiat Fiorino 2016",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/255/2016/handbook-2016-fiorino.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355597 - V/2016.",
+    "fipeVariants": [
+      "6662/2016-5",
+      "6663/2016-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2017",
+    "title": "Fiat Fiorino 2017",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/255/2017/handbook-2017-fiorino.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355597 - VIII/2017.",
+    "fipeVariants": [
+      "6663/2017-5",
+      "7751/2017-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2018",
+    "title": "Fiat Fiorino 2018",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/255/2018/handbook-2018-fiorino.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351092 - AGO/2018.",
+    "fipeVariants": [
+      "6663/2018-5",
+      "7751/2018-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2019",
+    "title": "Fiat Fiorino 2019",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/255/2019/handbook-2019-fiorino.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351092 - MAI/2019.",
+    "fipeVariants": [
+      "6663/2019-5",
+      "7751/2019-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2020",
+    "title": "Fiat Fiorino 2020",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/255/2020/handbook-fiorino-2020_2020.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351092 - EDIÇÃO 01 - JAN/2020.",
+    "fipeVariants": [
+      "6663/2020-5",
+      "7751/2020-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2021",
+    "title": "Fiat Fiorino 2021",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/255/2021/handbook-fiorino-2021_2021.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351092 - EDIÇÃO 03 - DEZ/2020.",
+    "fipeVariants": [
+      "6663/2021-5",
+      "7751/2021-5",
+      "9194/2021-5",
+      "9208/2021-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2022",
+    "title": "Fiat Fiorino 2022",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/255/2022/handbook-fiorino-2022_2022.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351452 - EDIÇÃO 01 - MAR/2022.",
+    "fipeVariants": [
+      "9194/2022-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2023",
+    "title": "Fiat Fiorino 2023",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/255/2023/handbook-fiorino-2023_2023.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9194/2023-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2024",
+    "title": "Fiat Fiorino 2024",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/255/2024/handbook-fiorino-2023_2024.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9194/2024-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2025",
+    "title": "Fiat Fiorino 2025",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/255/2026/MANUAIS-DE-BORDO_FIORINO_2025-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9194/2025-5",
+      "11376/2025-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2026",
+    "title": "Fiat Fiorino 2026",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/255/2026/MANUAIS-DE-BORDO_FIORINO_2025-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "11376/2026-5"
+    ]
+  },
+  {
+    "model": "Fiorino",
+    "year": "2027",
+    "title": "Fiat Fiorino 2027",
+    "external_url": "https://document-uploader-service.k8s.fcalatam.com.br/v1/file/download/MANUAL_SERVICE/6aa7face7309f8108b1feba9?file_name=MANUAIS-DE-BORDO_FIORINO_2026-2027-ED02-02-09-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "11376/2027-5"
+    ]
+  },
+  {
+    "model": "Freemont",
+    "year": "2012",
+    "title": "Fiat Freemont 2012",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/345/2012/handbook-2012-freemont.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355393 - IV/2012.",
+    "fipeVariants": [
+      "5618/2012-1"
+    ]
+  },
+  {
+    "model": "Freemont",
+    "year": "2013",
+    "title": "Fiat Freemont 2013",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/345/2013/handbook-2013-freemont.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355522 - I/2013.",
+    "fipeVariants": [
+      "5618/2013-1"
+    ]
+  },
+  {
+    "model": "Freemont",
+    "year": "2014",
+    "title": "Fiat Freemont 2014",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/345/2014/handbook-2014-freemont.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355589 - X/2014.",
+    "fipeVariants": [
+      "5618/2014-1"
+    ]
+  },
+  {
+    "model": "Freemont",
+    "year": "2015",
+    "title": "Fiat Freemont 2015",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Freemont_2015_pt_BR_ba81206d1c.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/freemont/info/manuais/2015",
+    "notes": "Impresso Fiat 60355589 de abril de 2015. Motor 2.4 a gasolina.",
+    "fipeVariants": [
+      "5618/2015-1"
+    ]
+  },
+  {
+    "model": "Freemont",
+    "year": "2016",
+    "title": "Fiat Freemont 2016",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/345/2016/handbook-2016-freemont.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355589 - V/2015.",
+    "fipeVariants": [
+      "5618/2016-1"
+    ]
+  },
+  {
+    "model": "Grand Siena",
+    "year": "2013",
+    "title": "Fiat Grand Siena 2013",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/197/2013/handbook-2013-grand-siena.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355443 - V/2013.",
+    "fipeVariants": [
+      "5925/2013-5",
+      "5926/2013-5",
+      "5927/2013-5",
+      "5928/2013-7",
+      "6488/2013-5"
+    ]
+  },
+  {
+    "model": "Grand Siena",
+    "year": "2014",
+    "title": "Fiat Grand Siena 2014",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/197/2014/handbook-2014-grand-siena.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355681 - X/2014.",
+    "fipeVariants": [
+      "5925/2014-5",
+      "5926/2014-5",
+      "5927/2014-5",
+      "5928/2014-7",
+      "6488/2014-5",
+      "6489/2014-5"
+    ]
+  },
+  {
+    "model": "Grand Siena",
+    "year": "2015",
+    "title": "Fiat Grand Siena 2015",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/197/2015/handbook-2015-grand-siena.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355681 - IX/2015.",
+    "fipeVariants": [
+      "5925/2015-5",
+      "5926/2015-5",
+      "5927/2015-5",
+      "5928/2015-7",
+      "6488/2015-5",
+      "6489/2015-5",
+      "6955/2015-5",
+      "6956/2015-5"
+    ]
+  },
+  {
+    "model": "Grand Siena",
+    "year": "2016",
+    "title": "Fiat Grand Siena 2016",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/197/2016/handbook-2016-grand-siena.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355825 - VI/2016.",
+    "fipeVariants": [
+      "5925/2016-5",
+      "5926/2016-5",
+      "5927/2016-5",
+      "5928/2016-7",
+      "6488/2016-5",
+      "6489/2016-5"
+    ]
+  },
+  {
+    "model": "Grand Siena",
+    "year": "2017",
+    "title": "Fiat Grand Siena 2017",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/197/2017/handbook-2017-grand-siena.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355937 - V/2017.",
+    "fipeVariants": [
+      "5925/2017-5",
+      "5926/2017-5",
+      "5927/2017-5",
+      "6488/2017-5",
+      "6489/2017-5",
+      "7824/2017-5"
+    ]
+  },
+  {
+    "model": "Grand Siena",
+    "year": "2018",
+    "title": "Fiat Grand Siena 2018",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/197/2018/handbook-2018-grand-siena.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351074 - AGO/2018.",
+    "fipeVariants": [
+      "5925/2018-5",
+      "7824/2018-5"
+    ]
+  },
+  {
+    "model": "Grand Siena",
+    "year": "2019",
+    "title": "Fiat Grand Siena 2019",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/197/2019/handbook-2019-grand-siena.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351134 - SET/2019.",
+    "fipeVariants": [
+      "5925/2019-5",
+      "7824/2019-5"
+    ]
+  },
+  {
+    "model": "Grand Siena",
+    "year": "2020",
+    "title": "Fiat Grand Siena 2020",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/197/2020/handbook-2020-grand-siena.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351134 - EDIÇÃO 01 - JAN/2020.",
+    "fipeVariants": [
+      "5925/2020-5",
+      "7824/2020-5"
+    ]
+  },
+  {
+    "model": "Idea",
+    "year": "2006",
+    "title": "Fiat Idea 2006",
+    "external_url": "https://drive.usercontent.google.com/download?id=15KugLEHGKInP4iKPbZBzs8WptDTtFe9l&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/12/manual-fiat-idea-2006.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60350959 - I/2006.",
+    "fipeVariants": [
+      "480/2006-5",
+      "481/2006-5"
+    ]
+  },
+  {
+    "model": "Idea",
+    "year": "2007",
+    "title": "Fiat Idea 2007",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/135/2007/handbook-2007-idea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60350987 - X/2006.",
+    "fipeVariants": [
+      "480/2007-5",
+      "481/2007-5",
+      "4160/2007-1"
+    ]
+  },
+  {
+    "model": "Idea",
+    "year": "2008",
+    "title": "Fiat Idea 2008",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/135/2008/handbook-2008-idea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355116 - VIII/2009.",
+    "fipeVariants": [
+      "480/2008-5",
+      "481/2008-5",
+      "4160/2008-1"
+    ]
+  },
+  {
+    "model": "Idea",
+    "year": "2009",
+    "title": "Fiat Idea 2009",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/135/2009/handbook-2009-idea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355263 - X/2009.",
+    "fipeVariants": [
+      "480/2009-5",
+      "481/2009-5",
+      "4160/2009-1"
+    ]
+  },
+  {
+    "model": "Idea",
+    "year": "2010",
+    "title": "Fiat Idea 2010",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/135/2010/handbook-2010-idea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355287 - VIII/2010.",
+    "fipeVariants": [
+      "480/2010-5",
+      "4160/2010-1",
+      "4966/2010-5"
+    ]
+  },
+  {
+    "model": "Idea",
+    "year": "2010",
+    "title": "Fiat Idea 2010",
+    "external_url": "https://drive.usercontent.google.com/download?id=1E5bgqeHRySNC_wJrjNfE2VyTeikfc6oj&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/12/manual-fiat-idea-2009.html",
+    "notes": "Edição Fiat de outubro de 2009 para Idea 1.8 Flex 8V da linha anterior à E.torQ.",
+    "fipeVariants": [
+      "481/2010-5",
+      "4962/2010-5"
+    ]
+  },
+  {
+    "model": "Idea",
+    "year": "2011",
+    "title": "Fiat Idea 2011",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/135/2011/handbook-2011-idea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355287 - X/2011.",
+    "fipeVariants": [
+      "4160/2011-1",
+      "4966/2011-5",
+      "5340/2011-5",
+      "5341/2011-5",
+      "5342/2011-5",
+      "5343/2011-5",
+      "5344/2011-5"
+    ]
+  },
+  {
+    "model": "Idea",
+    "year": "2012",
+    "title": "Fiat Idea 2012",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/135/2012/handbook-2012-idea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355287 - III/2012.",
+    "fipeVariants": [
+      "4160/2012-1",
+      "4966/2012-5",
+      "5340/2012-5",
+      "5341/2012-5",
+      "5342/2012-5",
+      "5343/2012-5",
+      "5344/2012-5"
+    ]
+  },
+  {
+    "model": "Idea",
+    "year": "2013",
+    "title": "Fiat Idea 2013",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/135/2013/handbook-2013-idea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355493 - IV/2013.",
+    "fipeVariants": [
+      "4160/2013-1",
+      "4966/2013-5",
+      "5340/2013-5",
+      "5341/2013-5",
+      "5342/2013-5"
+    ]
+  },
+  {
+    "model": "Idea",
+    "year": "2014",
+    "title": "Fiat Idea 2014",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/135/2014/handbook-2014-idea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355591 - X/2014.",
+    "fipeVariants": [
+      "4160/2014-1",
+      "4966/2014-5",
+      "5340/2014-5",
+      "5341/2014-5",
+      "5342/2014-5",
+      "6711/2014-5",
+      "6712/2014-5"
+    ]
+  },
+  {
+    "model": "Idea",
+    "year": "2015",
+    "title": "Fiat Idea 2015",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/135/2015/handbook-2015-idea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355591 - VIII/2015.",
+    "fipeVariants": [
+      "4160/2015-1",
+      "4966/2015-5",
+      "5340/2015-5",
+      "5341/2015-5",
+      "5342/2015-5",
+      "6711/2015-5",
+      "6712/2015-5"
+    ]
+  },
+  {
+    "model": "Idea",
+    "year": "2016",
+    "title": "Fiat Idea 2016",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/135/2016/handbook-2016-idea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355823 - V/2016.",
+    "fipeVariants": [
+      "4160/2016-1",
+      "4966/2016-5",
+      "5340/2016-5",
+      "5341/2016-5",
+      "5342/2016-5",
+      "6711/2016-5",
+      "6712/2016-5",
+      "7504/2016-5",
+      "7505/2016-5"
+    ]
+  },
+  {
+    "model": "Linea",
+    "year": "2009",
+    "title": "Fiat Linea 2009",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/110/2009/handbook-2009-linea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355218 - XI/2009.",
+    "fipeVariants": [
+      "4748/2009-5",
+      "4749/2009-5",
+      "4750/2009-5",
+      "4751/2009-1"
+    ]
+  },
+  {
+    "model": "Linea",
+    "year": "2010",
+    "title": "Fiat Linea 2010",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/110/2010/handbook-2010-linea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355346 - VIII/2010.",
+    "fipeVariants": [
+      "4748/2010-5",
+      "4749/2010-5",
+      "4750/2010-5",
+      "4751/2010-1",
+      "4920/2010-5",
+      "4921/2010-5"
+    ]
+  },
+  {
+    "model": "Linea",
+    "year": "2011",
+    "title": "Fiat Linea 2011",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/110/2011/handbook-2011-linea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355408 - X/2011.",
+    "fipeVariants": [
+      "4748/2011-5",
+      "4749/2011-5",
+      "4750/2011-5",
+      "4751/2011-1",
+      "4920/2011-5",
+      "4921/2011-5"
+    ]
+  },
+  {
+    "model": "Linea",
+    "year": "2012",
+    "title": "Fiat Linea 2012",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/110/2012/handbook-2012-linea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355408 - V/2012.",
+    "fipeVariants": [
+      "4749/2012-5",
+      "4751/2012-1",
+      "5577/2012-5",
+      "5578/2012-5"
+    ]
+  },
+  {
+    "model": "Linea",
+    "year": "2013",
+    "title": "Fiat Linea 2013",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/110/2013/handbook-2013-linea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355481 - III/2013.",
+    "fipeVariants": [
+      "4749/2013-5",
+      "5577/2013-5",
+      "5578/2013-5",
+      "6581/2013-5",
+      "6582/2013-5"
+    ]
+  },
+  {
+    "model": "Linea",
+    "year": "2014",
+    "title": "Fiat Linea 2014",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/110/2014/handbook-2014-linea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355648 - VII/2014.",
+    "fipeVariants": [
+      "4749/2014-5",
+      "5577/2014-5",
+      "5578/2014-5",
+      "6581/2014-5",
+      "6582/2014-5"
+    ]
+  },
+  {
+    "model": "Linea",
+    "year": "2015",
+    "title": "Fiat Linea 2015",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/110/2015/handbook-2015-linea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355762 - VIII/2015.",
+    "fipeVariants": [
+      "4749/2015-5",
+      "5577/2015-5",
+      "5578/2015-5"
+    ]
+  },
+  {
+    "model": "Linea",
+    "year": "2016",
+    "title": "Fiat Linea 2016",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/110/2016/handbook-2016-linea.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355762 - V/2016.",
+    "fipeVariants": [
+      "4749/2016-5",
+      "5577/2016-5",
+      "5578/2016-5"
+    ]
+  },
+  {
+    "model": "Marea",
+    "year": "2000",
+    "title": "Fiat Marea 2000",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Brava_2000_PT_BR_cbd471613d.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/brava/info/manuais/2000",
+    "notes": "Capítulo E: Marea e Marea Weekend SX 1.8 16V e Turbo 2.0 20V.",
+    "fipeVariants": [
+      "490/2000-1",
+      "492/2000-1",
+      "501/2000-1",
+      "503/2000-1"
+    ]
+  },
+  {
+    "model": "Marea",
+    "year": "2001",
+    "title": "Fiat Marea 2001",
+    "external_url": "https://www.manualdocarro.com.br/wp-content/uploads/2023/02/fiat-marea_2001_4541dbda1d3fd75fe49d.pdf",
+    "source": "https://www.manualdocarro.com.br/2001-fiat-marea-manual-do-proprietario/",
+    "notes": "Capítulo E: Marea e Marea Weekend ELX/HLX 2.4 20V, SX 1.8 16V e Turbo 2.0 20V.",
+    "fipeVariants": [
+      "485/2001-1",
+      "488/2001-1",
+      "490/2001-1",
+      "492/2001-1",
+      "496/2001-1",
+      "499/2001-1",
+      "501/2001-1",
+      "503/2001-1"
+    ]
+  },
+  {
+    "model": "Marea",
+    "year": "2002",
+    "title": "Fiat Marea 2002",
+    "external_url": "https://www.manualdocarro.com.br/wp-content/uploads/2023/02/fiat-marea_2001_4541dbda1d3fd75fe49d.pdf",
+    "source": "https://www.manualdocarro.com.br/2001-fiat-marea-manual-do-proprietario/",
+    "notes": "Capítulo E: Marea e Marea Weekend ELX/HLX 2.4 20V, SX 1.8 16V e Turbo 2.0 20V.",
+    "fipeVariants": [
+      "485/2002-1",
+      "487/2002-1",
+      "488/2002-1",
+      "490/2002-1",
+      "492/2002-1",
+      "496/2002-1",
+      "498/2002-1",
+      "499/2002-1",
+      "501/2002-1",
+      "503/2002-1"
+    ]
+  },
+  {
+    "model": "Marea",
+    "year": "2007",
+    "title": "Fiat Marea 2007",
+    "external_url": "https://drive.usercontent.google.com/download?id=1h_sbp7QPwF1IDSKP7dnqzUS4HylfIRGr&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/07/manual-fiat-marea-2007.html",
+    "notes": "Impresso Fiat 60350900 de março de 2007 para Marea sedã e Marea Weekend.",
+    "fipeVariants": [
+      "483/2007-1",
+      "487/2007-1",
+      "489/2007-1",
+      "492/2007-1",
+      "494/2007-1",
+      "498/2007-1",
+      "500/2007-1",
+      "503/2007-1"
+    ]
+  },
+  {
+    "model": "Mobi",
+    "year": "2017",
+    "title": "Fiat Mobi 2017",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/341/2017/handbook-2017-mobi.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355883 - VIII/2017.",
+    "fipeVariants": [
+      "7538/2017-5",
+      "7539/2017-5",
+      "7540/2017-5",
+      "7541/2017-5",
+      "7612/2017-5",
+      "7613/2017-5",
+      "7825/2017-5"
+    ]
+  },
+  {
+    "model": "Mobi",
+    "year": "2018",
+    "title": "Fiat Mobi 2018",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/341/2018/handbook-2018-mobi.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355883 - SET/2018.",
+    "fipeVariants": [
+      "7538/2018-5",
+      "7540/2018-5",
+      "7612/2018-5",
+      "7825/2018-5",
+      "7920/2018-5"
+    ]
+  },
+  {
+    "model": "Mobi",
+    "year": "2019",
+    "title": "Fiat Mobi 2019",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/341/2019/handbook-2019-mobi.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351132 - NOV/2019.",
+    "fipeVariants": [
+      "7538/2019-5",
+      "7540/2019-5",
+      "7612/2019-5",
+      "7825/2019-5",
+      "7920/2019-5",
+      "8344/2019-5"
+    ]
+  },
+  {
+    "model": "Mobi",
+    "year": "2020",
+    "title": "Fiat Mobi 2020",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/341/2020/handbook-2020-mobi.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351132 - EDIÇÃO 01 - JAN/2020.",
+    "fipeVariants": [
+      "7538/2020-5",
+      "7540/2020-5",
+      "7612/2020-5",
+      "7825/2020-5",
+      "8344/2020-5"
+    ]
+  },
+  {
+    "model": "Mobi",
+    "year": "2021",
+    "title": "Fiat Mobi 2021",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/341/2021/handbook-mobi-2020_2021.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351300 - EDIÇÃO 01 - OUT/2020.",
+    "fipeVariants": [
+      "7538/2021-5",
+      "7540/2021-5",
+      "9228/2021-5"
+    ]
+  },
+  {
+    "model": "Mobi",
+    "year": "2022",
+    "title": "Fiat Mobi 2022",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/341/2022/handbook-mobi-2022_2022.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351484 - EDIÇÃO 01 - JAN/2022.",
+    "fipeVariants": [
+      "7538/2022-5",
+      "7540/2022-5",
+      "9228/2022-5"
+    ]
+  },
+  {
+    "model": "Mobi",
+    "year": "2023",
+    "title": "Fiat Mobi 2023",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/341/2023/handbook-mobi-2023_2023.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "7540/2023-5",
+      "9228/2023-5"
+    ]
+  },
+  {
+    "model": "Mobi",
+    "year": "2024",
+    "title": "Fiat Mobi 2024",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/341/2024/handbook-mobi-2023_2024.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "7540/2024-5",
+      "9228/2024-5"
+    ]
+  },
+  {
+    "model": "Mobi",
+    "year": "2026",
+    "title": "Fiat Mobi 2026",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/341/2026/MANUAIS-DE-BORDO_MOBI_2025-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "7540/2026-5",
+      "9228/2026-5"
+    ]
+  },
+  {
+    "model": "Mobi",
+    "year": "2027",
+    "title": "Fiat Mobi 2027",
+    "external_url": "https://document-uploader-service.k8s.fcalatam.com.br/v1/file/download/MANUAL_SERVICE/6aa7fae47309f8108b1febaa?file_name=MANUAIS-DE-BORDO_MOBI_2026-2027-ED02-02-09-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "7540/2027-5",
+      "9228/2027-5"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "1996",
+    "title": "Fiat Palio 1996",
+    "external_url": "https://clubedopalio.com.br/manual/palio-96%20%C3%A0%2099%20el-ed-edx-e-16v.pdf",
+    "source": "https://clubedopalio.com.br/manuais",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "509/1996-1",
+      "510/1996-1",
+      "514/1996-1",
+      "515/1996-1",
+      "516/1996-1",
+      "517/1996-1",
+      "517/1996-2"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "1997",
+    "title": "Fiat Palio 1997",
+    "external_url": "https://clubedopalio.com.br/manual/palio-96%20%C3%A0%2099%20el-ed-edx-e-16v.pdf",
+    "source": "https://clubedopalio.com.br/manuais",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "509/1997-1",
+      "510/1997-1",
+      "514/1997-1",
+      "515/1997-1",
+      "515/1997-2",
+      "516/1997-1",
+      "517/1997-1",
+      "517/1997-2"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "1998",
+    "title": "Fiat Palio 1998",
+    "external_url": "https://clubedopalio.com.br/manual/palio-96%20%C3%A0%2099%20el-ed-edx-e-16v.pdf",
+    "source": "https://clubedopalio.com.br/manuais",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "509/1998-1",
+      "510/1998-1",
+      "514/1998-1",
+      "515/1998-1",
+      "515/1998-2",
+      "516/1998-1",
+      "516/1998-2",
+      "517/1998-1",
+      "517/1998-2"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "1999",
+    "title": "Fiat Palio 1999",
+    "external_url": "https://clubedopalio.com.br/manual/palio-96%20%C3%A0%2099%20el-ed-edx-e-16v.pdf",
+    "source": "https://clubedopalio.com.br/manuais",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "509/1999-1",
+      "510/1999-1",
+      "514/1999-1",
+      "515/1999-1",
+      "515/1999-2",
+      "516/1999-1",
+      "516/1999-2",
+      "517/1999-1",
+      "517/1999-2"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "2001",
+    "title": "Fiat Palio 2001",
+    "external_url": "https://startmycar-manuals.s3.amazonaws.com/published/Fiat-Weekend_2001_PT_BR_0eadf6d111.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/weekend/info/manuais/2001",
+    "notes": "Manual Fiat brasileiro de 2001, compartilhado por Palio, Siena e Palio Weekend. Versões conforme as tabelas do livreto.",
+    "fipeVariants": [
+      "520/2001-1",
+      "522/2001-1",
+      "527/2001-1",
+      "532/2001-1",
+      "533/2001-1",
+      "541/2001-1"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "2005",
+    "title": "Fiat Palio 2005",
+    "external_url": "https://clubedopalio.com.br/manual/manual-do--fiat-palio-siena-palio-weekend-e-strada-2005pdf.pdf",
+    "source": "https://clubedopalio.com.br/manuais",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "521/2005-1",
+      "540/2005-5"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "2007",
+    "title": "Fiat Palio 2007",
+    "external_url": "https://drive.usercontent.google.com/download?id=1hSk8wgZpI0yjxJV7a8URLOnrDo8WVS_9&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2007.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60350981 - V/2006.",
+    "fipeVariants": [
+      "521/2007-1",
+      "524/2007-1",
+      "540/2007-5",
+      "3883/2007-5",
+      "4290/2007-5"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "2008",
+    "title": "Fiat Palio 2008",
+    "external_url": "https://drive.usercontent.google.com/download?id=1ba3nCjnpiWQE6_d3grY6BUpZlhdCPEfG&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2008.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60350981 - IV/2008.",
+    "fipeVariants": [
+      "519/2008-1",
+      "521/2008-1",
+      "524/2008-1",
+      "3883/2008-5",
+      "4290/2008-5"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "2010",
+    "title": "Fiat Palio 2010",
+    "external_url": "https://clubedopalio.com.br/manual/manual-de-manutenao-palio-2010.pdf",
+    "source": "https://clubedopalio.com.br/manuais",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "519/2010-1",
+      "521/2010-1",
+      "524/2010-1",
+      "528/2010-1",
+      "3883/2010-5",
+      "4290/2010-5",
+      "4967/2010-5"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "2011",
+    "title": "Fiat Palio 2011",
+    "external_url": "https://clubedopalio.com.br/manual/manual-palio-2011.pdf",
+    "source": "https://clubedopalio.com.br/manuais",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355314 - II/2011.",
+    "fipeVariants": [
+      "519/2011-1",
+      "521/2011-1"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "2012",
+    "title": "Fiat Palio 2012",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/196/2012/handbook-2012-palio.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355392 - IV/2012.",
+    "fipeVariants": [
+      "5271/2012-5",
+      "5293/2012-5",
+      "5294/2012-5",
+      "5696/2012-5",
+      "5697/2012-5",
+      "5721/2012-5"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "2013",
+    "title": "Fiat Palio 2013",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/196/2013/handbook-2013-palio.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355392 - V/2013.",
+    "fipeVariants": [
+      "5271/2013-5",
+      "5293/2013-5",
+      "5294/2013-5",
+      "5696/2013-5",
+      "5697/2013-5",
+      "5721/2013-5",
+      "6318/2013-5",
+      "6319/2013-5"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "2014",
+    "title": "Fiat Palio 2014",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/196/2014/handbook-2014-palio.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355680 - X/2014.",
+    "fipeVariants": [
+      "5271/2014-5",
+      "5293/2014-5",
+      "5294/2014-5",
+      "5696/2014-5",
+      "5697/2014-5",
+      "5721/2014-5",
+      "6318/2014-5",
+      "6319/2014-5"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "2015",
+    "title": "Fiat Palio 2015",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/196/2015/handbook-2015-palio.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355680 - IX/2015.",
+    "fipeVariants": [
+      "5271/2015-5",
+      "5293/2015-5",
+      "5294/2015-5",
+      "5696/2015-5",
+      "5697/2015-5",
+      "5721/2015-5",
+      "6318/2015-5",
+      "6319/2015-5",
+      "7180/2015-5",
+      "7181/2015-5"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "2016",
+    "title": "Fiat Palio 2016",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/196/2016/handbook-2016-palio.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355680 - VI/2016.",
+    "fipeVariants": [
+      "5271/2016-5",
+      "5293/2016-5",
+      "5294/2016-5",
+      "5696/2016-5",
+      "5697/2016-5",
+      "5721/2016-5",
+      "7180/2016-5",
+      "7181/2016-5",
+      "7614/2016-5",
+      "7615/2016-5"
+    ]
+  },
+  {
+    "model": "Palio",
+    "year": "2017",
+    "title": "Fiat Palio 2017",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/196/2017/handbook-2017-palio.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355847 - VIII/2017.",
+    "fipeVariants": [
+      "5271/2017-5",
+      "5293/2017-5",
+      "5294/2017-5",
+      "5696/2017-5",
+      "5697/2017-5",
+      "5721/2017-5"
+    ]
+  },
+  {
+    "model": "Palio Fire",
+    "year": "2004",
+    "title": "Fiat Palio Fire 2004",
+    "external_url": "https://drive.usercontent.google.com/download?id=1-FZ0W93gIZ1ZVFQfJ0AQ4f6ivQrW3jzG&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2004-fire.html",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "505/2004-1",
+      "506/2004-1",
+      "521/2004-1",
+      "532/2004-1"
+    ]
+  },
+  {
+    "model": "Palio Fire",
+    "year": "2005",
+    "title": "Fiat Palio Fire 2005",
+    "external_url": "https://drive.usercontent.google.com/download?id=1nmcR09DdGn9OJoMQX9NQGQgrbSufY4ew&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/10/manual-fiat-strada-fire-2005.html",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "505/2005-1",
+      "506/2005-1",
+      "532/2005-1"
+    ]
+  },
+  {
+    "model": "Palio Fire",
+    "year": "2006",
+    "title": "Fiat Palio Fire 2006",
+    "external_url": "https://drive.usercontent.google.com/download?id=17Rp7f0J7kNogX7pIjP5d_s2BmOZ0Ds1K&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2006.html",
+    "notes": "Edição de fábrica digitalizada. Impresso nº 60350961 - I/2006.",
+    "fipeVariants": [
+      "505/2006-1",
+      "506/2006-1",
+      "521/2006-1",
+      "532/2006-1"
+    ]
+  },
+  {
+    "model": "Palio Fire",
+    "year": "2007",
+    "title": "Fiat Palio Fire 2007",
+    "external_url": "https://clubedopalio.com.br/manual/manual-proprietario-palio-fire-2007.pdf",
+    "source": "https://clubedopalio.com.br/manuais",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "505/2007-1",
+      "506/2007-1",
+      "532/2007-1",
+      "3965/2007-5",
+      "3966/2007-5"
+    ]
+  },
+  {
+    "model": "Palio Fire",
+    "year": "2009",
+    "title": "Fiat Palio Fire 2009",
+    "external_url": "https://drive.usercontent.google.com/download?id=1OGE68S3gXxocNlX_jt6SmvBg4O9UfF6A&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2009.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355137 - V/2009.",
+    "fipeVariants": [
+      "505/2009-1",
+      "506/2009-1",
+      "519/2009-1",
+      "521/2009-1",
+      "3965/2009-5",
+      "3966/2009-5",
+      "4825/2009-5",
+      "4826/2009-5",
+      "4827/2009-5",
+      "4828/2009-5"
+    ]
+  },
+  {
+    "model": "Palio Fire",
+    "year": "2010",
+    "title": "Fiat Palio Fire 2010",
+    "external_url": "https://drive.usercontent.google.com/download?id=18zBtLh65VwpVwmHhjLHUWRykn_BtIUVv&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2010.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355281 - VII/2010.",
+    "fipeVariants": [
+      "4825/2010-5",
+      "4826/2010-5",
+      "4827/2010-5",
+      "4828/2010-5"
+    ]
+  },
+  {
+    "model": "Palio Fire",
+    "year": "2011",
+    "title": "Fiat Palio Fire 2011",
+    "external_url": "https://drive.usercontent.google.com/download?id=10BHwyT_L4Z3dHd4wj2h0TGuUizRM00C9&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2011.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355281 - XI/2011.",
+    "fipeVariants": [
+      "4825/2011-5",
+      "4826/2011-5",
+      "4827/2011-5",
+      "4828/2011-5"
+    ]
+  },
+  {
+    "model": "Palio Fire",
+    "year": "2012",
+    "title": "Fiat Palio Fire 2012",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/171/2012/handbook-2012-palio-strada-siena-fire.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355281 - VI/2012.",
+    "fipeVariants": [
+      "4825/2012-5",
+      "4826/2012-5",
+      "4827/2012-5",
+      "4828/2012-5"
+    ]
+  },
+  {
+    "model": "Palio Fire",
+    "year": "2013",
+    "title": "Fiat Palio Fire 2013",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/171/2013/handbook-2013-palio-fire.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355527 - IX/2013.",
+    "fipeVariants": [
+      "4825/2013-5",
+      "4826/2013-5",
+      "4827/2013-5",
+      "4828/2013-5"
+    ]
+  },
+  {
+    "model": "Palio Fire",
+    "year": "2014",
+    "title": "Fiat Palio Fire 2014",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/171/2014/handbook-2014-palio-fire.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355672 - X/2014.",
+    "fipeVariants": [
+      "505/2014-1",
+      "506/2014-1",
+      "3965/2014-5",
+      "3966/2014-5",
+      "4825/2014-5",
+      "4826/2014-5",
+      "4827/2014-5",
+      "4828/2014-5"
+    ]
+  },
+  {
+    "model": "Palio Fire",
+    "year": "2015",
+    "title": "Fiat Palio Fire 2015",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/171/2015/handbook-2015-palio-fire.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355672 - VIII/2015.",
+    "fipeVariants": [
+      "505/2015-1",
+      "506/2015-1",
+      "3965/2015-5",
+      "3966/2015-5",
+      "6836/2015-5",
+      "6837/2015-5",
+      "7026/2015-5"
+    ]
+  },
+  {
+    "model": "Palio Fire",
+    "year": "2016",
+    "title": "Fiat Palio Fire 2016",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/171/2016/handbook-2016-palio-fire.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355672 - VI/2016.",
+    "fipeVariants": [
+      "505/2016-1",
+      "506/2016-1",
+      "3965/2016-5",
+      "3966/2016-5",
+      "6836/2016-5",
+      "6837/2016-5"
+    ]
+  },
+  {
+    "model": "Palio Fire",
+    "year": "2017",
+    "title": "Fiat Palio Fire 2017",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/171/2017/handbook-2017-palio-fire.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355672 - II/2017.",
+    "fipeVariants": [
+      "506/2017-1",
+      "6836/2017-5"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2001",
+    "title": "Fiat Palio Weekend 2001",
+    "external_url": "https://startmycar-manuals.s3.amazonaws.com/published/Fiat-Weekend_2001_PT_BR_0eadf6d111.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/weekend/info/manuais/2001",
+    "notes": "Manual Fiat brasileiro de 2001, compartilhado por Palio, Siena e Palio Weekend. Versões conforme as tabelas do livreto.",
+    "fipeVariants": [
+      "545/2001-1",
+      "549/2001-1",
+      "550/2001-1",
+      "560/2001-1"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2005",
+    "title": "Fiat Palio Weekend 2005",
+    "external_url": "https://clubedopalio.com.br/manual/manual-do--fiat-palio-siena-palio-weekend-e-strada-2005pdf.pdf",
+    "source": "https://clubedopalio.com.br/manuais",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "547/2005-1",
+      "558/2005-5",
+      "561/2005-1"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2007",
+    "title": "Fiat Palio Weekend 2007",
+    "external_url": "https://drive.usercontent.google.com/download?id=1hSk8wgZpI0yjxJV7a8URLOnrDo8WVS_9&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2007.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60350981 - V/2006.",
+    "fipeVariants": [
+      "547/2007-1",
+      "552/2007-5",
+      "558/2007-5"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2008",
+    "title": "Fiat Palio Weekend 2008",
+    "external_url": "https://drive.usercontent.google.com/download?id=1ba3nCjnpiWQE6_d3grY6BUpZlhdCPEfG&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2008.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60350981 - IV/2008.",
+    "fipeVariants": [
+      "547/2008-1",
+      "552/2008-5",
+      "558/2008-5"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2009",
+    "title": "Fiat Palio Weekend 2009",
+    "external_url": "https://drive.usercontent.google.com/download?id=1H1FxX4CwtdnaTnXlPzJGl7IlW6IKVvu_&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2009.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355217 - VII/2009.",
+    "fipeVariants": [
+      "547/2009-1",
+      "552/2009-5",
+      "4673/2009-5",
+      "4674/2009-5"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2010",
+    "title": "Fiat Palio Weekend 2010",
+    "external_url": "https://drive.usercontent.google.com/download?id=1Ql9Q2QR8oX1tj88f4e7xXcu_7136WVfZ&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2010.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355313 - XI/2010.",
+    "fipeVariants": [
+      "547/2010-1",
+      "552/2010-5",
+      "4673/2010-5",
+      "4674/2010-5",
+      "4968/2010-5",
+      "5063/2010-5",
+      "5272/2010-5"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2011",
+    "title": "Fiat Palio Weekend 2011",
+    "external_url": "https://drive.usercontent.google.com/download?id=1ZQuYskbs3Wk_0oq789roxVUx8AkGWYYO&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2011.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355368 - V/2011.",
+    "fipeVariants": [
+      "547/2011-1",
+      "4673/2011-5",
+      "4674/2011-5",
+      "4968/2011-5",
+      "5272/2011-5",
+      "5412/2011-5",
+      "5619/2011-5"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2012",
+    "title": "Fiat Palio Weekend 2012",
+    "external_url": "https://drive.usercontent.google.com/download?id=1KnpGHCa9Xh3_12cNyB0qCX7x4EuvHNNI&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2012.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355368 - I/2012.",
+    "fipeVariants": [
+      "547/2012-1",
+      "4673/2012-5",
+      "4968/2012-5",
+      "5272/2012-5",
+      "5412/2012-5",
+      "5619/2012-5",
+      "5879/2012-5",
+      "5880/2012-5",
+      "5881/2012-5",
+      "5882/2012-5"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2013",
+    "title": "Fiat Palio Weekend 2013",
+    "external_url": "https://drive.usercontent.google.com/download?id=1N0VAjhtOEAKjo3T8ny17gNQrJeFYVmGO&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2013.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355466 - IX/2013.",
+    "fipeVariants": [
+      "547/2013-1",
+      "4673/2013-5",
+      "4968/2013-5",
+      "5272/2013-5",
+      "5412/2013-5",
+      "5619/2013-5"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2014",
+    "title": "Fiat Palio Weekend 2014",
+    "external_url": "https://drive.usercontent.google.com/download?id=1IW4Uk9czAoP36dXzZ-8tjTKB0JXcG1n0&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2014.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355668 - X/2014.",
+    "fipeVariants": [
+      "547/2014-1",
+      "4673/2014-5",
+      "4968/2014-5",
+      "5272/2014-5",
+      "5412/2014-5",
+      "5619/2014-5"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2015",
+    "title": "Fiat Palio Weekend 2015",
+    "external_url": "https://drive.usercontent.google.com/download?id=1BWr-W9hj4r9XZmJH-pegDkqECi1HQc9R&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2015.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355668 - IX/2015.",
+    "fipeVariants": [
+      "547/2015-1",
+      "4673/2015-5",
+      "4968/2015-5",
+      "5272/2015-5",
+      "5412/2015-5",
+      "5619/2015-5"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2016",
+    "title": "Fiat Palio Weekend 2016",
+    "external_url": "https://drive.usercontent.google.com/download?id=1hW8PC9vi1KYZxA_CUBmu0GVULFqxj44q&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2006.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355668 - XI/2016.",
+    "fipeVariants": [
+      "547/2016-1",
+      "4673/2016-5",
+      "4968/2016-5",
+      "5272/2016-5",
+      "5412/2016-5",
+      "5619/2016-5",
+      "7542/2016-5",
+      "7543/2016-5",
+      "7544/2016-5",
+      "7545/2016-5"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2018",
+    "title": "Fiat Palio Weekend 2018",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/374/2018/handbook-2018-weekend.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351086 - AGO/2018.",
+    "fipeVariants": [
+      "547/2018-1",
+      "4673/2018-5",
+      "5272/2018-5",
+      "5619/2018-5"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2019",
+    "title": "Fiat Palio Weekend 2019",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/374/2019/handbook-2019-weekend.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351086 - MAI/2019.",
+    "fipeVariants": [
+      "547/2019-1",
+      "4673/2019-5",
+      "5272/2019-5"
+    ]
+  },
+  {
+    "model": "Palio Weekend",
+    "year": "2020",
+    "title": "Fiat Palio Weekend 2020",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/374/2020/handbook-2020-weekend.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351086 - MAI/2019.",
+    "fipeVariants": [
+      "547/2020-1",
+      "4673/2020-5",
+      "5272/2020-5"
+    ]
+  },
+  {
+    "model": "Pulse",
+    "year": "2022",
+    "title": "Fiat Pulse 2022",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/363/2022/handbook-pulse-2022_2022.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9645/2022-5",
+      "9646/2022-5",
+      "9647/2022-5",
+      "9648/2022-5",
+      "9649/2022-5"
+    ]
+  },
+  {
+    "model": "Pulse",
+    "year": "2023",
+    "title": "Fiat Pulse 2023",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/363/2023/handbook-pulse-2023_2023.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9645/2023-5",
+      "9646/2023-5",
+      "9647/2023-5",
+      "9648/2023-5",
+      "9649/2023-5"
+    ]
+  },
+  {
+    "model": "Pulse",
+    "year": "2024",
+    "title": "Fiat Pulse 2024",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/363/2024/handbook-pulse-2024_2024.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9645/2024-5",
+      "9647/2024-5",
+      "9648/2024-5",
+      "9649/2024-5"
+    ]
+  },
+  {
+    "model": "Pulse",
+    "year": "2025",
+    "title": "Fiat Pulse 2025",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/363/2025/handbook-pulse-2024_2025.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9645/2025-5",
+      "9647/2025-5",
+      "9648/2025-5",
+      "9649/2025-5",
+      "11269/2025-6",
+      "11270/2025-6",
+      "11271/2025-5"
+    ]
+  },
+  {
+    "model": "Pulse",
+    "year": "2026",
+    "title": "Fiat Pulse 2026",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/363/2026/MANUAIS-DE-BORDO_PULSE_2025-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9647/2026-5",
+      "9648/2026-5",
+      "11269/2026-6",
+      "11270/2026-6",
+      "11509/2026-5"
+    ]
+  },
+  {
+    "model": "Pulse",
+    "year": "2027",
+    "title": "Fiat Pulse 2027",
+    "external_url": "https://document-uploader-service.k8s.fcalatam.com.br/v1/file/download/MANUAL_SERVICE/6ab3bd73c971d551a27093f8?file_name=MANUAIS-DE-BORDO_PULSE_2026-2027-ED02-21-09-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9647/2027-5",
+      "9648/2027-5",
+      "11269/2027-6"
+    ]
+  },
+  {
+    "model": "Pulse Abarth",
+    "year": "2023",
+    "title": "Fiat Pulse Abarth 2023",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/363/2023/handbook-pulse-abarth-2023-2023.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10219/2023-5"
+    ]
+  },
+  {
+    "model": "Pulse Abarth",
+    "year": "2024",
+    "title": "Fiat Pulse Abarth 2024",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/363/2024/handbook-pulse-abarth-2023_2024.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10219/2024-5"
+    ]
+  },
+  {
+    "model": "Pulse Abarth",
+    "year": "2026",
+    "title": "Fiat Pulse Abarth 2026",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/363/2026/MANUAIS-DE-BORDO_PULSE-ABARTH_2025-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10219/2026-5"
+    ]
+  },
+  {
+    "model": "Pulse Abarth",
+    "year": "2027",
+    "title": "Fiat Pulse Abarth 2027",
+    "external_url": "https://document-uploader-service.k8s.fcalatam.com.br/v1/file/download/MANUAL_SERVICE/6ab3bd97c971d551a27093fa?file_name=MANUAIS-DE-BORDO_PULSE-ABARTH_2026-2027-ED02-21-09-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10219/2027-5"
+    ]
+  },
+  {
+    "model": "Punto",
+    "year": "2008",
+    "title": "Fiat Punto 2008",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/118/2008/handbook-2008-punto.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355143 - XI/2008.",
+    "fipeVariants": [
+      "4421/2008-5",
+      "4422/2008-5",
+      "4423/2008-5",
+      "4424/2008-5"
+    ]
+  },
+  {
+    "model": "Punto",
+    "year": "2009",
+    "title": "Fiat Punto 2009",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/118/2009/handbook-2009-punto.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355246 - XI/2009.",
+    "fipeVariants": [
+      "4421/2009-5",
+      "4422/2009-5",
+      "4423/2009-5",
+      "4424/2009-5",
+      "4859/2009-1"
+    ]
+  },
+  {
+    "model": "Punto",
+    "year": "2010",
+    "title": "Fiat Punto 2010",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/118/2010/handbook-2010-punto.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355300 - VII/2010.",
+    "fipeVariants": [
+      "4421/2010-5",
+      "4422/2010-5",
+      "4423/2010-5",
+      "4424/2010-5",
+      "4859/2010-1"
+    ]
+  },
+  {
+    "model": "Punto",
+    "year": "2011",
+    "title": "Fiat Punto 2011",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/118/2011/handbook-2011-punto.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355300 - X/2011.",
+    "fipeVariants": [
+      "4421/2011-5",
+      "4422/2011-5",
+      "4424/2011-5",
+      "4859/2011-1",
+      "5273/2011-5",
+      "5295/2011-5",
+      "5296/2011-5",
+      "5297/2011-5",
+      "5298/2011-5",
+      "5463/2011-5"
+    ]
+  },
+  {
+    "model": "Punto",
+    "year": "2012",
+    "title": "Fiat Punto 2012",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/118/2012/handbook-2012-punto.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355446 - IV/2012.",
+    "fipeVariants": [
+      "4424/2012-5",
+      "4859/2012-1",
+      "5273/2012-5",
+      "5295/2012-5",
+      "5296/2012-5",
+      "5297/2012-5",
+      "5298/2012-5",
+      "5463/2012-5",
+      "5883/2012-5"
+    ]
+  },
+  {
+    "model": "Punto",
+    "year": "2013",
+    "title": "Fiat Punto 2013",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/118/2013/handbook-2013-punto.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355580 - V/2013.",
+    "fipeVariants": [
+      "4424/2013-5",
+      "4859/2013-1",
+      "5273/2013-5",
+      "5295/2013-5",
+      "5298/2013-5",
+      "5463/2013-5",
+      "5883/2013-5"
+    ]
+  },
+  {
+    "model": "Punto",
+    "year": "2014",
+    "title": "Fiat Punto 2014",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/118/2014/handbook-2014-punto.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355554 - VII/2014.",
+    "fipeVariants": [
+      "4424/2014-5",
+      "4859/2014-1",
+      "5273/2014-5",
+      "5295/2014-5",
+      "5298/2014-5",
+      "5463/2014-5",
+      "5883/2014-5",
+      "6560/2014-5",
+      "6561/2014-5",
+      "7182/2014-5",
+      "7226/2014-5"
+    ]
+  },
+  {
+    "model": "Punto",
+    "year": "2015",
+    "title": "Fiat Punto 2015",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/118/2015/handbook-2015-punto.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355761 - VIII/2015.",
+    "fipeVariants": [
+      "4424/2015-5",
+      "4859/2015-1",
+      "5273/2015-5",
+      "5295/2015-5",
+      "5298/2015-5",
+      "5463/2015-5",
+      "5883/2015-5",
+      "6560/2015-5",
+      "6561/2015-5",
+      "7182/2015-5",
+      "7226/2015-5"
+    ]
+  },
+  {
+    "model": "Punto",
+    "year": "2016",
+    "title": "Fiat Punto 2016",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/118/2016/handbook-2016-punto.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355849 - VI/2016.",
+    "fipeVariants": [
+      "4424/2016-5",
+      "4859/2016-1",
+      "5273/2016-5",
+      "5295/2016-5",
+      "5298/2016-5",
+      "5463/2016-5",
+      "5883/2016-5",
+      "6560/2016-5",
+      "6561/2016-5",
+      "7182/2016-5",
+      "7226/2016-5"
+    ]
+  },
+  {
+    "model": "Punto",
+    "year": "2017",
+    "title": "Fiat Punto 2017",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/118/2017/handbook-2017-punto.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355849 - II/2017.",
+    "fipeVariants": [
+      "5273/2017-5",
+      "5295/2017-5",
+      "5463/2017-5",
+      "5883/2017-5",
+      "6560/2017-5",
+      "6561/2017-5"
+    ]
+  },
+  {
+    "model": "Scudo",
+    "year": "2023",
+    "title": "Fiat Scudo 2023",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/508/2023/handbook-scudo-2023_2023.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9919/2023-3",
+      "9920/2023-3"
+    ]
+  },
+  {
+    "model": "Scudo",
+    "year": "2024",
+    "title": "Fiat Scudo 2024",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/508/2024/handbook-scudo-2023_2024.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9919/2024-3",
+      "9920/2024-3"
+    ]
+  },
+  {
+    "model": "Scudo",
+    "year": "2025",
+    "title": "Fiat Scudo 2025",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/508/2025/MANUAIS-DE-BORDO_SCUDO_2025-2025.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9919/2025-3",
+      "9920/2025-3",
+      "11511/2025-3",
+      "11512/2025-3"
+    ]
+  },
+  {
+    "model": "Scudo",
+    "year": "2026",
+    "title": "Fiat Scudo 2026",
+    "external_url": "https://document-uploader-service.k8s.fcalatam.com.br/v1/file/download/MANUAL_SERVICE/6a3d77c7db18b246e5f0ed3b?file_name=MANUAIS-DE-BORDO_SCUDO_2026-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "11511/2026-3",
+      "11512/2026-3"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2001",
+    "title": "Fiat Siena 2001",
+    "external_url": "https://startmycar-manuals.s3.amazonaws.com/published/Fiat-Weekend_2001_PT_BR_0eadf6d111.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/weekend/info/manuais/2001",
+    "notes": "Manual Fiat brasileiro de 2001, compartilhado por Palio, Siena e Palio Weekend. Versões conforme as tabelas do livreto.",
+    "fipeVariants": [
+      "577/2001-1",
+      "582/2001-1",
+      "584/2001-1",
+      "588/2001-1",
+      "590/2001-1"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2004",
+    "title": "Fiat Siena 2004",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Strada_2004_PT_BR_716bb7c6a4.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/strada/info/manuais/2004",
+    "notes": "Manual compartilhado da linha Palio, Siena, Palio Weekend e Strada. Versões Flex identificadas na tabela da edição.",
+    "fipeVariants": [
+      "585/2004-5",
+      "594/2004-5"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2005",
+    "title": "Fiat Siena 2005",
+    "external_url": "https://clubedopalio.com.br/manual/manual-do--fiat-palio-siena-palio-weekend-e-strada-2005pdf.pdf",
+    "source": "https://clubedopalio.com.br/manuais",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "583/2005-1",
+      "594/2005-5"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2007",
+    "title": "Fiat Siena 2007",
+    "external_url": "https://drive.usercontent.google.com/download?id=1hSk8wgZpI0yjxJV7a8URLOnrDo8WVS_9&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2007.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60350981 - V/2006.",
+    "fipeVariants": [
+      "583/2007-1",
+      "586/2007-5",
+      "594/2007-5"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2008",
+    "title": "Fiat Siena 2008",
+    "external_url": "https://drive.usercontent.google.com/download?id=1ba3nCjnpiWQE6_d3grY6BUpZlhdCPEfG&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2008.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60350981 - IV/2008.",
+    "fipeVariants": [
+      "583/2008-1",
+      "586/2008-5",
+      "594/2008-5"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2009",
+    "title": "Fiat Siena 2009",
+    "external_url": "https://drive.usercontent.google.com/download?id=1H1FxX4CwtdnaTnXlPzJGl7IlW6IKVvu_&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2009.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355217 - VII/2009.",
+    "fipeVariants": [
+      "583/2009-1",
+      "586/2009-5",
+      "594/2009-5",
+      "4133/2009-7"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2010",
+    "title": "Fiat Siena 2010",
+    "external_url": "https://drive.usercontent.google.com/download?id=1Ql9Q2QR8oX1tj88f4e7xXcu_7136WVfZ&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2010.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355313 - XI/2010.",
+    "fipeVariants": [
+      "583/2010-1",
+      "586/2010-5",
+      "594/2010-5",
+      "4133/2010-7",
+      "4860/2010-5",
+      "4861/2010-5",
+      "4969/2010-5"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2011",
+    "title": "Fiat Siena 2011",
+    "external_url": "https://drive.usercontent.google.com/download?id=1ZQuYskbs3Wk_0oq789roxVUx8AkGWYYO&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2011.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355368 - V/2011.",
+    "fipeVariants": [
+      "4133/2011-7",
+      "4860/2011-5",
+      "4861/2011-5",
+      "5301/2011-5",
+      "5302/2011-5",
+      "5361/2011-5",
+      "5362/2011-5",
+      "5363/2011-5",
+      "5364/2011-5"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2012",
+    "title": "Fiat Siena 2012",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/372/2012/handbook-2012-siena.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355443 -V/2012.",
+    "fipeVariants": [
+      "4133/2012-7",
+      "5301/2012-5",
+      "5302/2012-5",
+      "5361/2012-5",
+      "5362/2012-5"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2012",
+    "title": "Fiat Siena 2012",
+    "external_url": "https://drive.usercontent.google.com/download?id=1KnpGHCa9Xh3_12cNyB0qCX7x4EuvHNNI&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2012.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355368 - I/2012.",
+    "fipeVariants": [
+      "4860/2012-5",
+      "4861/2012-5"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2013",
+    "title": "Fiat Siena 2013",
+    "external_url": "https://drive.usercontent.google.com/download?id=1N0VAjhtOEAKjo3T8ny17gNQrJeFYVmGO&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2013.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355466 - IX/2013.",
+    "fipeVariants": [
+      "5361/2013-5",
+      "5362/2013-5"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2014",
+    "title": "Fiat Siena 2014",
+    "external_url": "https://drive.usercontent.google.com/download?id=1IW4Uk9czAoP36dXzZ-8tjTKB0JXcG1n0&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2014.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355668 - X/2014.",
+    "fipeVariants": [
+      "4860/2014-5",
+      "4861/2014-5",
+      "5361/2014-5",
+      "5362/2014-5"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2015",
+    "title": "Fiat Siena 2015",
+    "external_url": "https://drive.usercontent.google.com/download?id=1BWr-W9hj4r9XZmJH-pegDkqECi1HQc9R&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2015.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355668 - IX/2015.",
+    "fipeVariants": [
+      "4860/2015-5",
+      "4861/2015-5",
+      "5361/2015-5",
+      "5362/2015-5"
+    ]
+  },
+  {
+    "model": "Siena",
+    "year": "2016",
+    "title": "Fiat Siena 2016",
+    "external_url": "https://drive.usercontent.google.com/download?id=1hW8PC9vi1KYZxA_CUBmu0GVULFqxj44q&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2006.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355668 - XI/2016.",
+    "fipeVariants": [
+      "4860/2016-5",
+      "4861/2016-5",
+      "5361/2016-5",
+      "5362/2016-5"
+    ]
+  },
+  {
+    "model": "Siena Fire",
+    "year": "2004",
+    "title": "Fiat Siena Fire 2004",
+    "external_url": "https://drive.usercontent.google.com/download?id=1-FZ0W93gIZ1ZVFQfJ0AQ4f6ivQrW3jzG&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2004-fire.html",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "577/2004-1",
+      "583/2004-1"
+    ]
+  },
+  {
+    "model": "Siena Fire",
+    "year": "2005",
+    "title": "Fiat Siena Fire 2005",
+    "external_url": "https://drive.usercontent.google.com/download?id=1nmcR09DdGn9OJoMQX9NQGQgrbSufY4ew&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/10/manual-fiat-strada-fire-2005.html",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "577/2005-1"
+    ]
+  },
+  {
+    "model": "Siena Fire",
+    "year": "2006",
+    "title": "Fiat Siena Fire 2006",
+    "external_url": "https://drive.usercontent.google.com/download?id=17Rp7f0J7kNogX7pIjP5d_s2BmOZ0Ds1K&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2006.html",
+    "notes": "Edição de fábrica digitalizada. Impresso nº 60350961 - I/2006.",
+    "fipeVariants": [
+      "577/2006-1",
+      "583/2006-1"
+    ]
+  },
+  {
+    "model": "Siena Fire",
+    "year": "2007",
+    "title": "Fiat Siena Fire 2007",
+    "external_url": "https://clubedopalio.com.br/manual/manual-proprietario-palio-fire-2007.pdf",
+    "source": "https://clubedopalio.com.br/manuais",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "577/2007-1",
+      "3967/2007-5"
+    ]
+  },
+  {
+    "model": "Siena Fire",
+    "year": "2009",
+    "title": "Fiat Siena Fire 2009",
+    "external_url": "https://drive.usercontent.google.com/download?id=1OGE68S3gXxocNlX_jt6SmvBg4O9UfF6A&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2009.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355137 - V/2009.",
+    "fipeVariants": [
+      "577/2009-1",
+      "3967/2009-5"
+    ]
+  },
+  {
+    "model": "Siena Fire",
+    "year": "2010",
+    "title": "Fiat Siena Fire 2010",
+    "external_url": "https://drive.usercontent.google.com/download?id=18zBtLh65VwpVwmHhjLHUWRykn_BtIUVv&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2010.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355281 - VII/2010.",
+    "fipeVariants": [
+      "577/2010-1",
+      "3967/2010-5"
+    ]
+  },
+  {
+    "model": "Siena Fire",
+    "year": "2011",
+    "title": "Fiat Siena Fire 2011",
+    "external_url": "https://drive.usercontent.google.com/download?id=10BHwyT_L4Z3dHd4wj2h0TGuUizRM00C9&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2011.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355281 - XI/2011.",
+    "fipeVariants": [
+      "577/2011-1",
+      "3967/2011-5",
+      "5299/2011-5"
+    ]
+  },
+  {
+    "model": "Siena Fire",
+    "year": "2012",
+    "title": "Fiat Siena Fire 2012",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/171/2012/handbook-2012-palio-strada-siena-fire.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Capítulo E-3, Siena Fire 1.0 8V Flex.",
+    "fipeVariants": [
+      "577/2012-1",
+      "3967/2012-5"
+    ]
+  },
+  {
+    "model": "Siena Fire",
+    "year": "2013",
+    "title": "Fiat Siena Fire 2013",
+    "external_url": "https://drive.usercontent.google.com/download?id=1eWkOka3yKvWp2pPDlG_ga4WE2SECvK8M&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2012.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355281 - VII/2012.",
+    "fipeVariants": [
+      "4860/2013-5",
+      "4861/2013-5"
+    ]
+  },
+  {
+    "model": "Stilo",
+    "year": "2009",
+    "title": "Fiat Stilo 2009",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Stilo_2009_PT_BR_51c050f334.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/stilo/info/manuais/2009",
+    "notes": "Impresso 60355267 para o Stilo brasileiro 1.8 8V Flex.",
+    "fipeVariants": [
+      "3813/2009-1",
+      "4187/2009-5",
+      "4329/2009-5",
+      "4529/2009-5",
+      "4530/2009-5",
+      "4531/2009-5",
+      "4862/2009-5"
+    ]
+  },
+  {
+    "model": "Stilo",
+    "year": "2010",
+    "title": "Fiat Stilo 2010",
+    "external_url": "https://startmycar-manuals.s3.amazonaws.com/published/Fiat-Stilo_2010_PT_BR_f47d58705e.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/stilo/info/manuais/2010",
+    "notes": "Impresso 60355267 para o Stilo brasileiro 1.8 8V Flex.",
+    "fipeVariants": [
+      "3813/2010-1",
+      "4187/2010-5",
+      "4329/2010-5",
+      "4529/2010-5",
+      "4530/2010-5",
+      "4531/2010-5",
+      "4862/2010-5",
+      "5064/2010-5",
+      "10065/2010-5"
+    ]
+  },
+  {
+    "model": "Stilo",
+    "year": "2011",
+    "title": "Fiat Stilo 2011",
+    "external_url": "https://startmycar-manuals.s3.amazonaws.com/published/Fiat-Stilo_2010_PT_BR_f47d58705e.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/stilo/info/manuais/2010",
+    "notes": "Impresso 60355267 para o Stilo brasileiro 1.8 8V Flex.",
+    "fipeVariants": [
+      "3813/2011-1",
+      "4187/2011-5",
+      "4329/2011-5",
+      "4529/2011-5",
+      "4530/2011-5",
+      "4531/2011-5",
+      "4862/2011-5",
+      "5064/2011-5",
+      "10065/2011-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2004",
+    "title": "Fiat Strada 2004",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Strada_2004_PT_BR_716bb7c6a4.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/strada/info/manuais/2004",
+    "notes": "Manual compartilhado da linha Palio, Siena, Palio Weekend e Strada. Versões Flex identificadas na tabela da edição.",
+    "fipeVariants": [
+      "611/2004-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2005",
+    "title": "Fiat Strada 2005",
+    "external_url": "https://clubedopalio.com.br/manual/manual-do--fiat-palio-siena-palio-weekend-e-strada-2005pdf.pdf",
+    "source": "https://clubedopalio.com.br/manuais",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "606/2005-5",
+      "610/2005-5",
+      "611/2005-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2007",
+    "title": "Fiat Strada 2007",
+    "external_url": "https://drive.usercontent.google.com/download?id=1hSk8wgZpI0yjxJV7a8URLOnrDo8WVS_9&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2007.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60350981 - V/2006.",
+    "fipeVariants": [
+      "606/2007-5",
+      "610/2007-5",
+      "611/2007-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2008",
+    "title": "Fiat Strada 2008",
+    "external_url": "https://drive.usercontent.google.com/download?id=1ba3nCjnpiWQE6_d3grY6BUpZlhdCPEfG&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2008.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60350981 - IV/2008.",
+    "fipeVariants": [
+      "606/2008-5",
+      "610/2008-5",
+      "611/2008-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2009",
+    "title": "Fiat Strada 2009",
+    "external_url": "https://drive.usercontent.google.com/download?id=1H1FxX4CwtdnaTnXlPzJGl7IlW6IKVvu_&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2009.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355217 - VII/2009.",
+    "fipeVariants": [
+      "606/2009-5",
+      "610/2009-5",
+      "611/2009-5",
+      "3884/2009-5",
+      "3885/2009-5",
+      "4733/2009-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2010",
+    "title": "Fiat Strada 2010",
+    "external_url": "https://drive.usercontent.google.com/download?id=1Ql9Q2QR8oX1tj88f4e7xXcu_7136WVfZ&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2010.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355313 - XI/2010.",
+    "fipeVariants": [
+      "610/2010-5",
+      "611/2010-5",
+      "3884/2010-5",
+      "3885/2010-5",
+      "4733/2010-5",
+      "4970/2010-5",
+      "5066/2010-5",
+      "5067/2010-5",
+      "5068/2010-5",
+      "6096/2010-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2011",
+    "title": "Fiat Strada 2011",
+    "external_url": "https://drive.usercontent.google.com/download?id=1ZQuYskbs3Wk_0oq789roxVUx8AkGWYYO&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2011.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355368 - V/2011.",
+    "fipeVariants": [
+      "611/2011-5",
+      "3884/2011-5",
+      "3885/2011-5",
+      "4733/2011-5",
+      "4970/2011-5",
+      "5066/2011-5",
+      "5067/2011-5",
+      "5068/2011-5",
+      "5464/2011-5",
+      "6096/2011-5",
+      "6097/2011-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2012",
+    "title": "Fiat Strada 2012",
+    "external_url": "https://drive.usercontent.google.com/download?id=1KnpGHCa9Xh3_12cNyB0qCX7x4EuvHNNI&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2012.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355368 - I/2012.",
+    "fipeVariants": [
+      "611/2012-5",
+      "3884/2012-5",
+      "3885/2012-5",
+      "4733/2012-5",
+      "4970/2012-5",
+      "5066/2012-5",
+      "5067/2012-5",
+      "5068/2012-5",
+      "5464/2012-5",
+      "5620/2012-5",
+      "5621/2012-5",
+      "6096/2012-5",
+      "6097/2012-5",
+      "6098/2012-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2013",
+    "title": "Fiat Strada 2013",
+    "external_url": "https://drive.usercontent.google.com/download?id=1N0VAjhtOEAKjo3T8ny17gNQrJeFYVmGO&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2013.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355466 - IX/2013.",
+    "fipeVariants": [
+      "4733/2013-5",
+      "4970/2013-5",
+      "5620/2013-5",
+      "5621/2013-5",
+      "6055/2013-5",
+      "6056/2013-5",
+      "6057/2013-5",
+      "6517/2013-5",
+      "6518/2013-5",
+      "6519/2013-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2014",
+    "title": "Fiat Strada 2014",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/578/2014/handbook-2014-strada.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355679 - X/2014.",
+    "fipeVariants": [
+      "4733/2014-5",
+      "4970/2014-5",
+      "5066/2014-5",
+      "5067/2014-5",
+      "5068/2014-5",
+      "5620/2014-5",
+      "5621/2014-5",
+      "6055/2014-5",
+      "6096/2014-5",
+      "6097/2014-5",
+      "6098/2014-5",
+      "6636/2014-5",
+      "6637/2014-5",
+      "7227/2014-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2015",
+    "title": "Fiat Strada 2015",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/578/2015/handbook-2015-strada.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355679 - IX/2015.",
+    "fipeVariants": [
+      "4733/2015-5",
+      "4970/2015-5",
+      "5066/2015-5",
+      "5067/2015-5",
+      "5068/2015-5",
+      "5620/2015-5",
+      "5621/2015-5",
+      "6055/2015-5",
+      "6096/2015-5",
+      "6097/2015-5",
+      "6098/2015-5",
+      "6636/2015-5",
+      "6637/2015-5",
+      "7134/2015-5",
+      "7135/2015-5",
+      "7136/2015-5",
+      "7227/2015-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2016",
+    "title": "Fiat Strada 2016",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/578/2016/handbook-2016-strada.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355679 - VI/2016.",
+    "fipeVariants": [
+      "4733/2016-5",
+      "4970/2016-5",
+      "5066/2016-5",
+      "5067/2016-5",
+      "5068/2016-5",
+      "5620/2016-5",
+      "5621/2016-5",
+      "6055/2016-5",
+      "6096/2016-5",
+      "6097/2016-5",
+      "6098/2016-5",
+      "6636/2016-5",
+      "6637/2016-5",
+      "7134/2016-5",
+      "7135/2016-5",
+      "7136/2016-5",
+      "7227/2016-5",
+      "7450/2016-5",
+      "7451/2016-5",
+      "7452/2016-5",
+      "7453/2016-5",
+      "7454/2016-5",
+      "7455/2016-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2017",
+    "title": "Fiat Strada 2017",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/578/2017/handbook-2017-strada.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355956 - VIII/2017.",
+    "fipeVariants": [
+      "4733/2017-5",
+      "4970/2017-5",
+      "5068/2017-5",
+      "5620/2017-5",
+      "5621/2017-5",
+      "7134/2017-5",
+      "7135/2017-5",
+      "7136/2017-5",
+      "7451/2017-5",
+      "7453/2017-5",
+      "7454/2017-5",
+      "7455/2017-5",
+      "7752/2017-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2018",
+    "title": "Fiat Strada 2018",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/578/2018/handbook-2018-strada.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351123 - AGO/2018.",
+    "fipeVariants": [
+      "4733/2018-5",
+      "4970/2018-5",
+      "5068/2018-5",
+      "7134/2018-5",
+      "7135/2018-5",
+      "7136/2018-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2019",
+    "title": "Fiat Strada 2019",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/578/2019/handbook-2019-strada.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351123 - EDIÇÃO 01 - JAN/2020.",
+    "fipeVariants": [
+      "4970/2019-5",
+      "5068/2019-5",
+      "7134/2019-5",
+      "7135/2019-5",
+      "7136/2019-5",
+      "8399/2019-5",
+      "8544/2019-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2020",
+    "title": "Fiat Strada 2020",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/281/2020/handbook-strada-2020_2020.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351123 - EDIÇÃO 01 - JAN/2020.",
+    "fipeVariants": [
+      "4970/2020-5",
+      "5068/2020-5",
+      "7134/2020-5",
+      "7135/2020-5",
+      "7136/2020-5",
+      "8399/2020-5",
+      "8544/2020-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2021",
+    "title": "Fiat Strada 2021",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Strada_2021_pt_BR_88aa651c1e.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/strada/info/manuais/2021",
+    "notes": "Impresso Fiat 60351164, janeiro de 2021. Nova Strada 1.4 Fire e 1.3 Firefly com câmbio manual.",
+    "fipeVariants": [
+      "9108/2021-5",
+      "9109/2021-5",
+      "9110/2021-5",
+      "9111/2021-5",
+      "9112/2021-5",
+      "9229/2021-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2022",
+    "title": "Fiat Strada 2022",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/281/2022/handbook-strada-2022_2022.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351480 - EDIÇÃO 01 - MAI/2022.",
+    "fipeVariants": [
+      "9108/2022-5",
+      "9109/2022-5",
+      "9110/2022-5",
+      "9111/2022-5",
+      "9112/2022-5",
+      "9723/2022-5",
+      "9724/2022-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2023",
+    "title": "Fiat Strada 2023",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/281/2023/handbook-strada-2023_2023.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9109/2023-5",
+      "9110/2023-5",
+      "9111/2023-5",
+      "9112/2023-5",
+      "9723/2023-5",
+      "9724/2023-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2024",
+    "title": "Fiat Strada 2024",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/281/2024/handbook-strada-2023_2024.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9110/2024-5",
+      "9111/2024-5",
+      "9112/2024-5",
+      "9724/2024-5",
+      "10836/2024-5",
+      "10837/2024-5",
+      "11109/2024-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2025",
+    "title": "Fiat Strada 2025",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/281/2025/handbook-strada-2024_2025.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9110/2025-5",
+      "9111/2025-5",
+      "9112/2025-5",
+      "9724/2025-5",
+      "10836/2025-5",
+      "10837/2025-5",
+      "11109/2025-5",
+      "11279/2025-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2026",
+    "title": "Fiat Strada 2026",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/281/2026/MANUAIS-DE-BORDO-STRADA_2025-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9110/2026-5",
+      "9111/2026-5",
+      "9112/2026-5",
+      "9724/2026-5",
+      "10836/2026-5",
+      "10837/2026-5",
+      "11109/2026-5"
+    ]
+  },
+  {
+    "model": "Strada",
+    "year": "2027",
+    "title": "Fiat Strada 2027",
+    "external_url": "https://document-uploader-service.k8s.fcalatam.com.br/v1/file/download/MANUAL_SERVICE/6aa7fb427309f8108b1febae?file_name=MANUAIS-DE-BORDO-STRADA_2026-2027-ED03-02-09-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9110/2027-5",
+      "9111/2027-5",
+      "9112/2027-5",
+      "9724/2027-5",
+      "10836/2027-5",
+      "10837/2027-5",
+      "11109/2027-5"
+    ]
+  },
+  {
+    "model": "Strada Fire",
+    "year": "2004",
+    "title": "Fiat Strada Fire 2004",
+    "external_url": "https://drive.usercontent.google.com/download?id=1-FZ0W93gIZ1ZVFQfJ0AQ4f6ivQrW3jzG&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-2004-fire.html",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "600/2004-1",
+      "601/2004-1"
+    ]
+  },
+  {
+    "model": "Strada Fire",
+    "year": "2005",
+    "title": "Fiat Strada Fire 2005",
+    "external_url": "https://drive.usercontent.google.com/download?id=1nmcR09DdGn9OJoMQX9NQGQgrbSufY4ew&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/10/manual-fiat-strada-fire-2005.html",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "600/2005-1",
+      "601/2005-1"
+    ]
+  },
+  {
+    "model": "Strada Fire",
+    "year": "2006",
+    "title": "Fiat Strada Fire 2006",
+    "external_url": "https://drive.usercontent.google.com/download?id=17Rp7f0J7kNogX7pIjP5d_s2BmOZ0Ds1K&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2006.html",
+    "notes": "Edição de fábrica digitalizada. Impresso nº 60350961 - I/2006.",
+    "fipeVariants": [
+      "602/2006-5",
+      "603/2006-5",
+      "3884/2006-5",
+      "3885/2006-5"
+    ]
+  },
+  {
+    "model": "Strada Fire",
+    "year": "2007",
+    "title": "Fiat Strada Fire 2007",
+    "external_url": "https://clubedopalio.com.br/manual/manual-proprietario-palio-fire-2007.pdf",
+    "source": "https://clubedopalio.com.br/manuais",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "602/2007-5",
+      "603/2007-5",
+      "3884/2007-5",
+      "3885/2007-5"
+    ]
+  },
+  {
+    "model": "Strada Fire",
+    "year": "2009",
+    "title": "Fiat Strada Fire 2009",
+    "external_url": "https://drive.usercontent.google.com/download?id=1OGE68S3gXxocNlX_jt6SmvBg4O9UfF6A&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2009.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355137 - V/2009.",
+    "fipeVariants": [
+      "602/2009-5",
+      "603/2009-5"
+    ]
+  },
+  {
+    "model": "Strada Fire",
+    "year": "2010",
+    "title": "Fiat Strada Fire 2010",
+    "external_url": "https://drive.usercontent.google.com/download?id=18zBtLh65VwpVwmHhjLHUWRykn_BtIUVv&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2010.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355281 - VII/2010.",
+    "fipeVariants": [
+      "602/2010-5",
+      "603/2010-5",
+      "5275/2010-5"
+    ]
+  },
+  {
+    "model": "Strada Fire",
+    "year": "2011",
+    "title": "Fiat Strada Fire 2011",
+    "external_url": "https://drive.usercontent.google.com/download?id=10BHwyT_L4Z3dHd4wj2h0TGuUizRM00C9&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2011.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355281 - XI/2011.",
+    "fipeVariants": [
+      "602/2011-5",
+      "603/2011-5",
+      "5274/2011-5",
+      "5275/2011-5"
+    ]
+  },
+  {
+    "model": "Strada Fire",
+    "year": "2012",
+    "title": "Fiat Strada Fire 2012",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/171/2012/handbook-2012-palio-strada-siena-fire.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Capítulo E-3, Strada Fire 1.4 8V Flex.",
+    "fipeVariants": [
+      "602/2012-5",
+      "603/2012-5"
+    ]
+  },
+  {
+    "model": "Strada Fire",
+    "year": "2013",
+    "title": "Fiat Strada Fire 2013",
+    "external_url": "https://drive.usercontent.google.com/download?id=1eWkOka3yKvWp2pPDlG_ga4WE2SECvK8M&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/10/manual-fiat-siena-fire-2012.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355281 - VII/2012.",
+    "fipeVariants": [
+      "5066/2013-5",
+      "5067/2013-5",
+      "5068/2013-5",
+      "6096/2013-5",
+      "6097/2013-5",
+      "6098/2013-5"
+    ]
+  },
+  {
+    "model": "Tempra",
+    "year": "1994",
+    "title": "Fiat Tempra 1994",
+    "external_url": "https://www.clubedotempra.com.br/downloads/manual_tempra.pdf",
+    "source": "https://www.clubedotempra.com.br/oficina/downloads/",
+    "notes": "Manual Fiat impresso em novembro de 1994. Capítulo G, Tempra 2.0 SPI 8V e MPI 16V a gasolina, carrocerias de duas e quatro portas.",
+    "fipeVariants": [
+      "618/1994-1",
+      "619/1994-1",
+      "623/1994-1"
+    ]
+  },
+  {
+    "model": "Tempra",
+    "year": "1995",
+    "title": "Fiat Tempra 1995",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2024/05/manual-proprietario-fiat-tempra-1995-1998.pdf",
+    "source": "https://onlycars.com.br/2013/05/manual-do-proprietario-fiat-tempra.html",
+    "notes": "Manual do Tempra sedã de quatro portas de 1995 a 1998. Versões SX, HLX, Stile e Turbo Stile.",
+    "fipeVariants": [
+      "625/1995-1"
+    ]
+  },
+  {
+    "model": "Tempra",
+    "year": "1995",
+    "title": "Fiat Tempra 1995",
+    "external_url": "https://www.clubedotempra.com.br/downloads/manual_tempra.pdf",
+    "source": "https://www.clubedotempra.com.br/oficina/downloads/",
+    "notes": "Manual Fiat impresso em novembro de 1994. Capítulo G, Tempra 2.0 SPI 8V e MPI 16V a gasolina, carrocerias de duas e quatro portas.",
+    "fipeVariants": [
+      "618/1995-1",
+      "619/1995-1",
+      "623/1995-1"
+    ]
+  },
+  {
+    "model": "Tempra",
+    "year": "1996",
+    "title": "Fiat Tempra 1996",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2024/05/manual-proprietario-fiat-tempra-1995-1998.pdf",
+    "source": "https://onlycars.com.br/2013/05/manual-do-proprietario-fiat-tempra.html",
+    "notes": "Manual do Tempra sedã de quatro portas de 1995 a 1998. Versões SX, HLX, Stile e Turbo Stile.",
+    "fipeVariants": [
+      "622/1996-1",
+      "625/1996-1",
+      "627/1996-1",
+      "628/1996-1"
+    ]
+  },
+  {
+    "model": "Tempra",
+    "year": "1997",
+    "title": "Fiat Tempra 1997",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2024/05/manual-proprietario-fiat-tempra-1995-1998.pdf",
+    "source": "https://onlycars.com.br/2013/05/manual-do-proprietario-fiat-tempra.html",
+    "notes": "Manual do Tempra sedã de quatro portas de 1995 a 1998. Versões SX, HLX, Stile e Turbo Stile.",
+    "fipeVariants": [
+      "622/1997-1",
+      "625/1997-1",
+      "627/1997-1",
+      "628/1997-1"
+    ]
+  },
+  {
+    "model": "Tempra",
+    "year": "1998",
+    "title": "Fiat Tempra 1998",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2024/05/manual-proprietario-fiat-tempra-1995-1998.pdf",
+    "source": "https://onlycars.com.br/2013/05/manual-do-proprietario-fiat-tempra.html",
+    "notes": "Manual do Tempra sedã de quatro portas de 1995 a 1998. Versões SX, HLX, Stile e Turbo Stile.",
+    "fipeVariants": [
+      "622/1998-1",
+      "625/1998-1",
+      "627/1998-1",
+      "628/1998-1"
+    ]
+  },
+  {
+    "model": "Tempra SW",
+    "year": "1995",
+    "title": "Fiat Tempra SW 1995",
+    "external_url": "https://www.clubedotempra.com.br/downloads/manual_tempra_sw.pdf",
+    "source": "https://www.clubedotempra.com.br/oficina/downloads/",
+    "notes": "Manual de uso e manutenção Fiat Tempra S.W. 2.0 i.e., edição em português.",
+    "fipeVariants": [
+      "626/1995-1"
+    ]
+  },
+  {
+    "model": "Tempra SW",
+    "year": "1996",
+    "title": "Fiat Tempra SW 1996",
+    "external_url": "https://www.clubedotempra.com.br/downloads/manual_tempra_sw.pdf",
+    "source": "https://www.clubedotempra.com.br/oficina/downloads/",
+    "notes": "Manual de uso e manutenção Fiat Tempra S.W. 2.0 i.e., edição em português.",
+    "fipeVariants": [
+      "626/1996-1"
+    ]
+  },
+  {
+    "model": "Tempra SW",
+    "year": "1997",
+    "title": "Fiat Tempra SW 1997",
+    "external_url": "https://www.clubedotempra.com.br/downloads/manual_tempra_sw.pdf",
+    "source": "https://www.clubedotempra.com.br/oficina/downloads/",
+    "notes": "Manual de uso e manutenção Fiat Tempra S.W. 2.0 i.e., edição em português.",
+    "fipeVariants": [
+      "626/1997-1"
+    ]
+  },
+  {
+    "model": "Tipo",
+    "year": "1994",
+    "title": "Fiat Tipo 1994",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2025/05/manual-proprietario-fiat-tipo-completp-pdf-gratis.pdf",
+    "source": "https://onlycars.com.br/2025/05/manual-proprietario-fiat-tipo.html",
+    "notes": "Capítulo G: Tipo 1.6 SPI, 2.0 8V e 2.0 16V importados. Edição em português publicada pela Fiat Automóveis S.A.",
+    "fipeVariants": [
+      "630/1994-1",
+      "633/1994-1"
+    ]
+  },
+  {
+    "model": "Tipo",
+    "year": "1995",
+    "title": "Fiat Tipo 1995",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2025/05/manual-proprietario-fiat-tipo-completp-pdf-gratis.pdf",
+    "source": "https://onlycars.com.br/2025/05/manual-proprietario-fiat-tipo.html",
+    "notes": "Capítulo G: Tipo 1.6 SPI, 2.0 8V e 2.0 16V importados. Edição em português publicada pela Fiat Automóveis S.A.",
+    "fipeVariants": [
+      "630/1995-1",
+      "632/1995-1",
+      "633/1995-1"
+    ]
+  },
+  {
+    "model": "Tipo",
+    "year": "1996",
+    "title": "Fiat Tipo 1996",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2025/05/manual-proprietario-fiat-tipo-completp-pdf-gratis.pdf",
+    "source": "https://onlycars.com.br/2025/05/manual-proprietario-fiat-tipo.html",
+    "notes": "Capítulo G: Tipo 1.6 SPI, 2.0 8V e 2.0 16V importados. Edição em português publicada pela Fiat Automóveis S.A.",
+    "fipeVariants": [
+      "633/1996-1"
+    ]
+  },
+  {
+    "model": "Titano",
+    "year": "2024",
+    "title": "Fiat Titano 2024",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/579/2025/handbook-titano-2025_2025.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual da linha de lançamento Titano 2.2 T 180 Diesel. Impresso Fiat 60351649, abril de 2024.",
+    "fipeVariants": [
+      "10999/2024-3",
+      "11000/2024-3",
+      "11001/2024-3"
+    ]
+  },
+  {
+    "model": "Titano",
+    "year": "2025",
+    "title": "Fiat Titano 2025",
+    "external_url": "https://document-uploader-service.k8s.fcalatam.com.br/v1/file/download/MANUAL_SERVICE/6a4564323fa5a32c7d103f36?file_name=MANUAIS-DE-BORDO_TITANO_2025-2025-ED02-12-06-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10999/2025-3",
+      "11000/2025-3",
+      "11001/2025-3"
+    ]
+  },
+  {
+    "model": "Titano",
+    "year": "2026",
+    "title": "Fiat Titano 2026",
+    "external_url": "https://document-uploader-service.k8s.fcalatam.com.br/v1/file/download/MANUAL_SERVICE/6a4564993fa5a32c7d103f38?file_name=MANUAIS-DE-BORDO_TITANO_2026-2026-ED03-12-06-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "10999/2026-3",
+      "11000/2026-3",
+      "11001/2026-3"
+    ]
+  },
+  {
+    "model": "Toro",
+    "year": "2017",
+    "title": "Fiat Toro 2017",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/226/2017/handbook-2017-toro.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355955 - VIII/2017.",
+    "fipeVariants": [
+      "7475/2017-5",
+      "7476/2017-3",
+      "7477/2017-3",
+      "7478/2017-5",
+      "7479/2017-3",
+      "7789/2017-5",
+      "7921/2017-5"
+    ]
+  },
+  {
+    "model": "Toro",
+    "year": "2018",
+    "title": "Fiat Toro 2018",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/226/2018/handbook-2018-toro.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351096 - AGO/2018.",
+    "fipeVariants": [
+      "7475/2018-5",
+      "7476/2018-3",
+      "7477/2018-3",
+      "7479/2018-3",
+      "7789/2018-5",
+      "7950/2018-5",
+      "7951/2018-5",
+      "8046/2018-5",
+      "10069/2018-3"
+    ]
+  },
+  {
+    "model": "Toro",
+    "year": "2019",
+    "title": "Fiat Toro 2019",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/226/2019/handbook-2019-toro.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351096 - NOV/2018.",
+    "fipeVariants": [
+      "7475/2019-5",
+      "7479/2019-3",
+      "8046/2019-5",
+      "8236/2019-5",
+      "8237/2019-5",
+      "10069/2019-3",
+      "10070/2019-3"
+    ]
+  },
+  {
+    "model": "Toro",
+    "year": "2020",
+    "title": "Fiat Toro 2020",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/226/2020/handbook-2020-toro.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351226 - EDIÇÃO 01 - JAN/2020.",
+    "fipeVariants": [
+      "7475/2020-5",
+      "7479/2020-3",
+      "8236/2020-5",
+      "8237/2020-5",
+      "8741/2020-5",
+      "8742/2020-3",
+      "10069/2020-3",
+      "10070/2020-3",
+      "10071/2020-3"
+    ]
+  },
+  {
+    "model": "Toro",
+    "year": "2021",
+    "title": "Fiat Toro 2021",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/226/2021/handbook-toro-2020_2021.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351226 - EDIÇÃO 01 - JAN/2021.",
+    "fipeVariants": [
+      "7475/2021-5",
+      "7479/2021-3",
+      "8236/2021-5",
+      "8237/2021-5",
+      "8741/2021-5",
+      "8742/2021-3",
+      "10069/2021-3",
+      "10070/2021-3",
+      "10071/2021-3"
+    ]
+  },
+  {
+    "model": "Toro",
+    "year": "2022",
+    "title": "Fiat Toro 2022",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/226/2022/handbook-toro-2022_2022.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat publicado para este ano-modelo.",
+    "fipeVariants": [
+      "7479/2022-3",
+      "8236/2022-5",
+      "8742/2022-3",
+      "9493/2022-5",
+      "9494/2022-5",
+      "9495/2022-5",
+      "10069/2022-3",
+      "10070/2022-3",
+      "10071/2022-3"
+    ]
+  },
+  {
+    "model": "Toro",
+    "year": "2023",
+    "title": "Fiat Toro 2023",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/226/2023/handbook-toro-2023_2023.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "7479/2023-3",
+      "9493/2023-5",
+      "9494/2023-5",
+      "9495/2023-5",
+      "10069/2023-3",
+      "10070/2023-3",
+      "10071/2023-3"
+    ]
+  },
+  {
+    "model": "Toro",
+    "year": "2024",
+    "title": "Fiat Toro 2024",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/226/2024/handbook-toro-2023_2024.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "7479/2024-3",
+      "9493/2024-5",
+      "9494/2024-5",
+      "9495/2024-5",
+      "10070/2024-3",
+      "10071/2024-3"
+    ]
+  },
+  {
+    "model": "Toro",
+    "year": "2026",
+    "title": "Fiat Toro 2026",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/226/2026/MANUAIS-DE-BORDO_TORO_2025-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9493/2026-5",
+      "9494/2026-5",
+      "9495/2026-5",
+      "11346/2026-3",
+      "11347/2026-5",
+      "11348/2026-3"
+    ]
+  },
+  {
+    "model": "Toro",
+    "year": "2027",
+    "title": "Fiat Toro 2027",
+    "external_url": "https://document-uploader-service.k8s.fcalatam.com.br/v1/file/download/MANUAL_SERVICE/6aa7fb167309f8108b1febac?file_name=MANUAIS-DE-BORDO_TORO_2026-2027-ED05-08-09-2026.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Edição publicada no portal Fiat para este ano-modelo.",
+    "fipeVariants": [
+      "9493/2027-5",
+      "9494/2027-5",
+      "11346/2027-3",
+      "11348/2027-3",
+      "12038/2027-6",
+      "12039/2027-6"
+    ]
+  },
+  {
+    "model": "Uno",
+    "year": "1987",
+    "title": "Fiat Uno 1987",
+    "external_url": "https://drive.usercontent.google.com/download?id=1ARXU-REV-AnXGIPtakh0xxz3JYAge9ux&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/09/manual-fiat-uno-s-cs-15r-1987.html",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "635/1987-1",
+      "637/1987-1",
+      "653/1987-1"
+    ]
+  },
+  {
+    "model": "Uno",
+    "year": "2011",
+    "title": "Fiat Uno 2011",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/195/2011/handbook-2011-uno.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355323 - X/2011.",
+    "fipeVariants": [
+      "5239/2011-5",
+      "5240/2011-5",
+      "5241/2011-5",
+      "5242/2011-5",
+      "5243/2011-5",
+      "5244/2011-5",
+      "5245/2011-5",
+      "5246/2011-5",
+      "5465/2011-5"
+    ]
+  },
+  {
+    "model": "Uno",
+    "year": "2012",
+    "title": "Fiat Uno 2012",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/195/2012/handbook-2012-uno.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355478 - IV/2012.",
+    "fipeVariants": [
+      "5239/2012-5",
+      "5240/2012-5",
+      "5241/2012-5",
+      "5242/2012-5",
+      "5243/2012-5",
+      "5244/2012-5",
+      "5245/2012-5",
+      "5246/2012-5",
+      "5465/2012-5",
+      "5480/2012-5",
+      "5481/2012-5",
+      "5482/2012-5",
+      "5483/2012-5",
+      "5484/2012-5",
+      "5485/2012-5",
+      "5486/2012-5",
+      "5487/2012-5",
+      "5488/2012-5",
+      "5664/2012-5",
+      "5665/2012-5",
+      "5666/2012-5",
+      "5667/2012-5"
+    ]
+  },
+  {
+    "model": "Uno",
+    "year": "2013",
+    "title": "Fiat Uno 2013",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/195/2013/handbook-2013-uno.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355478 - II/2013.",
+    "fipeVariants": [
+      "5241/2013-5",
+      "5242/2013-5",
+      "5243/2013-5",
+      "5244/2013-5",
+      "5245/2013-5",
+      "5246/2013-5",
+      "5465/2013-5",
+      "5483/2013-5",
+      "5484/2013-5",
+      "5485/2013-5",
+      "5486/2013-5",
+      "5664/2013-5",
+      "5665/2013-5",
+      "5666/2013-5",
+      "5667/2013-5",
+      "6321/2013-5",
+      "6322/2013-5",
+      "6323/2013-5",
+      "7149/2013-5"
+    ]
+  },
+  {
+    "model": "Uno",
+    "year": "2014",
+    "title": "Fiat Uno 2014",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/195/2014/handbook-2014-uno.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355676 - X/2014.",
+    "fipeVariants": [
+      "5241/2014-5",
+      "5242/2014-5",
+      "5243/2014-5",
+      "5244/2014-5",
+      "5245/2014-5",
+      "5246/2014-5",
+      "5465/2014-5",
+      "5483/2014-5",
+      "5484/2014-5",
+      "5665/2014-5",
+      "5667/2014-5",
+      "6321/2014-5",
+      "6322/2014-5",
+      "6323/2014-5",
+      "6520/2014-5"
+    ]
+  },
+  {
+    "model": "Uno",
+    "year": "2015",
+    "title": "Fiat Uno 2015",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/195/2015/handbook-2015-uno.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355676 - VIII/2015.",
+    "fipeVariants": [
+      "5241/2015-5",
+      "5242/2015-5",
+      "5243/2015-5",
+      "5244/2015-5",
+      "5245/2015-5",
+      "5246/2015-5",
+      "5465/2015-5",
+      "5483/2015-5",
+      "5484/2015-5",
+      "6957/2015-5",
+      "6958/2015-5",
+      "7027/2015-5",
+      "7070/2015-5",
+      "7149/2015-5",
+      "7183/2015-5"
+    ]
+  },
+  {
+    "model": "Uno",
+    "year": "2016",
+    "title": "Fiat Uno 2016",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/195/2016/handbook-2016-uno.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355676 - VI/2016.",
+    "fipeVariants": [
+      "5241/2016-5",
+      "5242/2016-5",
+      "5243/2016-5",
+      "5244/2016-5",
+      "5245/2016-5",
+      "5465/2016-5",
+      "5483/2016-5",
+      "5484/2016-5",
+      "6957/2016-5",
+      "6958/2016-5",
+      "7027/2016-5",
+      "7070/2016-5",
+      "7183/2016-5",
+      "7616/2016-5",
+      "7617/2016-5"
+    ]
+  },
+  {
+    "model": "Uno",
+    "year": "2017",
+    "title": "Fiat Uno 2017",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/195/2017/handbook-2017-uno.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60355942 - VIII/2017.",
+    "fipeVariants": [
+      "7732/2017-5",
+      "7733/2017-5",
+      "7734/2017-5",
+      "7735/2017-5",
+      "7736/2017-5",
+      "7737/2017-5"
+    ]
+  },
+  {
+    "model": "Uno",
+    "year": "2018",
+    "title": "Fiat Uno 2018",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/195/2018/handbook-2018-uno.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351055 - AGO/2018.",
+    "fipeVariants": [
+      "7733/2018-5",
+      "7734/2018-5",
+      "7735/2018-5",
+      "7736/2018-5",
+      "7737/2018-5",
+      "7952/2018-5"
+    ]
+  },
+  {
+    "model": "Uno",
+    "year": "2019",
+    "title": "Fiat Uno 2019",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/195/2019/handbook-uno-2019_2019.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351121 - EDIÇÃO 01 - JAN/2020.",
+    "fipeVariants": [
+      "6957/2019-5",
+      "7735/2019-5",
+      "7736/2019-5",
+      "7952/2019-5"
+    ]
+  },
+  {
+    "model": "Uno",
+    "year": "2020",
+    "title": "Fiat Uno 2020",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/195/2020/handbook-2020-uno.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351121 - EDIÇÃO 01 - JAN/2020.",
+    "fipeVariants": [
+      "6957/2020-5",
+      "7735/2020-5",
+      "7736/2020-5",
+      "7952/2020-5"
+    ]
+  },
+  {
+    "model": "Uno",
+    "year": "2021",
+    "title": "Fiat Uno 2021",
+    "external_url": "https://servicos.fiat.com.br/content/dam/fiat/products/handbooks/195/2021/handbook-uno-2021_2021.pdf",
+    "source": "https://servicos.fiat.com.br/manuais.html",
+    "notes": "Manual de uso e manutenção Fiat. Impresso 60351121 - EDIÇÃO 03 - JAN/2021.",
+    "fipeVariants": [
+      "6957/2021-5",
+      "7735/2021-5",
+      "7736/2021-5",
+      "7952/2021-5",
+      "9725/2021-5"
+    ]
+  },
+  {
+    "model": "Uno Furgão",
+    "year": "2004",
+    "title": "Fiat Uno Furgão 2004",
+    "external_url": "https://drive.usercontent.google.com/download?id=1eMk8soJs4CuCM85y2ef7DOElwAVs8xho&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2004.html",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "640/2004-1"
+    ]
+  },
+  {
+    "model": "Uno Furgão",
+    "year": "2005",
+    "title": "Fiat Uno Furgão 2005",
+    "external_url": "https://drive.usercontent.google.com/download?id=13BsAa9p87-niWtnbuazySnMPTGyqzGkj&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2005.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60350886 - II/2005.",
+    "fipeVariants": [
+      "640/2005-1"
+    ]
+  },
+  {
+    "model": "Uno Furgão",
+    "year": "2007",
+    "title": "Fiat Uno Furgão 2007",
+    "external_url": "https://drive.usercontent.google.com/download?id=1ycepr-LA0StJ1MLzEA1VXZG2s1rXXvB_&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2007.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355013 - X/2006.",
+    "fipeVariants": [
+      "640/2007-1"
+    ]
+  },
+  {
+    "model": "Uno Furgão",
+    "year": "2009",
+    "title": "Fiat Uno Furgão 2009",
+    "external_url": "https://drive.usercontent.google.com/download?id=1_A02pzFGORR_O5M_8JZueDaMyJENL8QQ&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2009.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355277 - IX/2009.",
+    "fipeVariants": [
+      "640/2009-1"
+    ]
+  },
+  {
+    "model": "Uno Furgão",
+    "year": "2010",
+    "title": "Fiat Uno Furgão 2010",
+    "external_url": "https://drive.usercontent.google.com/download?id=1qGuqoh-q3gOp0eDDdu6CCWIeKsjZyeBw&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2010.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355277 - VII/2010.",
+    "fipeVariants": [
+      "640/2010-1"
+    ]
+  },
+  {
+    "model": "Uno Furgão",
+    "year": "2012",
+    "title": "Fiat Uno Furgão 2012",
+    "external_url": "https://drive.usercontent.google.com/download?id=1YYDx2U6aBA_eIfOcIdyedDcc_6QLTm34&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2012.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355277 - II/2012.",
+    "fipeVariants": [
+      "640/2012-1"
+    ]
+  },
+  {
+    "model": "Uno Furgão",
+    "year": "2013",
+    "title": "Fiat Uno Furgão 2013",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Fiorino_2013_PT_BR_abc0a2f64a.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/fiorino/info/manuais/2013",
+    "notes": "Impresso Fiat 60355277 de julho de 2013. Capítulo E, Uno Furgão 1.3 Fire Flex.",
+    "fipeVariants": [
+      "640/2013-1"
+    ]
+  },
+  {
+    "model": "Uno Mille",
+    "year": "2004",
+    "title": "Fiat Uno Mille 2004",
+    "external_url": "https://drive.usercontent.google.com/download?id=1eMk8soJs4CuCM85y2ef7DOElwAVs8xho&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2004.html",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "644/2004-1",
+      "645/2004-1"
+    ]
+  },
+  {
+    "model": "Uno Mille",
+    "year": "2005",
+    "title": "Fiat Uno Mille 2005",
+    "external_url": "https://drive.usercontent.google.com/download?id=13BsAa9p87-niWtnbuazySnMPTGyqzGkj&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2005.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60350886 - II/2005.",
+    "fipeVariants": [
+      "644/2005-1",
+      "645/2005-1"
+    ]
+  },
+  {
+    "model": "Uno Mille",
+    "year": "2007",
+    "title": "Fiat Uno Mille 2007",
+    "external_url": "https://drive.usercontent.google.com/download?id=1ycepr-LA0StJ1MLzEA1VXZG2s1rXXvB_&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2007.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355013 - X/2006.",
+    "fipeVariants": [
+      "644/2007-1",
+      "645/2007-1"
+    ]
+  },
+  {
+    "model": "Uno Mille",
+    "year": "2009",
+    "title": "Fiat Uno Mille 2009",
+    "external_url": "https://drive.usercontent.google.com/download?id=1_A02pzFGORR_O5M_8JZueDaMyJENL8QQ&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2009.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355277 - IX/2009.",
+    "fipeVariants": [
+      "644/2009-1",
+      "645/2009-1",
+      "4316/2009-5",
+      "4317/2009-5",
+      "4763/2009-5",
+      "4764/2009-5",
+      "4765/2009-5",
+      "4766/2009-5"
+    ]
+  },
+  {
+    "model": "Uno Mille",
+    "year": "2010",
+    "title": "Fiat Uno Mille 2010",
+    "external_url": "https://drive.usercontent.google.com/download?id=1qGuqoh-q3gOp0eDDdu6CCWIeKsjZyeBw&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2010.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355277 - VII/2010.",
+    "fipeVariants": [
+      "644/2010-1",
+      "645/2010-1",
+      "4316/2010-5",
+      "4317/2010-5",
+      "4763/2010-5",
+      "4764/2010-5",
+      "4765/2010-5",
+      "4766/2010-5"
+    ]
+  },
+  {
+    "model": "Uno Mille",
+    "year": "2012",
+    "title": "Fiat Uno Mille 2012",
+    "external_url": "https://drive.usercontent.google.com/download?id=1YYDx2U6aBA_eIfOcIdyedDcc_6QLTm34&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2024/06/manual-fiat-fiorino-2012.html",
+    "notes": "Edição de fábrica digitalizada. Impresso 60355277 - II/2012.",
+    "fipeVariants": [
+      "644/2012-1",
+      "645/2012-1",
+      "4316/2012-5",
+      "4317/2012-5",
+      "4763/2012-5",
+      "4764/2012-5",
+      "4765/2012-5",
+      "4766/2012-5"
+    ]
+  },
+  {
+    "model": "Uno Mille",
+    "year": "2013",
+    "title": "Fiat Uno Mille 2013",
+    "external_url": "https://manuals.opinautos.com.br/published/Fiat-Fiorino_2013_PT_BR_abc0a2f64a.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/fiorino/info/manuais/2013",
+    "notes": "Impresso Fiat 60355277 de julho de 2013. Capítulo E, Mille Fire e Mille Way Economy 1.0 Flex.",
+    "fipeVariants": [
+      "644/2013-1",
+      "645/2013-1",
+      "4316/2013-5",
+      "4317/2013-5",
+      "4763/2013-5",
+      "4764/2013-5",
+      "4765/2013-5",
+      "4766/2013-5",
+      "6320/2013-5",
+      "6692/2013-5"
+    ]
+  },
+  {
+    "model": "Uno Mille Brio",
+    "year": "1991",
+    "title": "Fiat Uno Mille Brio 1991",
+    "external_url": "https://drive.usercontent.google.com/download?id=1ZnMHik1weeGfNsGCP1JJ9kVg1OmOPCe9&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/09/manual-do-fiat-uno-mille-1991-brio.html",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "647/1991-1"
+    ]
+  },
+  {
+    "model": "Uno Mille Electronic",
+    "year": "1993",
+    "title": "Fiat Uno Mille Electronic 1993",
+    "external_url": "https://manuals.opinautos.com/published/Fiat-Uno_1993_PT__5e290bafe3.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/uno/info/manuais/1993",
+    "notes": "Edição brasileira do manual de uso e manutenção do Uno Mille Electronic 1.0 a gasolina.",
+    "fipeVariants": [
+      "646/1993-1",
+      "647/1993-1"
+    ]
+  },
+  {
+    "model": "Uno Mille Electronic",
+    "year": "1994",
+    "title": "Fiat Uno Mille Electronic 1994",
+    "external_url": "https://manuals.opinautos.com/published/Fiat-Uno_1993_PT__5e290bafe3.pdf",
+    "source": "https://www.opinautos.com.br/br/fiat/uno/info/manuais/1993",
+    "notes": "Edição brasileira do manual de uso e manutenção do Uno Mille Electronic 1.0 a gasolina.",
+    "fipeVariants": [
+      "646/1994-1",
+      "647/1994-1"
+    ]
+  },
+  {
+    "model": "Uno Mille ELX",
+    "year": "1994",
+    "title": "Fiat Uno Mille ELX 1994",
+    "external_url": "https://drive.usercontent.google.com/download?id=1JE0HxfwVXDiCswCvL0riQEPxN7AaiAEx&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/09/manual-do-fiat-uno-mille-elx-1994.html",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "643/1994-1"
+    ]
+  },
+  {
+    "model": "Uno Mille i.e.",
+    "year": "1995",
+    "title": "Fiat Uno Mille i.e. 1995",
+    "external_url": "https://drive.usercontent.google.com/download?id=1R1asaDbZni9CCZ7RZIOTQYPoiJ1vKDR8&export=download&confirm=t",
+    "source": "https://manuaisdoproprietario.blogspot.com/2023/09/manual-do-fiat-uno-mille-ep-e-ie-1995.html",
+    "notes": "Digitalização do manual de uso e manutenção Fiat. Confira a aplicação indicada no livreto.",
+    "fipeVariants": [
+      "647/1995-1"
+    ]
+  }
+]

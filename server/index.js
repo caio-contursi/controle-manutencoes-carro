@@ -1,5 +1,6 @@
 import { openPostgresCatalog } from './db/postgres.js'
 import { registerFipeRoute } from './fipe.js'
+import { fipeManualCatalogs } from './db/fipe-owner-manuals.js'
 import express from 'express'
 import fs from 'node:fs/promises'
 import path from 'node:path'
@@ -18,7 +19,10 @@ const postgres = process.env.DATABASE_URL
   : null
 const catalog = postgres ? null : createCatalog(catalogFile)
 app.disable('x-powered-by')
-registerFipeRoute(app)
+const fipeManuals = postgres
+  ? new Map(await Promise.all(fipeManualCatalogs.map(async ({ brand }) => [brand, await postgres.fipeOwnerManuals(brand)])))
+  : undefined
+registerFipeRoute(app, fipeManuals)
 app.use(express.json({ limit: '256kb' }))
 
 async function readState() {

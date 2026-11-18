@@ -3,7 +3,6 @@ import { manufacturerPortals } from './manual-portals.js'
 
 const sources = [
   [59, manufacturerPortals[59]],
-  [23, 'https://www.chevrolet.com.br/servicos/manuais-veiculos/anos-anteriores'],
   [43, 'https://www.nissan.com.br/servicos/manuais/novo-versa.html'],
 ]
 const nissanPage = await fetch(manufacturerPortals[43], { signal: AbortSignal.timeout(15000) })
@@ -44,10 +43,6 @@ for (const [brand, source, sourceModel = 'Versa'] of sources) {
       if (!url.pathname.includes('/literatura-de-bordo/') || /suplemento|rádio|resgate|conectado|alinhamento/i.test(title)) continue
       match = title.match(/^Manual (?:Novo )?(.+?) (20\d{2})(?:\s*[–-]\s*V[aá]lido.*)?$/i)
         || title.match(/^(.+?) (20\d{2})\s*-\s*Manual de instruções$/i)
-    } else if (brand === 23) {
-      match = url.pathname.match(/\/manual-([a-z0-9-]+)-(20\d{2})\.pdf$/i)
-        || url.pathname.match(/\/(celta)\/(2015)-MY155_Celta\.pdf$/i)
-      if (match && title !== match[2]) continue
     } else if (brand === 48) {
       const filename = decodeURIComponent(url.pathname.split('/').at(-1))
       if (!/manual.*propriet[aá]rio/i.test(filename) || /radio|multim[ií]dia|garantia/i.test(filename)) continue

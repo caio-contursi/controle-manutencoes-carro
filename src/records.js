@@ -1,7 +1,8 @@
 export function displayDate(value) {
   if (!value) return 'Data não informada'
   const date = new Date(/^\d{4}-\d{2}-\d{2}$/.test(value) ? value + 'T12:00:00' : value)
-  return Number.isNaN(date.getTime()) ? 'Data não informada' : date.toLocaleDateString('pt-BR')
+  const locale = document.documentElement.lang || 'pt-BR'
+  return Number.isNaN(date.getTime()) ? 'Data não informada' : date.toLocaleDateString(locale)
 }
 
 export function calendarMonth(value = new Date()) {

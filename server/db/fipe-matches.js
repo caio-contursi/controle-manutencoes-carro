@@ -177,6 +177,13 @@ export const ownerManuals = [
     keys: ['25/6780/2020-5/014083-0', '25/6781/2020-5/014081-3', '25/4799/2020-5/014056-2', '25/8050/2020-5/014097-0'],
   },
   {
+    title: 'Renault Clio 2015',
+    external_url: 'https://cdn.group.renault.com/ren/br/renault-new-cars/editorial/manuais/manuais-clio/2015/NU1055-5-X65-PTB.pdf',
+    evidence: 'A Renault Brasil publica a edição NU1055-5 para o ano-modelo 2015. P. 1.10: versão de cinco portas. P. 6.4: motor D4D 1.0 16V Hi-Power.',
+    supporting_source: 'https://www.renault.com.br/manuais/clio.html',
+    keys: ['48/2012/2015-1/025054-6'],
+  },
+  {
     title: 'Renault Kwid 2023',
     external_url: 'https://cdn.group.renault.com/ren/br/renault-new-cars/editorial/2023/manuais/agosto/manual-proprietario-kwid-2023.pdf',
     evidence: 'Dados técnicos, p. 6.4: B4D 999 cm³. Etiqueta do Inmetro publicada pela marca: Zen, Intense e Outsider 1.0 12V Flex manual.',

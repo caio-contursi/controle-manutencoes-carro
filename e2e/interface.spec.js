@@ -4,7 +4,7 @@ const vehicle = { brand: 'Fiat', model: 'Palio', year: '2015', plate: 'ABC1D23' 
 const pending = { title: 'Revisão pendente', status: 'Atrasada', km: 9000 }
 
 async function seed(request, overrides = {}) {
-  const data = { profile: { name: 'Teste' }, vehicle, mileage: 10000, expenses: [], maintenance: [], reminders: [], ...overrides }
+  const data = { profile: { name: 'Teste' }, vehicle, mileage: 10000, expenses: [], maintenance: [], reminders: [], dark: false, ...overrides }
   for (const [key, value] of Object.entries(data)) {
     const response = await request.put('/api/state/' + key, { data: { value } })
     expect(response.ok()).toBeTruthy()
@@ -60,6 +60,7 @@ async function mockFipe(page) {
       return route.fulfill({ json: (year ? familyVersions[key + '/' + year] : familyYears[key]) ?? [] })
     }
     if (year) {
+      if (query.get('model') === '11') return route.fulfill({ json: { price: 'R$ 26.000,00', referenceMonth: 'novembro de 2026', manuals: [] } })
       return route.fulfill({ json: { brand: 'Fiat', model: 'Palio Fire', modelYear: 2015, fuel: 'Flex', price: 'R$ 25.000,00', referenceMonth: 'novembro de 2026', codeFipe: '001269-6', manuals: [{ external_url: 'https://servicos.fiat.com.br/manual.pdf', edition: '2015', token: 'pdf-test' }] } })
     }
     return route.fulfill({ json: brand ? brandModels[brand] : [{ code: '21', name: 'Fiat' }, { code: '59', name: 'Volkswagen' }] })
@@ -68,23 +69,28 @@ async function mockFipe(page) {
 }
 async function selectFipe(page, familyRequests, open = true) {
   if (open) await button(page, 'Consultar Tabela FIPE').click()
-  await page.getByRole('combobox', { name: 'Marca FIPE', exact: true }).selectOption('21')
   const select = (name) => page.getByRole('combobox', { name, exact: true })
+  const model = select(open ? 'Carro' : 'Modelo')
+  const version = select(open ? 'Modelo' : 'Versão')
+  await select(open ? 'Marca FIPE' : 'Marca').selectOption('21')
   await expect(select('Ano-modelo')).toBeDisabled()
-  await select('Carro').selectOption('palio')
+  await model.selectOption('palio')
   await expect(select('Ano-modelo').locator('option:not([value=""])')).toHaveText(['2015', '2013'])
-  await expect(select('Modelo')).toHaveCount(0)
+  if (open) await expect(version).toHaveCount(0)
+  else await expect(version).toBeDisabled()
   expect(familyRequests).toEqual(['21/palio'])
   await select('Ano-modelo').selectOption('2015')
-  await expect(select('Modelo').locator('option')).toHaveText([
+  await expect(version.locator('option')).toHaveText([
     'Selecione', 'Palio Fire 1.0 Flex 8V Hatch 3p · Flex', 'Palio 1.6 16V Sedan 5p · Gasolina',
   ])
   expect(familyRequests).toEqual(['21/palio', '21/palio/2015'])
-  await select('Modelo').selectOption('10/2015-5')
+  await expect(page.getByText('R$ 25.000,00', { exact: true })).toHaveCount(0)
+  await expect(page.getByRole('link', { name: 'Visualizar manual' })).toHaveCount(0)
+  await version.selectOption('10/2015-5')
   await expect(page.getByText('R$ 25.000,00', { exact: true })).toBeVisible()
   await expect(page.getByRole('heading', { name: 'Manutenção', exact: true })).toHaveCount(0)
   await expect(page.getByRole('link', { name: 'Visualizar manual' })).toHaveAttribute('href', '/api/catalog/manual-pdf?token=pdf-test')
-  await expect(page.getByRole('link', { name: 'Baixar PDF' })).toHaveAttribute('href', '/api/catalog/manual-pdf?token=pdf-test&download=1')
+  await expect(page.getByRole('link', { name: open ? 'Baixar PDF' : 'Baixar manual em PDF', exact: true })).toHaveAttribute('href', '/api/catalog/manual-pdf?token=pdf-test&download=1')
 }
 
 test('cadastro: consulta FIPE, volta, confirma e preserva o perfil ao recarregar', async ({ page, request }) => {
@@ -200,27 +206,74 @@ test('catálogo: consulta unificada FIPE e manual', async ({ page, request }) =>
   })
   await page.goto('/')
   await nav(page, 'Catálogo')
-  await expect(page.getByRole('heading', { name: 'Próximas marcas que serão catalogadas' })).toBeVisible()
-  await expect(page.getByRole('heading', { name: 'Cobertura por versão e ano' })).toHaveCount(0)
-  await expect(page.getByRole('heading', { name: 'Buscar manuais no catálogo' })).toHaveCount(0)
+  const catalog = page.getByRole('region', { name: 'Consult information about your car in our technical catalog!' })
+  await expect(catalog.getByText('Select your car model and check the details:', { exact: true })).toBeVisible()
+  await expect(page.locator('.catalog-page > section')).toHaveCount(1)
+  await expect(catalog.getByRole('combobox')).toHaveCount(4)
   await selectFipe(page, familyRequests, false)
+  await expect(catalog.getByText('novembro de 2026', { exact: true })).toBeVisible()
+  await expect(catalog.getByRole('link')).toHaveText(['Visualizar manual', 'Baixar manual em PDF'])
   const select = (name) => page.getByRole('combobox', { name, exact: true })
+  await select('Versão').selectOption('11/2015-1')
+  await expect(catalog.getByText('R$ 26.000,00', { exact: true })).toBeVisible()
+  await expect(catalog.getByText('Manual de fábrica ainda não confirmado para este modelo e ano.')).toBeVisible()
+  await expect(catalog.getByRole('link')).toHaveCount(0)
   await select('Ano-modelo').selectOption('2013')
-  await expect(select('Modelo').locator('option')).toHaveText(['Selecione', 'Palio Fire 1.0 Flex 8V Hatch 3p · Flex'])
+  await expect(select('Versão').locator('option')).toHaveText(['Selecione', 'Palio Fire 1.0 Flex 8V Hatch 3p · Flex'])
   await expect(page.getByRole('link', { name: 'Visualizar manual' })).toHaveCount(0)
-  await expect(page.getByText('R$ 25.000,00', { exact: true })).toHaveCount(0)
-  await select('Carro').selectOption('uno')
+  await expect(catalog.getByText('R$ 26.000,00', { exact: true })).toHaveCount(0)
+  await select('Modelo').selectOption('uno')
   await expect(select('Ano-modelo').locator('option:not([value=""])')).toHaveText(['2012'])
   await expect(select('Ano-modelo')).toHaveValue('')
-  await expect(select('Modelo')).toHaveCount(0)
-  await select('Marca FIPE').selectOption('59')
+  await expect(select('Versão')).toBeDisabled()
+  await select('Marca').selectOption('59')
   await expect(select('Ano-modelo')).toBeDisabled()
-  await select('Carro').selectOption('fox')
+  await select('Modelo').selectOption('fox')
   await expect(select('Ano-modelo').locator('option:not([value=""])')).toHaveText(['2018'])
   expect(familyRequests).toEqual(['21/palio', '21/palio/2015', '21/palio/2013', '21/uno', '59/fox'])
   expect(stateRequests).toEqual(['GET'])
   await expect(page.getByRole('heading', { name: 'Fontes registradas' })).toHaveCount(0)
   await expect(page.getByRole('heading', { name: 'Contribuir com uma fonte' })).toHaveCount(0)
+})
+
+test('catálogo: abre a visualização e oferece o download do PDF selecionado', async ({ page, request }) => {
+  await seed(request)
+  const familyRequests = await mockFipe(page)
+  await page.goto('/')
+  await nav(page, 'Catálogo')
+  await selectFipe(page, familyRequests, false)
+  await expect(page.getByRole('link', { name: 'Baixar manual em PDF', exact: true })).toHaveAttribute('download', '')
+  await page.context().route('**/api/catalog/manual-pdf?*', (route) => route.fulfill({ body: 'PDF do manual' }))
+  const popupEvent = page.waitForEvent('popup')
+  await page.getByRole('link', { name: 'Visualizar manual', exact: true }).click()
+  const popup = await popupEvent
+  await expect(popup).toHaveURL(/\/api\/catalog\/manual-pdf\?token=pdf-test$/)
+})
+
+test('tema: alterna no cabeçalho e no menu móvel e persiste ao recarregar', async ({ page, request }) => {
+  await seed(request)
+  await mockFipe(page)
+  await page.goto('/')
+  const theme = page.getByRole('switch', { name: 'Modo escuro' })
+  const root = page.locator('html')
+  await expect(theme).toHaveAttribute('aria-checked', 'false')
+  await theme.press('Space')
+  await expect(theme).toHaveAttribute('aria-checked', 'true')
+  await expect(root).toHaveAttribute('data-theme', 'dark')
+  await expect.poll(async () => (await (await request.get('/api/state')).json()).dark).toBe(true)
+  await nav(page, 'Catálogo')
+  const catalog = page.locator('.catalog-fipe')
+  await expect(catalog).toHaveCSS('background-color', 'rgb(25, 36, 56)')
+  await page.reload()
+  await expect(theme).toHaveAttribute('aria-checked', 'true')
+  await expect(root).toHaveAttribute('data-theme', 'dark')
+  await page.setViewportSize({ width: 390, height: 844 })
+  await button(page, 'Abrir menu').click()
+  await dialog(page).getByRole('switch', { name: 'Modo escuro' }).click()
+  await expect(root).toHaveAttribute('data-theme', 'light')
+  await button(dialog(page), 'Fechar menu').click()
+  await expect(theme).toHaveAttribute('aria-checked', 'false')
+  await expect(catalog).toHaveCSS('background-color', 'rgb(255, 255, 255)')
 })
 
 test('uma edição pendente sobrevive ao recarregamento e chega ao servidor', async ({ page, request }) => {

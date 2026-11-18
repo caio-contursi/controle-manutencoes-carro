@@ -20,7 +20,6 @@ export function manualsByModelYear(brand, quote) {
   if (!model) return []
   const description = words.join(' ')
   if (brand === '59' && model === 'polo' && /^polo\s+sed[aã]/.test(description)) return []
-  if (brand === '23' && model === 'cruze' && /^cruze\s+(?:sport|hatch)/.test(description)) return []
   if (brand === '43' && model === 'march' && /^march\s+active/.test(description)) return []
   // Avoid substituting combustion manuals for an electric model with a shared name.
   if (/el[eé]tric/i.test(quote.fuel || '') && !/ev|id[. ]|leaf|euv/i.test(model)) return []

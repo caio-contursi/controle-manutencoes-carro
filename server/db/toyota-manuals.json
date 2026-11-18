@@ -1,0 +1,1917 @@
+[
+  {
+    "model": "band",
+    "year": "1989",
+    "title": "Toyota Bandeirante 1989 — Manual do Proprietário",
+    "external_url": "https://www.4x4brasil.com.br/forum/attachments/toyota-bandeirante/236818d1280454281-manual-band-manual-do-proprietario-livrete-manutencao-toyota.pdf",
+    "source": "https://ort.com.br/blog/2022/08/11/biblioteca-toyota-bandeirante/",
+    "notes": "Manual do proprietário e livrete de manutenção Toyota Bandeirante, edição de 1989.",
+    "fipeVariants": [
+      "2206/1989-3",
+      "2207/1989-3",
+      "2208/1989-3",
+      "2209/1989-3",
+      "2211/1989-3",
+      "2212/1989-3"
+    ]
+  },
+  {
+    "model": "camry",
+    "year": "2002",
+    "title": "Toyota CAMRY 2002 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Camry_2002_pt_BR_ac71bf5708.pdf",
+    "source": "https://www.opinautos.com.br/toyota/camry/info/manuais/2002",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2216/2002-1"
+    ]
+  },
+  {
+    "model": "camry",
+    "year": "2004",
+    "title": "Toyota CAMRY 2004 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Camry_2004_pt_BR_a928dd2a75.pdf",
+    "source": "https://www.opinautos.com.br/toyota/camry/info/manuais/2004",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2216/2004-1"
+    ]
+  },
+  {
+    "model": "camry",
+    "year": "2006",
+    "title": "Toyota CAMRY 2006 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Camry_2006_pt_BR_11c80d93a2.pdf",
+    "source": "https://www.opinautos.com.br/toyota/camry/info/manuais/2006",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2216/2006-1"
+    ]
+  },
+  {
+    "model": "camry",
+    "year": "2007",
+    "title": "Toyota CAMRY 2007 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Camry_2007_pt_BR_209d6a5a77.pdf",
+    "source": "https://www.opinautos.com.br/toyota/camry/info/manuais/2007",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4091/2007-1"
+    ]
+  },
+  {
+    "model": "camry",
+    "year": "2009",
+    "title": "Toyota CAMRY 2009 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Camry_2009_pt_BR_3e8f9ef52d.pdf",
+    "source": "https://www.opinautos.com.br/toyota/camry/info/manuais/2009",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4091/2009-1"
+    ]
+  },
+  {
+    "model": "camry",
+    "year": "2012",
+    "title": "Toyota CAMRY 2012 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Camry_2012_pt_BR_5a41322c96.pdf",
+    "source": "https://www.opinautos.com.br/toyota/camry/info/manuais/2012",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4091/2012-1"
+    ]
+  },
+  {
+    "model": "camry",
+    "year": "2013",
+    "title": "Toyota CAMRY 2013 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Camry_2013_pt_BR_08298ac842.pdf",
+    "source": "https://www.opinautos.com.br/toyota/camry/info/manuais/2013",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4091/2013-1"
+    ]
+  },
+  {
+    "model": "camry",
+    "year": "2014",
+    "title": "Toyota CAMRY 2014 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Camry_2014_pt_BR_d2a7790cfd.pdf",
+    "source": "https://www.opinautos.com.br/toyota/camry/info/manuais/2014",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4091/2014-1"
+    ]
+  },
+  {
+    "model": "camry",
+    "year": "2016",
+    "title": "Toyota CAMRY 2016 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Camry_2016_pt_BR_4a252bb272.pdf",
+    "source": "https://www.opinautos.com.br/toyota/camry/info/manuais/2016",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4091/2016-1"
+    ]
+  },
+  {
+    "model": "camry",
+    "year": "2017",
+    "title": "Toyota CAMRY 2017 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Camry_2017_pt_BR_3cc41dca32.pdf",
+    "source": "https://www.opinautos.com.br/toyota/camry/info/manuais/2017",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4091/2017-1"
+    ]
+  },
+  {
+    "model": "camry",
+    "year": "2019",
+    "title": "Toyota CAMRY 2019 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Camry_2019_pt_BR_110b6e82e8.pdf",
+    "source": "https://www.opinautos.com.br/toyota/camry/info/manuais/2019",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4091/2019-1"
+    ]
+  },
+  {
+    "model": "camry",
+    "year": "2020",
+    "title": "Toyota CAMRY 2020 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Camry_2020_pt_BR_689c33e77f.pdf",
+    "source": "https://www.opinautos.com.br/toyota/camry/info/manuais/2020",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4091/2020-1"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "1999",
+    "title": "Toyota COROLLA 1999 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_1999_pt_BR_3d731f24b4.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/1999",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2219/1999-1",
+      "2225/1999-1",
+      "2226/1999-1",
+      "2227/1999-1",
+      "2228/1999-1",
+      "2229/1999-1",
+      "2230/1999-1",
+      "2233/1999-1",
+      "2234/1999-1"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2001",
+    "title": "Toyota COROLLA 2001 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2001_pt_BR_92f87e82c3.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2001",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2225/2001-1",
+      "2226/2001-1",
+      "2229/2001-1",
+      "2230/2001-1",
+      "2233/2001-1",
+      "2234/2001-1"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2002",
+    "title": "Toyota COROLLA 2002 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2002_pt_BR_45333022ca.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2002",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2225/2002-1",
+      "2226/2002-1",
+      "2229/2002-1",
+      "2230/2002-1",
+      "2233/2002-1",
+      "2234/2002-1"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2003",
+    "title": "Toyota COROLLA 2003 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2003_pt_BR_44f244c292.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2003",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2225/2003-1",
+      "2229/2003-1",
+      "2230/2003-1",
+      "2231/2003-1",
+      "2232/2003-1"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2004",
+    "title": "Toyota COROLLA 2004 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2004_pt_BR_335d0a7285.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2004",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2225/2004-1",
+      "2229/2004-1",
+      "2230/2004-1",
+      "2231/2004-1",
+      "2232/2004-1"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2005",
+    "title": "Toyota COROLLA 2005 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2005_pt_BR_6777f7949c.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2005",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2221/2005-1",
+      "2222/2005-1",
+      "2225/2005-1",
+      "2229/2005-1",
+      "2230/2005-1",
+      "2231/2005-1",
+      "2232/2005-1"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2006",
+    "title": "Toyota Corolla 2005 — Manual do Proprietário",
+    "external_url": "https://amigosdagraxa.com.br/wp-content/uploads/manuais/manual-proprietario-toyota-corolla-2005.pdf",
+    "source": "https://amigosdagraxa.com.br/manual-proprietario-corolla-pdf/",
+    "notes": "Edição 2005; fonte informa aplicação aos anos-modelo 2003–2008.",
+    "fipeVariants": [
+      "2221/2006-1",
+      "2222/2006-1",
+      "2225/2006-1",
+      "2229/2006-1",
+      "2230/2006-1",
+      "2231/2006-1",
+      "2232/2006-1"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2007",
+    "title": "Toyota COROLLA 2007 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2007_pt_BR_457885fe47.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2007",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2221/2007-1",
+      "2222/2007-1",
+      "2225/2007-1",
+      "2229/2007-1",
+      "2230/2007-1",
+      "2231/2007-1",
+      "2232/2007-1",
+      "4166/2007-1",
+      "4167/2007-1",
+      "4168/2007-1",
+      "4169/2007-1"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2008",
+    "title": "Toyota COROLLA 2008 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2008_pt_BR_aeccfe2991.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2008",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2221/2008-1",
+      "2222/2008-1",
+      "2225/2008-1",
+      "2229/2008-1",
+      "2230/2008-1",
+      "2231/2008-1",
+      "2233/2008-1",
+      "2234/2008-1",
+      "4348/2008-5"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2009",
+    "title": "Toyota COROLLA 2009 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2009_pt_BR_27330cc66f.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2009",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2225/2009-1",
+      "2229/2009-1",
+      "2230/2009-1",
+      "2231/2009-1",
+      "2233/2009-1",
+      "2234/2009-1"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2010",
+    "title": "Toyota COROLLA 2010 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2010_pt_BR_d7e1d36879.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2010",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2225/2010-1",
+      "2229/2010-1",
+      "2230/2010-1",
+      "2231/2010-1",
+      "2233/2010-1",
+      "2234/2010-1",
+      "5041/2010-5",
+      "5042/2010-5",
+      "9300/2010-5"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2011",
+    "title": "Toyota COROLLA 2011 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2011_pt_BR_86a4dae2f1.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2011",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2233/2011-1",
+      "2234/2011-1",
+      "5041/2011-5",
+      "5042/2011-5",
+      "5194/2011-5",
+      "9300/2011-5"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2012",
+    "title": "Toyota COROLLA 2012 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2012_pt_BR_a9ca6c52ba.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2012",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2233/2012-1",
+      "2234/2012-1",
+      "5041/2012-5",
+      "5042/2012-5",
+      "5194/2012-5",
+      "9300/2012-5"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2013",
+    "title": "Toyota COROLLA 2013 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2013_pt_BR_e22fc75072.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2013",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2233/2013-1",
+      "2234/2013-1",
+      "5041/2013-5",
+      "5042/2013-5",
+      "5194/2013-5",
+      "5939/2013-5",
+      "9300/2013-5"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2014",
+    "title": "Toyota COROLLA 2014 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2014_pt_BR_48de787829.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2014",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2233/2014-1",
+      "2234/2014-1",
+      "5041/2014-5",
+      "5042/2014-5",
+      "5194/2014-5",
+      "5939/2014-5",
+      "9300/2014-5"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2015",
+    "title": "Toyota COROLLA 2015 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2015_pt_BR_e9a72070f6.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2015",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "5041/2015-5",
+      "5042/2015-5",
+      "5194/2015-5",
+      "9300/2015-5"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2016",
+    "title": "Toyota COROLLA 2016 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2016_pt_BR_85f246de92.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2016",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "5041/2016-5",
+      "5042/2016-5",
+      "5194/2016-5",
+      "7214/2016-5",
+      "9300/2016-5"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2017",
+    "title": "Toyota COROLLA 2017 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2017_pt_BR_f51dc10443.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2017",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "5041/2017-5",
+      "5042/2017-5",
+      "5194/2017-5",
+      "7214/2017-5",
+      "7558/2017-5",
+      "7746/2017-5",
+      "9300/2017-5"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2018",
+    "title": "Toyota COROLLA 2018 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2018_pt_BR_0c14f589f6.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2018",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "5041/2018-5",
+      "5194/2018-5",
+      "5939/2018-5",
+      "7214/2018-5",
+      "9300/2018-5"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2019",
+    "title": "Toyota COROLLA 2019 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2019_pt_BR_a31307836b.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2019",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "5041/2019-5",
+      "5194/2019-5",
+      "5939/2019-5",
+      "7214/2019-5",
+      "9300/2019-5"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2020",
+    "title": "Toyota COROLLA 2020 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2020_pt_BR_6b079e1942.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2020",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "5194/2020-5",
+      "8839/2020-5",
+      "9300/2020-5",
+      "9984/2020-6",
+      "9985/2020-6"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2021",
+    "title": "Toyota COROLLA 2021 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2021_pt_BR_9b8f978cbd.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2021",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "5194/2021-5",
+      "8839/2021-5",
+      "9300/2021-5",
+      "9984/2021-6",
+      "9985/2021-6"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2022",
+    "title": "Toyota COROLLA 2022 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corolla_2022_pt_BR_70519ddab9.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corolla/info/manuais/2022",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "5194/2022-5",
+      "8839/2022-5",
+      "9300/2022-5",
+      "9301/2022-5",
+      "9984/2022-6",
+      "9985/2022-6"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2023",
+    "title": "Toyota Corolla 2020 — Manual do Proprietário",
+    "external_url": "https://amigosdagraxa.com.br/wp-content/uploads/manuais/manual-proprietario-toyota-corolla-2020.pdf",
+    "source": "https://amigosdagraxa.com.br/manual-proprietario-corolla-pdf/",
+    "notes": "Edição 2020; fonte informa aplicação aos anos-modelo 2020–2023.",
+    "fipeVariants": [
+      "5194/2023-5",
+      "8839/2023-5",
+      "9300/2023-5",
+      "9301/2023-5",
+      "9984/2023-6",
+      "9985/2023-6"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2024",
+    "title": "Toyota Corolla 2024 — Manual do Proprietário",
+    "external_url": "https://amigosdagraxa.com.br/wp-content/uploads/manuais/manual-proprietario-toyota-corolla-2024.pdf",
+    "source": "https://amigosdagraxa.com.br/manual-proprietario-corolla-pdf/",
+    "notes": "Edição 2024; fonte informa aplicação aos anos-modelo 2024–2026.",
+    "fipeVariants": [
+      "10751/2024-1",
+      "10752/2024-1",
+      "5194/2024-5",
+      "8839/2024-5",
+      "9300/2024-5",
+      "9301/2024-5",
+      "9984/2024-6",
+      "9985/2024-6"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2025",
+    "title": "Toyota Corolla 2024 — Manual do Proprietário",
+    "external_url": "https://amigosdagraxa.com.br/wp-content/uploads/manuais/manual-proprietario-toyota-corolla-2024.pdf",
+    "source": "https://amigosdagraxa.com.br/manual-proprietario-corolla-pdf/",
+    "notes": "Edição 2024; fonte informa aplicação aos anos-modelo 2024–2026.",
+    "fipeVariants": [
+      "5194/2025-5",
+      "8839/2025-5",
+      "9300/2025-5",
+      "9301/2025-5",
+      "9984/2025-6",
+      "9985/2025-6"
+    ]
+  },
+  {
+    "model": "corolla",
+    "year": "2026",
+    "title": "Toyota Corolla 2024 — Manual do Proprietário",
+    "external_url": "https://amigosdagraxa.com.br/wp-content/uploads/manuais/manual-proprietario-toyota-corolla-2024.pdf",
+    "source": "https://amigosdagraxa.com.br/manual-proprietario-corolla-pdf/",
+    "notes": "Edição 2024; fonte informa aplicação aos anos-modelo 2024–2026.",
+    "fipeVariants": [
+      "11635/2026-6",
+      "5194/2026-5",
+      "8839/2026-5",
+      "9300/2026-5",
+      "9301/2026-5",
+      "9985/2026-6"
+    ]
+  },
+  {
+    "model": "corolla-cross",
+    "year": "2022",
+    "title": "Toyota Corolla Cross 2022 — Manual do Proprietário",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2025/04/Manual-proprietario-toyota-corolla-cross.pdf",
+    "source": "https://onlycars.com.br/2025/04/manual-toyota-corolla-cross-pdf.html",
+    "notes": "Edição brasileira Toyota 01999-98B50-RP (MY23, novembro de 2021); associada somente ao Corolla Cross.",
+    "fipeVariants": [
+      "9324/2022-6",
+      "9325/2022-5",
+      "9326/2022-5",
+      "9986/2022-6",
+      "9987/2022-6"
+    ]
+  },
+  {
+    "model": "corolla-cross",
+    "year": "2023",
+    "title": "Toyota Corolla Cross 2022 — Manual do Proprietário",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2025/04/Manual-proprietario-toyota-corolla-cross.pdf",
+    "source": "https://onlycars.com.br/2025/04/manual-toyota-corolla-cross-pdf.html",
+    "notes": "Edição brasileira Toyota 01999-98B50-RP (MY23, novembro de 2021); associada somente ao Corolla Cross.",
+    "fipeVariants": [
+      "9325/2023-5",
+      "9326/2023-5",
+      "9787/2023-5",
+      "9986/2023-6",
+      "9987/2023-6"
+    ]
+  },
+  {
+    "model": "corolla-cross",
+    "year": "2024",
+    "title": "Toyota Corolla Cross 2022 — Manual do Proprietário",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2025/04/Manual-proprietario-toyota-corolla-cross.pdf",
+    "source": "https://onlycars.com.br/2025/04/manual-toyota-corolla-cross-pdf.html",
+    "notes": "Edição brasileira Toyota 01999-98B50-RP (MY23, novembro de 2021); associada somente ao Corolla Cross.",
+    "fipeVariants": [
+      "10909/2024-5",
+      "9325/2024-5",
+      "9326/2024-5",
+      "9787/2024-5",
+      "9986/2024-6",
+      "9987/2024-6"
+    ]
+  },
+  {
+    "model": "corolla-cross",
+    "year": "2025",
+    "title": "Toyota Corolla Cross 2022 — Manual do Proprietário",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2025/04/Manual-proprietario-toyota-corolla-cross.pdf",
+    "source": "https://onlycars.com.br/2025/04/manual-toyota-corolla-cross-pdf.html",
+    "notes": "Edição brasileira Toyota 01999-98B50-RP (MY23, novembro de 2021); associada somente ao Corolla Cross.",
+    "fipeVariants": [
+      "10909/2025-5",
+      "9325/2025-5",
+      "9326/2025-5",
+      "9787/2025-5",
+      "9986/2025-6",
+      "9987/2025-6"
+    ]
+  },
+  {
+    "model": "corolla-cross",
+    "year": "2026",
+    "title": "Toyota Corolla Cross 2022 — Manual do Proprietário",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2025/04/Manual-proprietario-toyota-corolla-cross.pdf",
+    "source": "https://onlycars.com.br/2025/04/manual-toyota-corolla-cross-pdf.html",
+    "notes": "Edição brasileira Toyota 01999-98B50-RP (MY23, novembro de 2021); associada somente ao Corolla Cross.",
+    "fipeVariants": [
+      "10909/2026-5",
+      "9325/2026-5",
+      "9326/2026-5",
+      "9787/2026-5",
+      "9986/2026-6",
+      "9987/2026-6"
+    ]
+  },
+  {
+    "model": "corona",
+    "year": "1996",
+    "title": "Toyota CORONA 1996 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Corona_1996_pt_BR_e98f0f985e.pdf",
+    "source": "https://www.opinautos.com.br/toyota/corona/info/manuais/1996",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2235/1996-1",
+      "2236/1996-1",
+      "2237/1996-1"
+    ]
+  },
+  {
+    "model": "etios",
+    "year": "2014",
+    "title": "Toyota ETIOS 2014 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Etios_2014_pt_BR_6ef0aac024.pdf",
+    "source": "https://www.opinautos.com.br/toyota/etios/info/manuais/2014",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "6245/2014-5",
+      "6246/2014-5",
+      "6247/2014-5",
+      "6248/2014-5",
+      "6249/2014-5",
+      "6250/2014-5",
+      "6251/2014-5",
+      "6598/2014-5",
+      "6651/2014-5",
+      "6872/2014-5",
+      "6873/2014-5"
+    ]
+  },
+  {
+    "model": "etios",
+    "year": "2015",
+    "title": "Toyota ETIOS 2015 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Etios_2015_pt_BR_5b2f1f4e6b.pdf",
+    "source": "https://www.opinautos.com.br/toyota/etios/info/manuais/2015",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "6246/2015-5",
+      "6247/2015-5",
+      "6248/2015-5",
+      "6249/2015-5",
+      "6251/2015-5",
+      "6598/2015-5",
+      "6651/2015-5",
+      "6872/2015-5",
+      "6873/2015-5"
+    ]
+  },
+  {
+    "model": "etios",
+    "year": "2016",
+    "title": "Toyota ETIOS 2016 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Etios_2016_pt_BR_2a9d7512cb.pdf",
+    "source": "https://www.opinautos.com.br/toyota/etios/info/manuais/2016",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "6246/2016-5",
+      "6247/2016-5",
+      "6248/2016-5",
+      "6249/2016-5",
+      "6251/2016-5",
+      "6598/2016-5",
+      "6651/2016-5",
+      "6872/2016-5",
+      "6873/2016-5"
+    ]
+  },
+  {
+    "model": "etios",
+    "year": "2017",
+    "title": "Toyota ETIOS 2017 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Etios_2017_pt_BR_62f57c7e3d.pdf",
+    "source": "https://www.opinautos.com.br/toyota/etios/info/manuais/2017",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "6246/2017-5",
+      "6247/2017-5",
+      "6248/2017-5",
+      "6249/2017-5",
+      "6251/2017-5",
+      "6598/2017-5",
+      "6651/2017-5",
+      "7559/2017-5",
+      "7560/2017-5",
+      "7561/2017-5",
+      "7562/2017-5",
+      "7563/2017-5",
+      "7564/2017-5",
+      "7565/2017-5",
+      "7711/2017-5",
+      "7712/2017-5",
+      "7747/2017-5"
+    ]
+  },
+  {
+    "model": "etios",
+    "year": "2018",
+    "title": "Toyota ETIOS 2018 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Etios_2018_pt_BR_fede028934.pdf",
+    "source": "https://www.opinautos.com.br/toyota/etios/info/manuais/2018",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "6246/2018-5",
+      "6247/2018-5",
+      "6251/2018-5",
+      "6598/2018-5",
+      "6651/2018-5",
+      "7559/2018-5",
+      "7560/2018-5",
+      "7561/2018-5",
+      "7562/2018-5",
+      "7563/2018-5",
+      "7564/2018-5",
+      "7565/2018-5",
+      "7711/2018-5",
+      "7712/2018-5",
+      "7747/2018-5"
+    ]
+  },
+  {
+    "model": "etios",
+    "year": "2019",
+    "title": "Toyota Etios 2019 — Manual do Proprietário",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2026/02/toyota-etios-manual-do-proprietario.pdf",
+    "source": "https://onlycars.com.br/2025/02/manual-toyota-etios-pdf.html",
+    "notes": "Edição Toyota de janeiro de 2019; usada para os anos-modelo finais do Etios brasileiro (2019–2021).",
+    "fipeVariants": [
+      "6246/2019-5",
+      "6247/2019-5",
+      "7560/2019-5",
+      "7561/2019-5",
+      "7562/2019-5",
+      "7563/2019-5",
+      "7711/2019-5",
+      "7712/2019-5",
+      "8249/2019-5",
+      "8250/2019-5",
+      "8251/2019-5",
+      "8252/2019-5"
+    ]
+  },
+  {
+    "model": "etios",
+    "year": "2020",
+    "title": "Toyota ETIOS 2020 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Etios_2020_pt_BR_1e39d08c61.pdf",
+    "source": "https://www.opinautos.com.br/toyota/etios/info/manuais/2020",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "6246/2020-5",
+      "6247/2020-5",
+      "7560/2020-5",
+      "7561/2020-5",
+      "8249/2020-5",
+      "8250/2020-5",
+      "8251/2020-5",
+      "8252/2020-5"
+    ]
+  },
+  {
+    "model": "etios",
+    "year": "2020",
+    "title": "Toyota Etios 2019 — Manual do Proprietário",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2026/02/toyota-etios-manual-do-proprietario.pdf",
+    "source": "https://onlycars.com.br/2025/02/manual-toyota-etios-pdf.html",
+    "notes": "Edição Toyota de janeiro de 2019; usada para os anos-modelo finais do Etios brasileiro (2019–2021).",
+    "fipeVariants": [
+      "6246/2020-5",
+      "6247/2020-5",
+      "7560/2020-5",
+      "7561/2020-5",
+      "8249/2020-5",
+      "8250/2020-5",
+      "8251/2020-5",
+      "8252/2020-5"
+    ]
+  },
+  {
+    "model": "etios",
+    "year": "2021",
+    "title": "Toyota ETIOS 2021 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Etios_2021_pt_BR_f30ff36991.pdf",
+    "source": "https://www.opinautos.com.br/toyota/etios/info/manuais/2021",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "6246/2021-5",
+      "6247/2021-5",
+      "7560/2021-5",
+      "7561/2021-5",
+      "8249/2021-5",
+      "8250/2021-5",
+      "8251/2021-5",
+      "8252/2021-5"
+    ]
+  },
+  {
+    "model": "etios",
+    "year": "2021",
+    "title": "Toyota Etios 2019 — Manual do Proprietário",
+    "external_url": "https://onlycars.com.br/wp-content/uploads/2026/02/toyota-etios-manual-do-proprietario.pdf",
+    "source": "https://onlycars.com.br/2025/02/manual-toyota-etios-pdf.html",
+    "notes": "Edição Toyota de janeiro de 2019; usada para os anos-modelo finais do Etios brasileiro (2019–2021).",
+    "fipeVariants": [
+      "6246/2021-5",
+      "6247/2021-5",
+      "7560/2021-5",
+      "7561/2021-5",
+      "8249/2021-5",
+      "8250/2021-5",
+      "8251/2021-5",
+      "8252/2021-5"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "1999",
+    "title": "Toyota HILUX 1999 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_1999_pt_BR_ff582a0b87.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/1999",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2239/1999-3",
+      "2244/1999-3",
+      "2245/1999-3",
+      "2253/1999-3",
+      "2264/1999-3",
+      "2265/1999-3",
+      "2269/1999-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2002",
+    "title": "Toyota HILUX 2002 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2001_pt_BR_e7cd086884.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2002",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2246/2002-1",
+      "2247/2002-3",
+      "2248/2002-3",
+      "2249/2002-3",
+      "2250/2002-3",
+      "2254/2002-1",
+      "2255/2002-3",
+      "2256/2002-3",
+      "2266/2002-1",
+      "2267/2002-3",
+      "2268/2002-3",
+      "2270/2002-1"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2005",
+    "title": "Toyota HILUX 2005 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2005_pt_BR_18c82410b1.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2005",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2247/2005-3",
+      "2248/2005-3",
+      "2250/2005-3",
+      "2255/2005-3",
+      "2256/2005-3",
+      "2267/2005-3",
+      "2268/2005-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2008",
+    "title": "Toyota HILUX 2008 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2008_pt_BR_54eab5ca57.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2008",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2242/2008-3",
+      "2243/2008-3",
+      "2251/2008-3",
+      "2252/2008-3",
+      "2257/2008-3",
+      "2258/2008-3",
+      "2259/2008-3",
+      "2260/2008-3",
+      "2262/2008-3",
+      "2263/2008-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2009",
+    "title": "Toyota HILUX 2009 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2009_pt_BR_9d91f25909.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2009",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2242/2009-3",
+      "2243/2009-3",
+      "2251/2009-3",
+      "2252/2009-3",
+      "2257/2009-3",
+      "2258/2009-3",
+      "2259/2009-3",
+      "2260/2009-3",
+      "2262/2009-3",
+      "2263/2009-3",
+      "4804/2009-1"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2010",
+    "title": "Toyota HILUX 2010 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2010_pt_BR_2e46f1c193.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2010",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2242/2010-3",
+      "2243/2010-3",
+      "2251/2010-3",
+      "2252/2010-3",
+      "2257/2010-3",
+      "2258/2010-3",
+      "2259/2010-3",
+      "2260/2010-3",
+      "2262/2010-3",
+      "2263/2010-3",
+      "4804/2010-1",
+      "5081/2010-1"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2011",
+    "title": "Toyota HILUX 2011 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2011_pt_BR_b1571644ee.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2011",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2242/2011-3",
+      "2243/2011-3",
+      "2252/2011-3",
+      "2257/2011-3",
+      "2258/2011-3",
+      "2259/2011-3",
+      "2260/2011-3",
+      "2262/2011-3",
+      "2263/2011-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2012",
+    "title": "Toyota HILUX 2012 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2012_pt_BR_c1ea57f06c.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2012",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2243/2012-3",
+      "2252/2012-3",
+      "2258/2012-3",
+      "2259/2012-3",
+      "2260/2012-3",
+      "2263/2012-3",
+      "5081/2012-1",
+      "5907/2012-5",
+      "6036/2012-3",
+      "6037/2012-3",
+      "6038/2012-3",
+      "6076/2012-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2013",
+    "title": "Toyota HILUX 2013 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2013_pt_BR_4282d4ddc8.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2013",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2252/2013-3",
+      "2258/2013-3",
+      "2259/2013-3",
+      "5081/2013-1",
+      "5907/2013-5",
+      "6036/2013-3",
+      "6037/2013-3",
+      "6038/2013-3",
+      "6076/2013-3",
+      "6310/2013-5"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2014",
+    "title": "Toyota HILUX 2014 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2013_pt_BR_4282d4ddc8.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2014",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2252/2014-3",
+      "2258/2014-3",
+      "2259/2014-3",
+      "5081/2014-1",
+      "5907/2014-5",
+      "6036/2014-3",
+      "6037/2014-3",
+      "6038/2014-3",
+      "6076/2014-3",
+      "6310/2014-5"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2015",
+    "title": "Toyota HILUX 2015 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2015_pt_BR_f4a64b60e5.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2015",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2252/2015-3",
+      "2258/2015-3",
+      "2259/2015-3",
+      "5081/2015-1",
+      "5907/2015-5",
+      "6036/2015-3",
+      "6037/2015-3",
+      "6038/2015-3",
+      "6076/2015-3",
+      "6310/2015-5",
+      "7046/2015-5",
+      "7076/2015-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2016",
+    "title": "Toyota HILUX 2016 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2016_PT_BR_d69f63dd9a.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2016",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2241/2016-3",
+      "7405/2016-3",
+      "7406/2016-3",
+      "7407/2016-3",
+      "7408/2016-3",
+      "7409/2016-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2017",
+    "title": "Toyota HILUX 2017 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2017_pt_BR_f1f6dc3765.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2017",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2241/2017-3",
+      "5081/2017-1",
+      "5907/2017-5",
+      "7046/2017-5",
+      "7405/2017-3",
+      "7406/2017-3",
+      "7407/2017-3",
+      "7408/2017-3",
+      "7409/2017-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2018",
+    "title": "Toyota HILUX 2018 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2018_pt_BR_67fffb7b6c.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2018",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2241/2018-3",
+      "4804/2018-1",
+      "5081/2018-1",
+      "5907/2018-5",
+      "7046/2018-5",
+      "7405/2018-3",
+      "7406/2018-3",
+      "7407/2018-3",
+      "7408/2018-3",
+      "7409/2018-3",
+      "8110/2018-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2019",
+    "title": "Toyota HILUX 2019 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2019_pt_BR_ff169fb073.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2019",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2241/2019-3",
+      "4804/2019-1",
+      "5081/2019-1",
+      "5907/2019-5",
+      "7046/2019-5",
+      "7405/2019-3",
+      "7406/2019-3",
+      "7407/2019-3",
+      "7408/2019-3",
+      "7409/2019-3",
+      "8554/2019-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2020",
+    "title": "Toyota HILUX 2020 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2020_pt_BR_a338b76fd4.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2020",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2241/2020-3",
+      "4804/2020-1",
+      "5081/2020-1",
+      "5907/2020-5",
+      "7046/2020-5",
+      "7405/2020-3",
+      "7406/2020-3",
+      "7407/2020-3",
+      "7408/2020-3",
+      "7409/2020-3",
+      "8554/2020-3",
+      "9026/2020-1"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2021",
+    "title": "Toyota HILUX 2021 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Hilux_2021_pt_BR_0789381429.pdf",
+    "source": "https://www.opinautos.com.br/toyota/hilux/info/manuais/2021",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2241/2021-3",
+      "5081/2021-1",
+      "5907/2021-5",
+      "7046/2021-5",
+      "7405/2021-3",
+      "7406/2021-3",
+      "7407/2021-3",
+      "7408/2021-3",
+      "7409/2021-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2022",
+    "title": "Toyota Hilux 2021 — Manual do Proprietário",
+    "external_url": "https://amigosdagraxa.com.br/wp-content/uploads/manuais/manual-proprietario-toyota-hilux-2021.pdf",
+    "source": "https://amigosdagraxa.com.br/manual-proprietario-hilux-pdf/",
+    "notes": "Edição 2021; fonte informa aplicação 2021–2023; documento para Hilux picape.",
+    "fipeVariants": [
+      "10172/2022-3",
+      "2241/2022-3",
+      "7405/2022-3",
+      "7406/2022-3",
+      "7407/2022-3",
+      "7408/2022-3",
+      "7409/2022-3",
+      "8554/2022-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2023",
+    "title": "Toyota Hilux 2021 — Manual do Proprietário",
+    "external_url": "https://amigosdagraxa.com.br/wp-content/uploads/manuais/manual-proprietario-toyota-hilux-2021.pdf",
+    "source": "https://amigosdagraxa.com.br/manual-proprietario-hilux-pdf/",
+    "notes": "Edição 2021; fonte informa aplicação 2021–2023; documento para Hilux picape.",
+    "fipeVariants": [
+      "10171/2023-3",
+      "10172/2023-3",
+      "2241/2023-3",
+      "7405/2023-3",
+      "7406/2023-3",
+      "7407/2023-3",
+      "7408/2023-3",
+      "7409/2023-3",
+      "8554/2023-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2024",
+    "title": "Toyota Hilux 2024 — Manual do Proprietário",
+    "external_url": "https://amigosdagraxa.com.br/wp-content/uploads/manuais/manual-proprietario-toyota-hilux-2024.pdf",
+    "source": "https://amigosdagraxa.com.br/manual-proprietario-hilux-pdf/",
+    "notes": "Edição 2024; fonte informa aplicação 2024 em diante; documento para Hilux picape.",
+    "fipeVariants": [
+      "10171/2024-3",
+      "10926/2024-3",
+      "11132/2024-3",
+      "2241/2024-3",
+      "7405/2024-3",
+      "7406/2024-3",
+      "7407/2024-3",
+      "7408/2024-3",
+      "7409/2024-3",
+      "8554/2024-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2025",
+    "title": "Toyota Hilux 2024 — Manual do Proprietário",
+    "external_url": "https://amigosdagraxa.com.br/wp-content/uploads/manuais/manual-proprietario-toyota-hilux-2024.pdf",
+    "source": "https://amigosdagraxa.com.br/manual-proprietario-hilux-pdf/",
+    "notes": "Edição 2024; fonte informa aplicação 2024 em diante; documento para Hilux picape.",
+    "fipeVariants": [
+      "10926/2025-3",
+      "11132/2025-3",
+      "11265/2025-3",
+      "11266/2025-3",
+      "2241/2025-3",
+      "7405/2025-3",
+      "7406/2025-3",
+      "7407/2025-3",
+      "7408/2025-3",
+      "7409/2025-3"
+    ]
+  },
+  {
+    "model": "hilux",
+    "year": "2026",
+    "title": "Toyota Hilux 2024 — Manual do Proprietário",
+    "external_url": "https://amigosdagraxa.com.br/wp-content/uploads/manuais/manual-proprietario-toyota-hilux-2024.pdf",
+    "source": "https://amigosdagraxa.com.br/manual-proprietario-hilux-pdf/",
+    "notes": "Edição 2024; fonte informa aplicação 2024 em diante; documento para Hilux picape.",
+    "fipeVariants": [
+      "10926/2026-3",
+      "11132/2026-3",
+      "11265/2026-3",
+      "11266/2026-3",
+      "2241/2026-3",
+      "7405/2026-3",
+      "7406/2026-3",
+      "7407/2026-3",
+      "7408/2026-3",
+      "7409/2026-3"
+    ]
+  },
+  {
+    "model": "prius",
+    "year": "2012",
+    "title": "Toyota PRIUS 2012 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Prius_2012_pt_BR_d528b23678.pdf",
+    "source": "https://www.opinautos.com.br/toyota/prius/info/manuais/2012",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "10044/2012-6"
+    ]
+  },
+  {
+    "model": "prius",
+    "year": "2016",
+    "title": "Toyota PRIUS 2016 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Prius_2016_pt_BR_f9096b89de.pdf",
+    "source": "https://www.opinautos.com.br/toyota/prius/info/manuais/2016",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "10044/2016-6"
+    ]
+  },
+  {
+    "model": "prius",
+    "year": "2018",
+    "title": "Toyota PRIUS 2018 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Prius_2018_pt_BR_91b956a8c4.pdf",
+    "source": "https://www.opinautos.com.br/toyota/prius/info/manuais/2018",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "10044/2018-6"
+    ]
+  },
+  {
+    "model": "prius",
+    "year": "2019",
+    "title": "Toyota PRIUS 2019 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Prius_2019_pt_BR_adabcb5a98.pdf",
+    "source": "https://www.opinautos.com.br/toyota/prius/info/manuais/2019",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "10044/2019-6"
+    ]
+  },
+  {
+    "model": "prius",
+    "year": "2020",
+    "title": "Toyota PRIUS 2020 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Prius_2020_pt_BR_e6190f6e34.pdf",
+    "source": "https://www.opinautos.com.br/toyota/prius/info/manuais/2020",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "10044/2020-6"
+    ]
+  },
+  {
+    "model": "prius",
+    "year": "2021",
+    "title": "Toyota PRIUS 2021 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Prius_2021_pt_BR_2c9b6a9b36.pdf",
+    "source": "https://www.opinautos.com.br/toyota/prius/info/manuais/2021",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "10044/2021-6"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "1999",
+    "title": "Toyota RAV4 1999 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_1999_pt_BR_2283f14d68.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/1999",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2285/1999-1",
+      "2286/1999-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2001",
+    "title": "Toyota RAV4 2001 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2001_pt_BR_696d5c9a1e.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2001",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2285/2001-1",
+      "2286/2001-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2003",
+    "title": "Toyota RAV4 2003 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2003_pt_BR_3aa5076457.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2003",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2285/2003-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2006",
+    "title": "Toyota RAV4 2006 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2006_pt_BR_5121c02975.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2006",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3977/2006-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2007",
+    "title": "Toyota RAV4 2007 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2007_pt_BR_c749aea629.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2007",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3977/2007-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2008",
+    "title": "Toyota RAV4 2008 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2008_pt_BR_3433e3796d.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2008",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3977/2008-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2009",
+    "title": "Toyota RAV4 2009 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2009_pt_BR_23be2c0531.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2009",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3977/2009-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2010",
+    "title": "Toyota RAV4 2010 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2010_pt_BR_ae7d50939a.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2010",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3977/2010-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2011",
+    "title": "Toyota RAV4 2011 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2011_pt_BR_c70cc3e0e0.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2011",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3977/2011-1",
+      "5431/2011-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2013",
+    "title": "Toyota RAV4 2013 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2013_pt_BR_d6a356720f.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2013",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2285/2013-1",
+      "6470/2013-1",
+      "6471/2013-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2014",
+    "title": "Toyota RAV4 2014 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2014_pt_BR_b99e10ce2f.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2014",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2285/2014-1",
+      "6470/2014-1",
+      "6471/2014-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2015",
+    "title": "Toyota RAV4 2015 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2015_pt_BR_6e439e2d5e.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2015",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2285/2015-1",
+      "6470/2015-1",
+      "6471/2015-1",
+      "7124/2015-1",
+      "7215/2015-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2017",
+    "title": "Toyota RAV4 2017 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2017_pt_BR_4e5a1a00c1.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2017",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "7215/2017-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2018",
+    "title": "Toyota RAV4 2018 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2018_pt_BR_eac5c1d8e5.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2018",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "6470/2018-1",
+      "7215/2018-1"
+    ]
+  },
+  {
+    "model": "rav4",
+    "year": "2019",
+    "title": "Toyota RAV4 2019 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-RAV4_2019_pt_BR_6e52bb71e5.pdf",
+    "source": "https://www.opinautos.com.br/toyota/rav4/info/manuais/2019",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "11998/2019-6",
+      "11999/2019-6",
+      "7215/2019-1"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "1997",
+    "title": "Toyota SW4 1997 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_1997_pt_BR_847a79bc38.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/1997",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2271/1997-1",
+      "2272/1997-1",
+      "2276/1997-1",
+      "2277/1997-3"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "1998",
+    "title": "Toyota SW4 1998 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_1998_pt_BR_9f63b43fe7.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/1998",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2271/1998-1",
+      "2272/1998-1",
+      "2276/1998-1",
+      "2277/1998-3"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2000",
+    "title": "Toyota SW4 2000 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2000_pt_BR_4598c8ca04.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2000",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "2271/2000-1",
+      "2272/2000-1",
+      "2277/2000-3"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2007",
+    "title": "Toyota SW4 2007 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2007_pt_BR_7c3e4e7b99.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2007",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3830/2007-3",
+      "3831/2007-3"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2008",
+    "title": "Toyota SW4 2008 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2008_pt_BR_32ce32dc36.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2008",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3830/2008-3",
+      "3831/2008-3"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2009",
+    "title": "Toyota SW4 2009 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2009_pt_BR_8e870ad1f5.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2009",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3830/2009-3",
+      "3831/2009-3",
+      "4905/2009-1",
+      "4906/2009-1",
+      "4907/2009-1"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2010",
+    "title": "Toyota SW4 2010 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2010_pt_BR_0a58487b25.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2010",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3830/2010-3",
+      "3831/2010-3",
+      "4905/2010-1",
+      "4906/2010-1",
+      "4907/2010-1"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2011",
+    "title": "Toyota SW4 2011 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2011_pt_BR_6a7d43cc45.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2011",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3830/2011-3",
+      "4905/2011-1",
+      "4907/2011-1"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2012",
+    "title": "Toyota SW4 2012 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2012_pt_BR_75860b00f4.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2012",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3830/2012-3",
+      "4905/2012-1",
+      "4906/2012-1",
+      "4907/2012-1",
+      "6077/2012-3"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2013",
+    "title": "Toyota SW4 2013 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2013_pt_BR_10f2980a0b.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2013",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3830/2013-3",
+      "4905/2013-1",
+      "4906/2013-1",
+      "4907/2013-1",
+      "6077/2013-3"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2014",
+    "title": "Toyota SW4 2014 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2014_pt_BR_66144006bc.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2014",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3830/2014-3",
+      "4905/2014-1",
+      "4906/2014-1",
+      "6077/2014-3"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2015",
+    "title": "Toyota SW4 2015 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2015_pt_BR_6cafe11118.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2015",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "3830/2015-3",
+      "4905/2015-1",
+      "4906/2015-1",
+      "6077/2015-3"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2017",
+    "title": "Toyota SW4 2017 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2017_pt_BR_0214dbf747.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2017",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4905/2017-1",
+      "4906/2017-1",
+      "7491/2017-3",
+      "7492/2017-1"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2018",
+    "title": "Toyota SW4 2018 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2018_pt_BR_4690852ccd.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2018",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4905/2018-1",
+      "4906/2018-1",
+      "7491/2018-3",
+      "8111/2018-5"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2019",
+    "title": "Toyota SW4 2019 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2019_pt_BR_096a693f93.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2019",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4906/2019-1",
+      "7491/2019-3",
+      "8111/2019-5",
+      "8299/2019-3"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2020",
+    "title": "Toyota SW4 2020 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2020_pt_BR_6b74130216.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2020",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4906/2020-1",
+      "7491/2020-3",
+      "8111/2020-5",
+      "8299/2020-3"
+    ]
+  },
+  {
+    "model": "sw4",
+    "year": "2021",
+    "title": "Toyota SW4 2021 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-SW4_2021_pt_BR_c2f376c06b.pdf",
+    "source": "https://www.opinautos.com.br/toyota/sw4/info/manuais/2021",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "4906/2021-1",
+      "7491/2021-3",
+      "8111/2021-5"
+    ]
+  },
+  {
+    "model": "yaris",
+    "year": "2019",
+    "title": "Toyota YARIS 2019 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Yaris_2019_pt_BR_ad7b2cf5a6.pdf",
+    "source": "https://www.opinautos.com.br/toyota/yaris/info/manuais/2019",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "8358/2019-5",
+      "8359/2019-5",
+      "8360/2019-5",
+      "8361/2019-5",
+      "8362/2019-5",
+      "8363/2019-5",
+      "8364/2019-5",
+      "8365/2019-5",
+      "8366/2019-5",
+      "8367/2019-5",
+      "8638/2019-5"
+    ]
+  },
+  {
+    "model": "yaris",
+    "year": "2020",
+    "title": "Toyota YARIS 2020 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Yaris_2020_pt_BR_f7b7d0ee2f.pdf",
+    "source": "https://www.opinautos.com.br/toyota/yaris/info/manuais/2020",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "8358/2020-5",
+      "8359/2020-5",
+      "8360/2020-5",
+      "8361/2020-5",
+      "8362/2020-5",
+      "8363/2020-5",
+      "8364/2020-5",
+      "8365/2020-5",
+      "8366/2020-5",
+      "8367/2020-5",
+      "8638/2020-5",
+      "8932/2020-5",
+      "8933/2020-5",
+      "8934/2020-5",
+      "8935/2020-5",
+      "8936/2020-5",
+      "8937/2020-5",
+      "8938/2020-5",
+      "8939/2020-5",
+      "8940/2020-5",
+      "8941/2020-5",
+      "8942/2020-5"
+    ]
+  },
+  {
+    "model": "yaris",
+    "year": "2021",
+    "title": "Toyota Yaris 2021 — Manual do Proprietário",
+    "external_url": "https://www.manualdocarro.com.br/wp-content/uploads/2023/03/toyota-yaris_2021_632029cbfbed8e136e5f.pdf",
+    "source": "https://www.manualdocarro.com.br/2021-toyota-yaris-manual-do-proprietario/",
+    "notes": "PDF do manual do proprietário Toyota Yaris brasileiro da edição indicada; hospedado pelo Manual do Carro.",
+    "fipeVariants": [
+      "8932/2021-5",
+      "8933/2021-5",
+      "8934/2021-5",
+      "8935/2021-5",
+      "8936/2021-5",
+      "8937/2021-5",
+      "8938/2021-5",
+      "8939/2021-5",
+      "8940/2021-5",
+      "8941/2021-5",
+      "8942/2021-5",
+      "9216/2021-5"
+    ]
+  },
+  {
+    "model": "yaris",
+    "year": "2022",
+    "title": "Toyota YARIS 2022 — Manual do Proprietário",
+    "external_url": "https://manuals.opinautos.com.br/published/Toyota-Yaris_2022_PT__e5001eb149.pdf",
+    "source": "https://www.opinautos.com.br/toyota/yaris/info/manuais/2022",
+    "notes": "Manual em português do Brasil, versão identificada para o ano-modelo indicado na fonte; compatibilidade vinculada às versões FIPE correspondentes.",
+    "fipeVariants": [
+      "8932/2022-5",
+      "8934/2022-5",
+      "8936/2022-5",
+      "8937/2022-5",
+      "8938/2022-5",
+      "8939/2022-5",
+      "8940/2022-5",
+      "8941/2022-5",
+      "8942/2022-5"
+    ]
+  },
+  {
+    "model": "yaris",
+    "year": "2023",
+    "title": "Toyota Yaris 2023 — Manual do Proprietário",
+    "external_url": "https://www.manualdocarro.com.br/wp-content/uploads/2023/03/toyota-yaris_2023_868d044c50af0cf9bc82.pdf",
+    "source": "https://www.manualdocarro.com.br/2023-toyota-yaris-manual-do-proprietario/",
+    "notes": "PDF do manual do proprietário Toyota Yaris brasileiro da edição indicada; hospedado pelo Manual do Carro.",
+    "fipeVariants": [
+      "8362/2023-5",
+      "8364/2023-5",
+      "8365/2023-5",
+      "8366/2023-5",
+      "8367/2023-5",
+      "9726/2023-5"
+    ]
+  }
+]

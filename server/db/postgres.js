@@ -1,10 +1,12 @@
 import { createReadStream, existsSync } from 'node:fs'
 import { readFile } from 'node:fs/promises'
+import { createHash } from 'node:crypto'
 import { pipeline } from 'node:stream/promises'
 import { DatabaseSync } from 'node:sqlite'
 import pg from 'pg'
 import { from as copyFrom } from 'pg-copy-streams'
 import { createCatalog } from './catalog.js'
+import { fipeManualCatalogs } from './fipe-owner-manuals.js'
 
 const tables = [
   'sources', 'brands', 'vehicles', 'powertrains', 'documents', 'vehicle_manual_coverage',
@@ -45,6 +47,23 @@ function sqliteSnapshot(file) {
   }
 }
 
+async function syncFipeManuals(client, { brand, slug, seed }) {
+  const entries = JSON.stringify(seed)
+  const prefix = `002_${slug}_manuals:`
+  const version = prefix + createHash('sha256').update(entries).digest('hex')
+  const applied = await client.query('SELECT 1 FROM catalog_migrations WHERE version = $1', [version])
+  if (applied.rowCount) return
+
+  await client.query('DELETE FROM fipe_owner_manuals WHERE brand_code = $1', [brand])
+  await client.query(`INSERT INTO fipe_owner_manuals
+    (brand_code, model, model_year, title, external_url, source, notes, fipe_variants)
+    SELECT $1, model, year::integer, title, external_url, source, notes, "fipeVariants"
+    FROM jsonb_to_recordset($2::jsonb) AS e(model text, year text, title text, external_url text,
+      source text, notes text, "fipeVariants" text[])`, [brand, entries])
+  await client.query('DELETE FROM catalog_migrations WHERE starts_with(version, $1)', [prefix])
+  await client.query('INSERT INTO catalog_migrations(version) VALUES ($1)', [version])
+}
+
 export async function openPostgresCatalog(connectionString, sqliteFile) {
   const pool = new pg.Pool({ connectionString, connectionTimeoutMillis: 8000 })
   pool.on('error', (error) => console.error('Conexão ociosa do catálogo perdida:', error.message))
@@ -52,18 +71,21 @@ export async function openPostgresCatalog(connectionString, sqliteFile) {
     await transaction(pool, async (client) => {
       await client.query('CREATE TABLE IF NOT EXISTS catalog_migrations (version text PRIMARY KEY, applied_at timestamptz NOT NULL DEFAULT now())')
       const applied = await client.query("SELECT 1 FROM catalog_migrations WHERE version = '001_catalog'")
-      if (applied.rowCount) return
-      await client.query(await read('./migrations/001_catalog.sql'))
-      for (const [table, rows, identity] of sqliteSnapshot(sqliteFile)) {
-        if (!rows.length) continue
-        const columns = Object.keys(rows[0]).map((column) => '"' + column.replaceAll('"', '""') + '"').join(', ')
-        await client.query('INSERT INTO ' + table + ' (' + columns + ') SELECT ' + columns +
-          ' FROM json_populate_recordset(NULL::' + table + ', $1::json)', [JSON.stringify(rows)])
-        if (identity) {
-          await client.query("SELECT setval(pg_get_serial_sequence($1, 'id'), (SELECT max(id) FROM " + table + "))", [table])
+      if (!applied.rowCount) {
+        await client.query(await read('./migrations/001_catalog.sql'))
+        for (const [table, rows, identity] of sqliteSnapshot(sqliteFile)) {
+          if (!rows.length) continue
+          const columns = Object.keys(rows[0]).map((column) => '"' + column.replaceAll('"', '""') + '"').join(', ')
+          await client.query('INSERT INTO ' + table + ' (' + columns + ') SELECT ' + columns +
+            ' FROM json_populate_recordset(NULL::' + table + ', $1::json)', [JSON.stringify(rows)])
+          if (identity) {
+            await client.query("SELECT setval(pg_get_serial_sequence($1, 'id'), (SELECT max(id) FROM " + table + "))", [table])
+          }
         }
+        await client.query("INSERT INTO catalog_migrations(version) VALUES ('001_catalog')")
       }
-      await client.query("INSERT INTO catalog_migrations(version) VALUES ('001_catalog')")
+      await client.query(await read('./migrations/002_fipe_owner_manuals.sql'))
+      for (const catalog of fipeManualCatalogs) await syncFipeManuals(client, catalog)
     })
     return new PostgresCatalog(pool)
   } catch (error) {
@@ -85,6 +107,11 @@ export async function importPilot(pool, csv = new URL('./imports/fiat-vw.csv', i
 class PostgresCatalog {
   constructor(pool) { this.pool = pool }
   async rows(sql, params) { return (await this.pool.query(sql, params)).rows }
+
+  async fipeOwnerManuals(brand) {
+    return this.rows(`SELECT model, model_year::text AS year, title, external_url, source, notes, fipe_variants AS "fipeVariants"
+      FROM fipe_owner_manuals WHERE brand_code = $1 ORDER BY model, model_year, title, external_url`, [brand])
+  }
 
   async counts() {
     const [counts] = await this.rows(`SELECT

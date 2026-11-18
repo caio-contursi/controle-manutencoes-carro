@@ -39,6 +39,17 @@ A senha padrão do Compose serve para uso local. Para definir outra antes de ini
 - `GET /api/catalog/search?q=...`: modelos publicados e pesquisáveis.
 - `GET /api/catalog/vehicles/:id`: modelo, agenda, problemas comprovados e mensagem de confirmação na concessionária.
 - `GET /api/catalog/sources`: fontes cadastradas.
+- `GET /api/catalog/chevrolet-manuals`: manuais do proprietário Chevrolet por modelo e ano-modelo.
+- `GET /api/catalog/fiat-manuals`: manuais de uso e manutenção Fiat por modelo e ano-modelo.
+- `GET /api/catalog/volkswagen-manuals`: manuais de instruções Volkswagen por modelo e ano-modelo.
+- `GET /api/catalog/ford-manuals`: manuais do proprietário Ford por modelo e ano-modelo, indexados às versões FIPE identificadas.
+- `GET /api/catalog/renault-manuals`: manuais do proprietário Renault, associados às versões e anos-modelo FIPE identificados.
+- `GET /api/catalog/toyota-manuals`: manuais do proprietário Toyota, associados às versões e anos-modelo FIPE identificados.
+- `GET /api/catalog/honda-manuals`: manuais do proprietário Honda, associados às versões e anos-modelo FIPE identificados.
+- `GET /api/catalog/hyundai-manuals`: manuais do proprietário Hyundai, associados às versões e anos-modelo FIPE identificados.
+- `GET /api/catalog/jeep-manuals`: manuais do proprietário Jeep, associados às versões e anos-modelo FIPE identificados.
+- `GET /api/catalog/nissan-manuals`: manuais do proprietário Nissan, associados às versões e anos-modelo FIPE identificados.
+- `GET /api/catalog/citroen-manuals`: manuais do proprietário Citroën, associados às versões e anos-modelo FIPE identificados.
 - `POST /api/catalog/contributions`: envia uma contribuição limitada para revisão; ela não é publicada automaticamente.
 
 ## Testes
@@ -48,6 +59,14 @@ Execute `npm test` para verificar inicialização do banco, cobertura das 30 mar
 O cadastro e o Catálogo consultam a [Fipe API](https://deividfortuna.github.io/fipe/v2/) em quatro etapas. Ao selecionar o carro, `GET /api/fipe/cars?brand=…&family=…` lista seus anos-modelo registrados no Brasil. Após a escolha do ano, `GET /api/fipe/cars?brand=…&family=…&year=…` lista as versões disponíveis naquele ano. Ao selecionar a versão, `GET /api/fipe/cars?brand=…&model=…&year=…` consulta a cotação de referência atual. Na consulta de cotação, `year` inclui o identificador de combustível do provedor. Configure opcionalmente `LEMBRACAR_FIPE_TOKEN` no servidor para usar um token do provedor.
 
 O arquivo `server/db/fipe-matches.js` registra as chaves exatas associadas a cada manual oficial e a evidência usada para verificar o vínculo. Para adicionar uma versão, confirme na documentação da montadora o ano-modelo e a configuração mecânica, confira se há edições diferentes por data de fabricação e valide os quatro componentes da chave na FIPE. Um PDF pode ter vários vínculos verificados. A consulta continua exibindo a cotação para as versões com manual pendente.
+
+No Catálogo, selecione marca, modelo, ano-modelo e versão para ver o valor de referência FIPE e acessar o manual disponível. A consulta usa o índice `server/db/chevrolet-manuals.json` para associar as edições Chevrolet pelo ano-modelo e pela versão aplicável. O seletor de modo escuro fica no cabeçalho e no menu móvel e salva a preferência no aplicativo.
+
+Os índices em `server/db/fiat-manuals.json`, `server/db/volkswagen-manuals.json`, `server/db/ford-manuals.json`, `server/db/renault-manuals.json`, `server/db/toyota-manuals.json`, `server/db/honda-manuals.json`, `server/db/jeep-manuals.json` e `server/db/nissan-manuals.json` e `server/db/citroen-manuals.json` incluem a fonte e os IDs de modelo e ano com combustível da FIPE. No Docker, o servidor sincroniza cada marca com a tabela `fipe_owner_manuals` do PostgreSQL e carrega os vínculos dessa tabela. Se uma montadora publica mais de uma edição para o mesmo ano-modelo, o catálogo exibe as datas disponíveis para identificar o manual pela fabricação. Atualize o índice e execute `docker compose up -d --build` para publicar alterações.
+
+Com o aplicativo em execução, rode `node scripts/audit-chevrolet-manuals.js` para testar a visualização e o download de todos os manuais Chevrolet publicados. O comando aceita a URL do aplicativo e um caminho opcional para gravar os resultados em JSON. Passe um relatório anterior como terceiro argumento para repetir apenas os testes de PDFs novos ou com falha.
+
+Rode `node scripts/audit-all-manuals.js` para verificar os PDFs publicados pelos catálogos FIPE de Chevrolet, Fiat, Volkswagen, Ford, Renault, Toyota, Honda, Hyundai, Jeep, Nissan e Citroën. O relatório confirma que os modos de visualização e download retornam cabeçalhos de PDF e assinatura `%PDF-` para cada link cadastrado.
 
 A consulta por placa ainda não está disponível. O Copiloto organiza informações locais e orienta consultar uma fonte oficial quando ainda não existe cobertura técnica verificada.
 

@@ -1,7 +1,8 @@
 import { isFipeFamilyQuery, loadFipeBrandModels, loadFipeFamilyVersions, loadFipeFamilyYears } from './fipe-family.js'
-import { manualToken, registerManualRoute } from './manual-pdf.js'
+import { withManualToken, registerManualRoute } from './manual-pdf.js'
 import { verifiedOwnerManual, supportedFipeBrands } from './db/fipe-matches.js'
-import { manualsByModelYear } from './db/manufacturer-manuals.js'
+import { chevroletOwnerManuals, listChevroletOwnerManuals } from './db/chevrolet-manuals.js'
+import { createFipeManualIndex, fipeManualCatalogs } from './db/fipe-owner-manuals.js'
 
 const baseUrl = 'https://fipe.parallelum.com.br/api/v2/cars'
 
@@ -26,8 +27,28 @@ async function requestUpstream(path) {
   return response.json()
 }
 
-export function registerFipeRoute(app) {
+function registerManualCatalog(app, path, list) {
+  app.get(path, (_request, response) => {
+    const models = list().map(({ model, years }) => ({
+      model,
+      years: years.map(({ year, manuals }) => ({
+        year,
+        manuals: manuals.map(withManualToken),
+      })),
+    }))
+    response.set('Cache-Control', 'no-store').json({ models })
+  })
+}
+
+export function registerFipeRoute(app, manualRowsByBrand) {
+  const manualIndexes = new Map()
   registerManualRoute(app)
+  registerManualCatalog(app, '/api/catalog/chevrolet-manuals', listChevroletOwnerManuals)
+  for (const { brand, slug, seed } of fipeManualCatalogs) {
+    const index = createFipeManualIndex(manualRowsByBrand?.get(brand) ?? seed)
+    manualIndexes.set(brand, index)
+    registerManualCatalog(app, `/api/catalog/${slug}-manuals`, index.list)
+  }
   app.get('/api/fipe/cars', async (request, response) => {
     const { brand, family, year } = request.query
     const path = family === undefined ? fipePath(request.query) : null
@@ -52,10 +73,14 @@ export function registerFipeRoute(app) {
       if (year) {
         const manual = verifiedOwnerManual(request.query, data)
         const manuals = manual ? [manual] : []
-        if (!manual && brand === '23' && /^celta(?:\s|$)/i.test(data.model) && year.startsWith(data.modelYear + '-')) {
-          manuals.push(...manualsByModelYear(brand, data))
+        if (!manual && brand === '23') {
+          manuals.push(...chevroletOwnerManuals(year, data, request.query.model))
         }
-        data.manuals = manuals.map((entry) => ({ ...entry, token: manualToken(entry.external_url) }))
+        const index = manualIndexes.get(brand)
+        if (!manual && index) {
+          manuals.push(...index.lookup(request.query.model, year, data))
+        }
+        data.manuals = manuals.map(withManualToken)
       }
       return response.set('Cache-Control', year ? 'no-store' : 'private, max-age=300').json(data)
     } catch (error) {
